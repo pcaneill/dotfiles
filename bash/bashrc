@@ -1,0 +1,23 @@
+LP_PS1_POSTFIX="\n> "
+source ~/CONFIG/bash/liquidpromptrc
+source ~/CONFIG/submodules/liquidprompt/liquidprompt
+
+if [ "$TERM" != "dumb" ]; then
+    eval `dircolors -b`
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Enable all cores generation
+ulimit -c unlimited
+
+# Use bash completion, if installed
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
