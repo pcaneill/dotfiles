@@ -10,3 +10,6 @@
 [submodule "submodules/window-numbering"]
 	path = submodules/window-numbering
 	url = https://github.com/Moeryn/window-numbering.el.git
+[submodule "submodules/powerline"]
+	path = submodules/powerline
+	url = https://github.com/milkypostman/powerline.git
