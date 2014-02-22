@@ -1,3 +1,12 @@
 [submodule "submodules/liquidpromt"]
 	path = submodules/liquidpromt
 	url = https://github.com/nojhan/liquidprompt.git
+[submodule "submodules/highlight-parentheses"]
+	path = submodules/highlight-parentheses
+	url = https://github.com/nschum/highlight-parentheses.el.git
+[submodule "submodules/highlight-symbol"]
+	path = submodules/highlight-symbol
+	url = https://github.com/nschum/highlight-symbol.el.git
+[submodule "submodules/window-numbering"]
+	path = submodules/window-numbering
+	url = https://github.com/Moeryn/window-numbering.el.git
