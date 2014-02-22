@@ -5,3 +5,8 @@ git submodule update
 
 # Install liquidprompt
 cp bash/bashrc ~/.bashrc
+
+# Set Desktop Background
+xfconf-query -c xfce4-desktop                                 \
+             --property /backdrop/screen0/monitor0/image-path \
+             --set ~/CONFIG/desktop/paris.jpg
