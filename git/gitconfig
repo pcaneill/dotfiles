@@ -1,0 +1,45 @@
+[core]
+    excludesfile=~/.gitignore
+    editor= emacs -nw
+
+[user]
+    name = "Pierre-Yves Caneill"
+    email = "py.caneill@gmail.com"
+
+[alias]
+    co=checkout
+    ci=commit
+    st=status
+    stat=status
+    pop=reset HEAD~
+    undo=reset HEAD~
+    glog=log --graph
+
+    amend = commit --amend
+    squash = commit --amend -C HEAD
+    fixup = commit --amend -C HEAD
+
+    unstash = stash apply
+
+[color]
+    ui     = auto
+    diff   = auto
+    branch = auto
+    status = auto
+    pager  = true
+    interactive = auto
+
+[color "diff"]
+    meta = green
+    frag = yellow
+    old = magenta
+    new = bold cyan
+
+[color "status"]
+    header = bold blue
+    added  = green
+    changed = bold red
+    untracked = bold yellow
+
+[rebase]
+    stat = true
