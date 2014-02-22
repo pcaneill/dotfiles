@@ -17,12 +17,13 @@
 ;;; Number window
 (add-to-list 'load-path "~/CONFIG/submodules/window-numbering")
 (require 'window-numbering)
+
 (window-numbering-mode t)
 
 ;;; Whitespace
 (require 'whitespace)
 
-(setq whitespace-line-column 78) ;; limit line length
+(setq whitespace-line-column 78)
 (setq whitespace-style '(face lines-tail))
 (add-hook 'c-mode-hook 'whitespace-mode)
 (add-hook 'prog-mode-hook 'whitespace-mode)
@@ -31,10 +32,26 @@
 (add-to-list 'load-path "~/CONFIG/submodules/powerline")
 (require 'powerline)
 
-(power-line-default-theme)
+(powerline-default-theme)
 
 ;;; Ido
 (ido-mode t)
+
+;;; Package
+(require 'package)
+
+(add-to-list 'package-archives
+ '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+   '("marmalade" .
+     "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;(package-install 'flycheck)
+;(package-install 'auto-complete)
+;(package-install 'git-rebase-mode)
+;(package-install 'git-commit-mode)
+;(package-install 'markdown-mode)
 
 ;;; Keyboard shortcut
 (require 'moeryn-shortcuts)

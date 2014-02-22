@@ -3,8 +3,8 @@
 
 ;; Remove menu bar
 (menu-bar-mode -1)
-;; Remove scroll bar
 
+;; Remove scroll bar
 (toggle-scroll-bar -1)
 
 ;; Remove tool bar
@@ -13,8 +13,11 @@
 ;; Matching parentheses
 (show-paren-mode)
 
+;; yes -> y, no -> n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Makes the region visible
-(transient-mark-mode 1) ;
+(transient-mark-mode 1)
 
 ;; Makes the line number show up
 (line-number-mode 1)
