@@ -3,3 +3,85 @@
 (require 'moeryn-display)
 
 (add-hook 'emacs-startup-hook 'moeryn-three-display)
+
+;;; Hightlight
+(add-to-list 'load-path "~/CONFIG/submodules/highlight-parentheses")
+(add-to-list 'load-path "~/CONFIG/submodules/highlight-symbol")
+(require 'highlight-parentheses)
+(require 'highlight-symbol)
+
+(highlight-parentheses-mode t)
+(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
+
+;;; Number window
+(add-to-list 'load-path "~/CONFIG/submodules/window-numbering")
+(require 'window-numbering)
+(window-numbering-mode t)
+
+;;; whitespace
+(require 'whitespace)
+
+(setq whitespace-line-column 78) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+(add-hook 'c-mode-hook 'whitespace-mode)
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
+;;; IDO
+(ido-mode t)
+
+;;; Options
+
+;;Line number
+(global-linum-mode t)
+;;Remove menu bar
+(menu-bar-mode -1)
+;;Remove scroll bar
+(toggle-scroll-bar -1)
+;;Remove tool bar
+(tool-bar-mode -1)
+;;Matching parentheses
+(show-paren-mode)
+;;Makes the region visible
+(transient-mark-mode 1) ;
+;;Makes the line number show up
+(line-number-mode 1)
+;;Makes the column number show up
+(column-number-mode 1)
+
+;;; Keyboards shortcut
+
+;; Buffers
+(global-set-key  (kbd "C-c <C-right>") 'moeryn-rapid-enlarge-function)
+(global-set-key  (kbd "C-c <C-left>")  'moeryn-rapid-shrink-function)
+
+(global-set-key  (kbd "C-G") 'goto-line)
+
+(global-set-key [(f4)] (lambda ()
+                         (interactive)
+                         (git-grep-it (format "%s" (current-word)))))
+
+;; Highlight
+(global-set-key [(f3)]       'highlight-symbol-at-point)
+(global-set-key [f2]         'highlight-symbol-next)
+(global-set-key [(shift f2)] 'highlight-symbol-prev)
+(global-set-key [(meta f2)]  'highlight-symbol-query-replace)
+
+;; Tags
+(global-set-key [(f1)] 'etags-select-find-tag-at-point)
+(global-set-key [(control f1)] 'etags-select-find-tag)
+
+;; Folds
+(global-set-key (kbd "C-<left>")  'hide-entry)
+(global-set-key (kbd "C-<right>") 'show-entry)
+(global-set-key (kbd "C-<up>")    'outline-previous-visible-heading)
+(global-set-key (kbd "C-<down>")  'outline-next-visible-heading)
+
+;; Flymake
+(global-set-key [(f12)] 'buffer-compile)
+(global-set-key [(f10)] 'flymake-show-next-error)
+
+;; git-rebase-mode
+(global-set-key [(meta u)] 'git-rebase-move-line-up)
+(global-set-key [(meta d)] 'git-rebase-move-line-down)
+(global-set-key [(meta k)] 'git-rebase-kill-line)
+(global-set-key [(meta a)] 'git-rebase-abort)
