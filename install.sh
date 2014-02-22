@@ -13,3 +13,6 @@ xfconf-query -c xfce4-desktop                                 \
 
 # emacs
 cp emacs/emacs ~/.emacs
+
+# git
+cp git/gitconfig ~/.gitconfig
