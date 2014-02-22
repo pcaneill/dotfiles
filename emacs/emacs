@@ -1,0 +1,5 @@
+;;; Moeryn Library
+(add-to-list 'load-path "~/CONFIG/emacs/moeryn")
+(require 'moeryn-display)
+
+(add-hook 'emacs-startup-hook 'moeryn-three-display)
