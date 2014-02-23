@@ -3,8 +3,10 @@
 git submodule init
 git submodule update
 
-# Install liquidprompt
+# Bash
 cp bash/bashrc ~/.bashrc
+cp bash/git-prompt.sh ~/.git-prompt.sh
+cp bash/git-completion.bash ~/.git-completion.bash
 
 # Set Desktop Background
 xfconf-query -c xfce4-desktop                                 \
