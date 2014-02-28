@@ -53,11 +53,11 @@
 ;(package-install 'git-commit-mode)
 ;(package-install 'markdown-mode)
 
-;;; Flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
 ;;; Font
 (set-face-attribute 'default (selected-frame) :height 92)
 
 ;;; Keyboard shortcut
 (require 'moeryn-shortcuts)
+
+;;; Hooks
+(require 'moeryn-hooks)
