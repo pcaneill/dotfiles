@@ -1,9 +1,9 @@
 export GIT_PS1_SHOWSTASHSTATE=1
 export PS1='\[\e[34;1m\]\u@\[\e[32;1m\]\H:\[\e[31;1m\]$(__git_ps1) \[\e[0m\]\w\[\e[31;1m\]\$ \[\e[0m\]'
 
-#LP_PS1_POSTFIX="\n> "
-#source ~/CONFIG/bash/liquidpromptrc
-#source ~/CONFIG/submodules/liquidpromt/liquidprompt
+LP_PS1_POSTFIX="\n> "
+source ~/CONFIG/bash/liquidpromptrc
+source ~/CONFIG/submodules/liquidpromt/liquidprompt
 
 if [ "$TERM" != "dumb" ]; then
     eval `dircolors -b`
