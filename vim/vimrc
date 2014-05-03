@@ -1,0 +1,253 @@
+" Moeryn's vim configuration
+
+set nocompatible
+
+" {{{ Pathogen
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin on
+filetype plugin indent on
+
+" }}}
+" {{{ Terminal
+
+
+" Enable color in the terminal for the powerline in some terminal
+set t_Co=256
+
+" }}}
+" {{{ Synastic
+
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'passive_filetypes': [ ] }
+let g:syntastic_ignore_files = ['^/usr/include/']
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_jump=0
+let g:syntastic_check_on_open=1
+let g:syntastic_silent_make=0
+
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = ''
+let g:syntastic_c_include_dirs = [ ]
+let g:syntastic_c_no_include_search = 1
+let g:syntastic_c_no_default_include_dirs = 1
+
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ''
+let g:syntastic_cpp_include_dirs = [ ]
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_no_default_include_dirs = 1
+
+command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
+
+" }}}
+" {{{ UltiSnips
+
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsListSnippets        = "<c-l>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+let g:UltiSnipsEditSplit = 'vertical'
+
+" }}}
+" {{{ ctrlp
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
+
+" }}}
+" {{{ colors
+
+hi Comment      cterm=none       ctermfg=blue       ctermbg=none
+hi doxygenBrief cterm=none       ctermfg=cyan       ctermbg=none
+hi Folded       cterm=none       ctermfg=brown      ctermbg=none
+
+hi Visual       cterm=reverse    ctermfg=none       ctermbg=none
+hi IncSearch    cterm=none       ctermfg=red        ctermbg=none
+hi Search       cterm=underline  ctermfg=red        ctermbg=none
+
+hi StatusLine   cterm=none       ctermfg=white      ctermbg=blue
+hi StatusLineNc cterm=none       ctermfg=black      ctermbg=white
+hi WildMenu     cterm=none       ctermfg=white      ctermbg=none
+hi VertSplit    cterm=none       ctermfg=darkgray   ctermbg=none
+hi NonText      cterm=none       ctermfg=darkgray   ctermbg=none
+
+hi MatchParen   cterm=underline  ctermfg=white      ctermbg=red
+hi Pmenu        cterm=none       ctermfg=gray       ctermbg=black
+hi PmenuSel     cterm=none       ctermfg=black      ctermbg=gray
+hi PmenuSbar    cterm=none       ctermfg=blue       ctermbg=blue
+hi PmenuThumb   cterm=none       ctermfg=gray       ctermbg=gray
+
+hi SpellBad     cterm=underline  ctermfg=lightred   ctermbg=none
+hi SpellCap     cterm=none       ctermfg=lightred   ctermbg=none
+hi SpellLocal   cterm=underline  ctermfg=darkgreen  ctermbg=none
+hi SpellRare    cterm=none       ctermfg=none       ctermbg=none
+
+hi javaScriptTpl       cterm=none ctermfg=darkgreen ctermbg=none
+hi javaScriptTplMark   cterm=none ctermfg=magenta ctermbg=none
+
+colo seoul256
+
+" }}}
+" {{{ mapping
+
+" change directory to the file being edited
+nnoremap ,cd :cd %:p:h<CR>
+
+" forbid non-breakable spaces
+imap   <Space>
+
+" next compilation error
+map +        :cnext<cr>
+map <kPlus>  :cnext<CR>
+" previous compilation error
+map -        :cprev<cr>
+map <kMinus> :cprev<CR>
+" next syntastic error
+map <S-Right> :lnext<cr>
+" previous syntastic error
+map <S-Left> :lprev<cr>
+
+" follow tag
+map <F2> <C-]>
+
+" bufExplorer
+map <F3> <Leader>be
+
+" grep on the current word
+map <F4> :gr! -w <cword><cr>
+
+set pastetoggle=<F5>
+
+nnoremap <F6> :nohlsearch<CR>
+
+" spell check
+map <F8> :setlocal spell! spelllang=en_us<CR>
+
+" horizontal split + next buffer
+map <F9> :split<cr>:bn<cr>
+" vertical split + next buffer
+map <F10> :vsplit<cr>:bn<cr>
+
+" make
+noremap  <F11> :make!<cr><cr>
+inoremap <F11> <esc>:make!<cr><cr>
+
+" remove trailing spaces
+map <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
+
+" move to left buffer
+map  <C-Left>   <C-w><Left>
+map! <C-Left>   <Esc> <C-w><Left>
+map  <C-h>      <C-w><Left>
+map! <C-h>      <Esc> <C-w><Left>
+" move to right buffer
+map  <C-Right>  <C-w><Right>
+map! <C-Right>  <Esc> <C-w><Right>
+map  <C-l>      <C-w><Right>
+map! <C-l>      <Esc> <C-w><Right>
+" move to buffer above
+map  <C-Up>     <C-w><Up>
+map! <C-Up>     <Esc> <C-w><Up>
+map  <C-k>      <C-w><Up>
+map! <C-k>      <Esc> <C-w><Up>
+" move to buffer below
+map  <C-Down>   <C-w><Down>
+map! <C-Down>   <Esc> <C-w><Down>
+map  <C-j>      <C-w><Down>
+map! <C-j>      <Esc> <C-w><Down>
+
+" scroll up
+map <S-Up> <C-Y>
+" scroll down
+map <S-Down> <C-E>
+
+" Exit insert mode
+imap jj  <ESC>
+imap hh  <ESC>
+imap lll <ESC>
+imap kk  <ESC>
+
+" }}}
+" {{{ various
+
+" cursor line
+set cursorline
+hi CursorLine term=bold cterm=bold ctermbg=black
+
+" syntax
+syntax on
+
+set encoding=utf-8
+set backspace=indent,eol,start
+
+set incsearch
+set hlsearch
+
+set autoindent
+
+set hidden
+set noesckeys
+
+
+" list
+set listchars=eol:\ ,tab:\ \ ,trail:-,extends:>,precedes:<,nbsp:¤
+set list
+"hi SpecialKey ctermbg=red
+
+
+" modeline
+set modeline
+set modelines=5
+
+set lazyredraw
+set undolevels=1000   " increase number of undos possible
+set ttyfast           " fast terminal
+set showmatch         " show matching bracket
+set report=0          " report the number of lines changed
+set laststatus=2      " always have a status line
+set number            " line numbering
+set foldmethod=marker " folding => {{{ }}}
+set wildmenu
+set tags=tags;/,.tags;/,TAG;/
+
+if v:version >= 703
+    "undo settings
+    set undodir=~/.vim/undofiles
+    set undofile
+    set colorcolumn=+1 "mark the ideal max text width
+endif
+
+" }}}
+" {{{ restore cursor position
+
+au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+" }}}
+" {{{ code formatting
+
+set tabstop=4
+set softtabstop=4
+set expandtab
+set textwidth=0
+set shiftwidth=4
+
+set cinoptions=
+set cinoptions+=L0.5s          " align labels at 0.5 shiftwidth
+set cinoptions+=:0.5s,=0.5s    " same for case labels and code following labels
+set cinoptions+=g0.5s,h0.5s    " same for C++ stuff
+set cinoptions+=t0             " type on the line before the function is not indented
+set cinoptions+=(0,Ws          " indent in functions ( ... ) when it breaks
+set cinoptions+=m1             " align the closing ) properly
+set cinoptions+=j1,J1          " java/javascript -> fixes blocks
+
+" Doxygen
+au! Syntax {cpp,c,d,javascript}
+au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
+
+" }}}

@@ -13,3 +13,39 @@
 [submodule "submodules/powerline"]
 	path = submodules/powerline
 	url = https://github.com/milkypostman/powerline.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/bundle/a"]
+	path = vim/bundle/a
+	url = https://github.com/vim-scripts/a.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim/bundle/seoul256"]
+	path = vim/bundle/seoul256
+	url = https://github.com/junegunn/seoul256.vim.git
+[submodule "submodules/supertab"]
+	path = submodules/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "submodules/bufexplorer"]
+	path = submodules/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
