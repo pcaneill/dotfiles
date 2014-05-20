@@ -29,3 +29,10 @@ cp submodules/bufexplorer/plugin/bufexplorer.vim vim/plugin/bufexplorer.vim
 
 # git
 cp git/gitconfig ~/.gitconfig
+
+# tig
+cp tig/tigrc ~/.tigrc
+
+
+# Install
+apt-get install xclip emacs vlc
