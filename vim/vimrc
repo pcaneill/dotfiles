@@ -53,17 +53,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsEditSplit = 'vertical'
 
 " }}}
-" {{{ youcompleteme
-
-
-let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-Tab>'
-
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-
-" }}}
 " {{{ ctrlp
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
@@ -100,6 +89,16 @@ hi javaScriptTpl       cterm=none ctermfg=darkgreen ctermbg=none
 hi javaScriptTplMark   cterm=none ctermfg=magenta ctermbg=none
 
 colo seoul256
+
+" }}}
+" {{{ youcompleteme
+
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 " }}}
 " {{{ mapping
