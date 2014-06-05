@@ -2,9 +2,9 @@
 
 git submodule init
 git submodule update
+git submodule update --recursive
 
 # Bash
-cp bash/bashrc ~/.bashrc
 cp bash/git-prompt.sh ~/.git-prompt.sh
 cp bash/git-completion.bash ~/.git-completion.bash
 
@@ -23,7 +23,6 @@ mkdir vim/doc
 cp submodules/supertab/doc/supertab.txt vim/doc/supertab.txt
 cp submodules/supertab/plugin/supertab.vim vim/plugin/supertab.vim
 
-
 cp submodules/bufexplorer/doc/bufexplorer.txt vim/doc/bufexplorer.txt
 cp submodules/bufexplorer/plugin/bufexplorer.vim vim/plugin/bufexplorer.vim
 
@@ -32,7 +31,6 @@ cp git/gitconfig ~/.gitconfig
 
 # tig
 cp tig/tigrc ~/.tigrc
-
 
 # Install
 apt-get install xclip emacs vlc
