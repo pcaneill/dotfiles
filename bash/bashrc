@@ -27,3 +27,20 @@ source ~/.git-prompt.sh
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+
+# Random bug finder
+function find_random_bug()
+{
+    local i=0;
+    while "$@"; do
+        i=$((i+1));
+        echo "---------- $i ----------";
+    done
+}
+
+# {{{ Aliases
+
+alias randbug=find_random_bug
+
+# }}}
