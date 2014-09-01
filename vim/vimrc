@@ -98,6 +98,11 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
 " }}}
+" {{{ gitgutter
+
+let g:gitgutter_realtime = 1
+
+" }}}
 " {{{ mapping
 
 " change directory to the file being edited
