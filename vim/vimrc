@@ -171,12 +171,6 @@ map <S-Up> <C-Y>
 " scroll down
 map <S-Down> <C-E>
 
-" Exit insert mode
-imap jj  <ESC>
-imap hh  <ESC>
-imap lll <ESC>
-imap kk  <ESC>
-
 " }}}
 " {{{ various
 
@@ -215,7 +209,6 @@ set ttyfast           " fast terminal
 set showmatch         " show matching bracket
 set report=0          " report the number of lines changed
 set laststatus=2      " always have a status line
-set number            " line numbering
 set foldmethod=marker " folding => {{{ }}}
 set wildmenu
 set tags=tags;/,.tags;/,TAG;/
@@ -259,4 +252,5 @@ au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
 
 " }}}
 
-"colo seoul256
+colo seoul256
+set nocompatible
