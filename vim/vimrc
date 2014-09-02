@@ -109,7 +109,7 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 
-let g:clang_library_path='/srv/tools/clang_3.4/lib/'
+let g:clang_library_path = '/srv/tools/clang_3.4/lib/'
 
 " }}}
 " {{{ gitgutter
@@ -137,7 +137,7 @@ map <S-Right> :lnext<cr>
 map <S-Left> :lprev<cr>
 
 " follow tag
-map <F2> <C-]>
+map <F2> :exec("tag ".expand("<cword>"))<CR>
 
 " bufExplorer
 map <F3> <Leader>be
