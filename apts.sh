@@ -51,4 +51,6 @@ apt-get install         \
     tig                 \
     ccache              \
     xfonts-terminus     \
+    libwbxml2-dev       \
+    npm                 \
     vlc
