@@ -49,4 +49,6 @@ atp-get install         \
     rlwrap              \
     gettex              \
     xclip               \
+    tig                 \
+    ccache              \
     vlc
