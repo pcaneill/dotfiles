@@ -55,4 +55,5 @@ apt-get install         \
     npm                 \
     python-psutil       \
     pulseaudio          \
+    cmake               \
     vlc
