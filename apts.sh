@@ -53,4 +53,5 @@ apt-get install         \
     xfonts-terminus     \
     libwbxml2-dev       \
     npm                 \
+    python-psutil       \
     vlc
