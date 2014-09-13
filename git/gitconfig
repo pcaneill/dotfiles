@@ -4,7 +4,7 @@
 
 [user]
     name = "Pierre-Yves Caneill"
-    email = "py.caneill@gmail.com"
+    email = "pierre-yves.caneill@intersec.com"
 
 [alias]
     co=checkout

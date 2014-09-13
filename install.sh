@@ -27,7 +27,7 @@ cp submodules/bufexplorer/doc/bufexplorer.txt vim/doc/bufexplorer.txt
 cp submodules/bufexplorer/plugin/bufexplorer.vim vim/plugin/bufexplorer.vim
 
 # git
-ln -s git/gitconfig ~/.gitconfig
+cp git/gitconfig ~/.gitconfig
 
 # tig
 ln -s tig/tigrc ~/.tigrc
