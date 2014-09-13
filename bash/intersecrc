@@ -1,1 +1,25 @@
 # Intersec specific helpers
+
+export PATH=/srv/tools/:$PATH
+export PATH=/usr/lib/ccache/:$PATH
+
+# Make coverage
+function make_coverage()
+{
+    lcov -c --directory .build-coverage-wasmunds/ -b . -o .build-coverage-wasmunds/test.info --ignore-errors source,gcov --no-external
+    lcov --remove .build-coverage-wasmunds/test.info "*.iop.h" -o .build-coverage-wasmunds/test.info
+    lcov --remove .build-coverage-wasmunds/test.info "*.iop.c" -o .build-coverage-wasmunds/test.info
+    lcov --remove .build-coverage-wasmunds/test.info "lib-common/iop/*" -o .build-coverage-wasmunds/test.info
+    lcov --remove .build-coverage-wasmunds/test.info "lib-common/compat/sys/*" -o .build-coverage-wasmunds/test.info
+    lcov --remove .build-coverage-wasmunds/test.info "qrrd/iop/*" -o .build-coverage-wasmunds/test.info
+    lcov --remove .build-coverage-wasmunds/test.info "js/*" -o .build-coverage-wasmunds/test.info
+    genhtml --function-coverage --branch-coverage --highlight --legend .build-coverage-wasmunds/test.info --output-directory /var/www/coverage
+}
+
+# Alias
+alias makef='make P=debug NOCHECK=1'
+alias makefa='make P=asan NOCHECK=1'
+alias makecov='make_coverage'
+alias zpf='rm -rf prefix/ ; mkdir prefix ; ./utils/setup.sh ; ./zpf-master -i1'
+alias zpf-sa='PLATFORM_MASTER_PID=$(pidof zpf-master) PLATFORM_CTLSOCK=@/var/run/zpf-master.ctl $*'
+alias zpf-py='rm -rf prefix/* ; ./utils/setup.sh ; ipython -i zpf-init.py'
