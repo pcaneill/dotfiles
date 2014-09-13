@@ -34,3 +34,6 @@ ln -s CONFIG/tig/tigrc ~/.tigrc
 
 # tmux
 ln -s CONFIG/tmux/tmux.conf ~/.tmux.conf
+
+# valgrind
+ln -s CONFIG/valgrind/valgrindrc ~/.valgrindrc
