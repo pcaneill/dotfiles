@@ -50,4 +50,5 @@ apt-get install         \
     xclip               \
     tig                 \
     ccache              \
+    xfonts-terminus     \
     vlc
