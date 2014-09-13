@@ -5,8 +5,8 @@ git submodule update
 git submodule update --recursive
 
 # Bash
-ln -s bash/git-prompt.sh ~/.git-prompt.sh
-ln -s bash/git-completion.bash ~/.git-completion.bash
+ln -s CONFIG/bash/git-prompt.sh ~/.git-prompt.sh
+ln -s CONFIG/bash/git-completion.bash ~/.git-completion.bash
 
 # Set Desktop Background
 xfconf-query -c xfce4-desktop                                 \
@@ -27,10 +27,10 @@ cp submodules/bufexplorer/doc/bufexplorer.txt vim/doc/bufexplorer.txt
 cp submodules/bufexplorer/plugin/bufexplorer.vim vim/plugin/bufexplorer.vim
 
 # git
-cp git/gitconfig ~/.gitconfig
+ln -s CONFIG/git/gitconfig ~/.gitconfig
 
 # tig
-ln -s tig/tigrc ~/.tigrc
+ln -s CONFIG/tig/tigrc ~/.tigrc
 
 # tmux
-ln -s tmux/tmux.conf ~/.tmux.conf
+ln -s CONFIG/tmux/tmux.conf ~/.tmux.conf
