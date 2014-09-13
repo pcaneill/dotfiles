@@ -1,6 +1,6 @@
 # Intersec specific helpers
 
-export PATH=/srv/tools/:$PATH
+export PATH=/srv/tools/bin/:$PATH
 export PATH=/usr/lib/ccache/:$PATH
 
 # Make coverage
