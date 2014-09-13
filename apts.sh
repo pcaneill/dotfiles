@@ -54,4 +54,5 @@ apt-get install         \
     libwbxml2-dev       \
     npm                 \
     python-psutil       \
+    pulseaudio          \
     vlc
