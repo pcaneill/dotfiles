@@ -34,6 +34,3 @@ cp tig/tigrc ~/.tigrc
 
 # tmux
 cp tmux/tmux.conf ~/.tmux.conf
-
-# Install
-apt-get install xclip emacs vlc
