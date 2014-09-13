@@ -1,4 +1,4 @@
-atp-get install         \
+apt-get install         \
     dos2unix            \
     tofrodos            \
     libsctp-dev         \
@@ -37,7 +37,7 @@ atp-get install         \
     ruby-dev            \
     python-dev          \
     scons               \
-     libimlib2-dev      \
+    libimlib2-dev       \
     libssl-dev          \
     libxmlsec1-dev      \
     libpcre3-dev        \
@@ -47,7 +47,6 @@ atp-get install         \
     exuberant-ctags     \
     smitools            \
     rlwrap              \
-    gettex              \
     xclip               \
     tig                 \
     ccache              \
