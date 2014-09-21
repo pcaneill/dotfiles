@@ -56,4 +56,7 @@ apt-get install         \
     python-psutil       \
     pulseaudio          \
     cmake               \
+    pylint              \
+    rtorrent            \
+    libunbound-dev      \
     vlc
