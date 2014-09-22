@@ -53,4 +53,7 @@ function find_random_bug()
 
 alias randbug=find_random_bug
 
+## Remove all swp and swo files recursively
+alias vimclean='find . -name ".*.swp" -type f -delete; find . -name ".*.swo" -type f -delete'
+
 # }}}
