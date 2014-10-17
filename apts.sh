@@ -59,4 +59,5 @@ apt-get install         \
     pylint              \
     rtorrent            \
     libunbound-dev      \
+    zsh                 \
     vlc
