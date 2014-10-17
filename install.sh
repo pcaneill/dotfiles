@@ -4,10 +4,6 @@ git submodule init
 git submodule update
 git submodule update --recursive
 
-# Bash
-ln -s CONFIG/bash/git-prompt.sh ~/.git-prompt.sh
-ln -s CONFIG/bash/git-completion.bash ~/.git-completion.bash
-
 # Set Desktop Background
 xfconf-query -c xfce4-desktop                                 \
              --property /backdrop/screen0/monitor0/image-path \
