@@ -22,7 +22,7 @@
 # see the README.
 
 # add time, jobs, load and battery
-LP_PS1="${LP_PS1_PREFIX}[${LP_LOAD}${LP_TIME}]  "
+LP_PS1="${LP_PS1_PREFIX}[${LP_LOAD}${LP_TIME}${LP_BATT}] "
 # add user, host and permissions colon
 LP_PS1="${LP_PS1}${LP_USER}${LP_HOST}${LP_PERM}"
 
@@ -30,9 +30,9 @@ LP_PS1="${LP_PS1}${LP_USER}${LP_HOST}${LP_PERM}"
 if [[ "$EUID" -ne "0" ]]
 then
     # path in foreground color
-    LP_PS1="${LP_PS1}   ${LP_PWD}${LP_VENV}${LP_PROXY}"
+    LP_PS1="${LP_PS1} ${LP_PWD}${LP_VENV}${LP_PROXY}"
     # add VCS infos
-    LP_PS1="${LP_PS1}   branch->${LP_VCS}"
+    LP_PS1="${LP_PS1} ${LP_VCS}"
 else
     # path in yellow
     LP_PS1="${LP_PS1}${LP_PWD}]${LP_VENV}${LP_PROXY}"
@@ -40,7 +40,8 @@ else
     [[ "$LP_ENABLE_VCS_ROOT" = "1" ]] && LP_PS1="${LP_PS1}${LP_VCS}"
 fi
 # add return code and prompt mark
-LP_PS1="${LP_PS1}${LP_ERR}\n${LP_MARK}"
+LP_PS1="${LP_PS1}${LP_ERR}
+${LP_MARK}"
 
 # "invisible" parts
 # Get the current prompt on the fly and make it a title
