@@ -1,59 +1,15 @@
 export GIT_PS1_SHOWSTASHSTATE=1
 export PS1='\[\e[34;1m\]\u@\[\e[32;1m\]\H:\[\e[31;1m\]$(__git_ps1) \[\e[0m\]\w\[\e[31;1m\]\$ \[\e[0m\]'
 
-LP_PS1_POSTFIX="\n> "
 source ~/CONFIG/bash/liquidpromptrc
 source ~/CONFIG/submodules/liquidpromt/liquidprompt
-
-if [ "$TERM" != "dumb" ]; then
-    eval `dircolors -b`
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Useful options
-if type llvm-symbolizer &> /dev/null; then
-    export ASAN_SYMBOLIZER_PATH="$(which llvm-symbolizer)"
-fi
-export ASAN_OPTIONS=abort_on_error=1:detect_leaks=1
-export LSAN_OPTIONS=use_stacks=0:use_registers=0:use_globals=1:use_tls=1
-export HISTSIZE=10000
-
-# Enable all cores generation
-ulimit -c unlimited
-
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
 
 # Use bash completion, if installed
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# Disable Caps lock to Escape
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+source ~/CONFIG/submodules/git/contrib/completion/git-completion.bash
+source ~/CONFIG/submodules/git/contrib/completion/git-prompt.sh
 
-# Random bug finder
-function find_random_bug()
-{
-    local i=0;
-    while "$@"; do
-        i=$((i+1));
-        echo "---------- $i ----------";
-    done
-}
-
-# {{{ Aliases
-
-alias randbug=find_random_bug
-
-## Remove all swp and swo files recursively
-alias vimclean='find . -name ".*.swp" -type f -delete; find . -name ".*.swo" -type f -delete; find . -name ".*.swn" -type f -delete'
-
-# }}}
+source ~/CONFIG/bash/moerynrc

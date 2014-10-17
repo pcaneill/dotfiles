@@ -1,0 +1,42 @@
+if [ "$TERM" != "dumb" ]; then
+    eval `dircolors -b`
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Useful options
+if type llvm-symbolizer &> /dev/null; then
+    export ASAN_SYMBOLIZER_PATH="$(which llvm-symbolizer)"
+fi
+export ASAN_OPTIONS=abort_on_error=1:detect_leaks=1
+export LSAN_OPTIONS=use_stacks=0:use_registers=0:use_globals=1:use_tls=1
+export HISTSIZE=10000
+
+# Enable all cores generation
+ulimit -c unlimited
+
+# Disable Caps lock to Escape
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+# Random bug finder
+function find_random_bug()
+{
+    local i=0;
+    while "$@"; do
+        i=$((i+1));
+        echo "---------- $i ----------";
+    done
+}
+
+# {{{ Aliases
+
+alias randbug=find_random_bug
+# Remove all swp and swo files recursively
+alias vimclean='find . -name ".*.swp" -type f -delete; find . -name ".*.swo" -type f -delete; find . -name ".*.swn" -type f -delete'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+# }}}
