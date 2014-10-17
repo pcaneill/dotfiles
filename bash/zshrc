@@ -1,0 +1,4 @@
+source ~/CONFIG/bash/liquidpromptrc
+source ~/CONFIG/submodules/liquidpromt/liquidprompt
+
+source ~/CONFIG/submodules/git/contrib/completion/git-completion.zsh
