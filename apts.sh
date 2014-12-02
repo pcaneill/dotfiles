@@ -60,4 +60,5 @@ apt-get install         \
     rtorrent            \
     libunbound-dev      \
     zsh                 \
+    tmux                \
     vlc
