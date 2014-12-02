@@ -10,7 +10,7 @@ xfconf-query -c xfce4-desktop                                 \
              --set ~/CONFIG/desktop/paris.jpg
 
 # emacs
-cp emacs/emacs ~/.emacs
+ln -s emacs/emacs ~/.emacs
 
 # vim
 mkdir vim/plugin
