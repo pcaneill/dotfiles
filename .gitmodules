@@ -58,3 +58,6 @@
 [submodule "submodules/git"]
 	path = submodules/git
 	url = https://github.com/git/git.git
+[submodule "submodules/tig"]
+	path = submodules/tig
+	url = https://github.com/jonas/tig.git
