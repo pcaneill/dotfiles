@@ -1,1 +1,10 @@
-bind generic C !@sh -c "echo -n %(commit) | xclip -selection c"
+# Views {{{
+
+set main-view   = line-number:yes,interval=1 id:yes date:relative author:full commit-title:yes,graph,refs,overflow=no
+
+# }}}
+# {{{ Bind
+
+bind generic Y !@sh -c "echo -n %(commit) | xclip -selection c"
+
+# }}}
