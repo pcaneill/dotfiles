@@ -24,3 +24,5 @@ alias makecov='make_coverage'
 alias zpf='rm -rf prefix/ ; mkdir prefix ; ./utils/setup.sh ; ./zpf-master -i1'
 alias zpf-sa='PLATFORM_MASTER_PID=$(pidof zpf-master) PLATFORM_CTLSOCK=@/var/run/zpf-master.ctl $*'
 alias zpf-py='rm -rf prefix/* ; ./utils/setup.sh ; ipython -i zpf-init.py'
+
+# vim: syn=sh
