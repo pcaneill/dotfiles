@@ -30,6 +30,28 @@ function find_random_bug()
     done
 }
 
+# Build FlameGraph
+function flame_graph_it()
+{
+    #TODO: provide an argument for the file name
+    perf script | ~/CONFIG/tools/FlameGraph/stackcollapse-perf.pl \
+                | ~/CONFIG/tools/FlameGraph/flamegraph.pl         \
+                > toto.svg
+    echo "toto.svg has been generated"
+    while true; do
+        if [[ $ZSH_NAME == "zsh" ]]; then
+            read "yn?Open in google-chrome the flame graph? y/n"
+        else
+            read -p "Open in google-chrome the flame graph? y/n" yn
+        fi
+        case $yn in
+            [Yy]* ) google-chrome toto.svg; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer y or n.";;
+        esac
+    done
+}
+
 # {{{ Aliases
 
 alias randbug=find_random_bug
@@ -40,8 +62,9 @@ alias myls=' ls -C -F -h --color=always'
 alias l=" myls -l"
 alias ll=' myls -l'
 alias la=' myls -lA'
-alias v=" clear; ll -gh"      # standard directory view
-alias vs=" v **/*(.)"         # show all files in all subdirs plain in a list
+alias v=" clear; ll -gh"    # standard directory view
+alias vs=" v **/*(.)"       # show all files in all subdirs plain in a list
+alias flameit=flame_graph_it
 
 # }}}
 
