@@ -17,6 +17,7 @@ function make_coverage()
 }
 
 # Alias
+alias make='make NOCHECK=1'
 alias makef='make P=debug NOCHECK=1'
 alias makefa='make P=asan NOCHECK=1'
 alias makecov='make_coverage'
