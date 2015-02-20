@@ -31,13 +31,34 @@ function find_random_bug()
 }
 
 # Build FlameGraph
-function flame_graph_it()
+function flameit()
 {
-    #TODO: provide an argument for the file name
+    local filename=""
+
+    if [ -z $1 ]; then
+        filename="flamegraph"
+    elif [[ "$1" == "-h" ]]; then
+        echo -e "FlameGraph helper"
+        echo -e "-----------------"
+        echo -e "usage: flameit [filename prefix] | [-h]"
+        return
+    else
+        filename=$1
+    fi
+
+    filename+="-`date +'%d%m-%H%M%S'`.svg"
+
+    echo -e "generating flamegraph $filename..."
+
     perf script | ~/CONFIG/tools/FlameGraph/stackcollapse-perf.pl \
                 | ~/CONFIG/tools/FlameGraph/flamegraph.pl         \
-                > toto.svg
-    echo "toto.svg has been generated"
+                > $filename
+
+    if [ $? -ne 0 ]; then
+        return
+    fi
+
+    echo -e "generation done."
     while true; do
         if [[ $ZSH_NAME == "zsh" ]]; then
             read "yn?Open in google-chrome the flame graph? y/n"
@@ -45,12 +66,16 @@ function flame_graph_it()
             read -p "Open in google-chrome the flame graph? y/n" yn
         fi
         case $yn in
-            [Yy]* ) google-chrome toto.svg; break;;
-            [Nn]* ) exit;;
+            [Yy]* ) google-chrome $filename; break;;
+            [Nn]* ) return;;
             * ) echo "Please answer y or n.";;
         esac
     done
 }
+
+if [[ $ZSH_NAME != "zsh" ]]; then
+    export -f flameit
+fi
 
 # {{{ Aliases
 
@@ -64,7 +89,6 @@ alias ll=' myls -l'
 alias la=' myls -lA'
 alias v=" clear; ll -gh"    # standard directory view
 alias vs=" v **/*(.)"       # show all files in all subdirs plain in a list
-alias flameit=flame_graph_it
 
 # }}}
 
