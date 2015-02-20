@@ -8,19 +8,19 @@ export PATH=/usr/lib/ccache/:$PATH
 
 function makecov()
 {
-    local path=".build-coverage-wasmunds/"
+    local cpath=".build-coverage-wasmunds/"
 
-    lcov -c --directory $path -wasmunds/ -b . -o $path/test.info               \
+    lcov -c --directory $cpath -wasmunds/ -b . -o $cpath/test.info             \
          --ignore-errors source,gcov --no-external
-    lcov --remove $path/test.info "*.iop.h" -o $path/test.info
-    lcov --remove $path/test.info "*.iop.c" -o $path/test.info
-    lcov --remove $path/test.info "lib-common/iop/*" -o $path/test.info
-    lcov --remove $path/test.info "lib-common/compat/sys/*" -o $path/test.info
-    lcov --remove $path/test.info "qrrd/iop/*" -o $path/test.info
-    lcov --remove $path/test.info "js/*" -o $path/test.info
+    lcov --remove $cpath/test.info "*.iop.h" -o $cpath/test.info
+    lcov --remove $cpath/test.info "*.iop.c" -o $cpath/test.info
+    lcov --remove $cpath/test.info "lib-common/iop/*" -o $cpath/test.info
+    lcov --remove $cpath/test.info "lib-common/compat/sys/*" -o $cpath/test.info
+    lcov --remove $cpath/test.info "qrrd/iop/*" -o $cpath/test.info
+    lcov --remove $cpath/test.info "js/*" -o $cpath/test.info
 
     genhtml --function-coverage --branch-coverage --highlight                  \
-            --legend $path/test.info --output-directory /var/www/coverage
+            --legend $cpath/test.info --output-directory /var/www/coverage
 
     if [ $? -ne 0 ]; then
         return
