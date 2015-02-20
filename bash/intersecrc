@@ -41,9 +41,25 @@ function makecov()
 }
 
 # }}}
+# {{{ ZPF helpers
+
+function pystart()
+{
+    rm -rf prefix/*
+    cp -rL etc prefix/
+
+    rm -rf prefix-1/*
+    rm -rf prefix-2/*
+    ./utils/setup.sh
+
+    ipython -i $1
+}
+
+# }}}
 
 if [[ $ZSH_NAME != "zsh" ]]; then
     export -f makecov
+    export -f pystart
 fi
 
 # }}}
@@ -54,6 +70,5 @@ alias makef='make P=debug NOCHECK=1'
 alias makefa='make P=asan NOCHECK=1'
 alias zpf='rm -rf prefix/ ; mkdir prefix ; ./utils/setup.sh ; ./zpf-master -i1'
 alias zpf-sa='PLATFORM_MASTER_PID=$(pidof zpf-master) PLATFORM_CTLSOCK=@/var/run/zpf-master.ctl $*'
-alias zpf-py='rm -rf prefix/* ; ./utils/setup.sh ; ipython -i zpf-init.py'
 
 # vim: syn=sh
