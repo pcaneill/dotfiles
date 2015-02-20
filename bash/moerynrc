@@ -20,13 +20,30 @@ ulimit -c unlimited
 # Disable Caps lock to Escape
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-# Random bug finder
-function find_random_bug()
+# Find a random bug in a test suite
+function randbug()
 {
-    local i=0;
-    while "$@"; do
-        i=$((i+1));
-        echo "---------- $i ----------";
+    local i=0
+    local filepath="/tmp/randbug"
+
+    echo -e "starting rand bug procedure"
+    while true; do
+        local start_timer=$(date +%s.%N)
+        local duration=""
+
+        i=$((i+1))
+
+        $@ &> $filepath
+        if [ $? -ne 0 ]; then
+            cat $filepath
+            echo -e "bug found during the $i execution"
+            echo -e "bug report dump in $filepath"
+            break
+        fi
+
+        duration=`echo "($(date +%s.%N) - $start_timer)*1000" | bc \
+                | awk '{printf "%.2f\n", $0}'`
+        echo -e "Execution: $i elapsed: $duration  ms"
     done
 }
 
@@ -75,11 +92,11 @@ function flameit()
 
 if [[ $ZSH_NAME != "zsh" ]]; then
     export -f flameit
+    export -f randbug
 fi
 
 # {{{ Aliases
 
-alias randbug=find_random_bug
 # Remove all swp and swo files recursively
 alias vimclean='find . -name ".*.swp" -type f -delete; find . -name ".*.swo" -type f -delete; find . -name ".*.swn" -type f -delete'
 alias ls=' ls --color=auto'
