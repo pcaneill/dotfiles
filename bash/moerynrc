@@ -1,12 +1,6 @@
-if [ "$TERM" != "dumb" ]; then
-    eval `dircolors -b`
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# {{{ Useful options
+# {{{ ASAN
 
-# Useful options
 if type llvm-symbolizer &> /dev/null; then
     export ASAN_SYMBOLIZER_PATH="$(which llvm-symbolizer)"
 fi
@@ -14,13 +8,20 @@ export ASAN_OPTIONS=abort_on_error=1:detect_leaks=1
 export LSAN_OPTIONS=use_stacks=0:use_registers=0:use_globals=1:use_tls=1
 export HISTSIZE=10000
 
+# }}}
+# {{{ Others
+
 # Enable all cores generation
 ulimit -c unlimited
 
 # Disable Caps lock to Escape
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
-# Find a random bug in a test suite
+# }}}
+# }}}
+# {{{ Functions
+# {{{ Find a random bug in a test suite
+
 function randbug()
 {
     local i=0
@@ -47,7 +48,9 @@ function randbug()
     done
 }
 
-# Build FlameGraph
+# }}}
+# {{{ Build FlameGraph
+
 function flameit()
 {
     local filename=""
@@ -90,7 +93,9 @@ function flameit()
     done
 }
 
-# Remove all swp and swo files recursively
+# }}}
+# {{{ Remove all swp and swo files recursively
+
 function vimclean()
 {
     find . -name ".*.swp" -type f -delete
@@ -98,13 +103,24 @@ function vimclean()
     find . -name ".*.swn" -type f -delete
 }
 
+# }}}
+
 if [[ $ZSH_NAME != "zsh" ]]; then
     export -f flameit
     export -f randbug
     export -f vimclean
 fi
 
+# }}}
 # {{{ Aliases
+
+if [ "$TERM" != "dumb" ]; then
+    eval `dircolors -b`
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 alias ls=' ls --color=auto'
 alias myls=' ls -C -F -h --color=always'
