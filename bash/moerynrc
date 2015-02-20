@@ -51,6 +51,30 @@ function randbug()
 # }}}
 # {{{ Build FlameGraph
 
+function flame_help()
+{
+    echo -e "FlameGraph helper"
+    echo -e "-----------------"
+    echo -e "usage: flameit [filename prefix] | [-h cpu]"
+    echo -e ""
+
+    if [ -z $1 ]; then
+        echo -e "   -h      show this help"
+        echo -e "   -h cpu  show the tutorial on how to generate the data"
+        echo -e "           for the CPU"
+        return
+    fi
+
+    if [[ "$1" == "cpu" ]]; then
+        echo -e "   Generate CPU data"
+        echo -e "   -----------------"
+        echo -e ""
+        echo -e "   perf record -g ./program"
+        echo -e "   the symbol of program must exist"
+        return
+    fi
+}
+
 function flameit()
 {
     local filename=""
@@ -58,9 +82,7 @@ function flameit()
     if [ -z $1 ]; then
         filename="flamegraph"
     elif [[ "$1" == "-h" ]]; then
-        echo -e "FlameGraph helper"
-        echo -e "-----------------"
-        echo -e "usage: flameit [filename prefix] | [-h]"
+        flame_help $2
         return
     else
         filename=$1
