@@ -61,4 +61,5 @@ apt-get install         \
     libunbound-dev      \
     zsh                 \
     tmux                \
+    python-pip          \
     vlc
