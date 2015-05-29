@@ -70,6 +70,7 @@ alias makef='make P=debug NOCHECK=1'
 alias makefa='make P=asan NOCHECK=1'
 alias zpf='rm -rf prefix/ ; mkdir prefix ; ./utils/setup.sh ; ./zpf-master -i1'
 alias zpf-sa='PLATFORM_MASTER_PID=$(pidof zpf-master) PLATFORM_CTLSOCK=@/var/run/zpf-master.ctl $*'
+alias one-sa='PLATFORM_MASTER_PID=$(pidof one-master) PLATFORM_CTLSOCK=@/var/run/one-master.ctl $*'
 
 # }}}
 
