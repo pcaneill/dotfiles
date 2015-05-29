@@ -29,7 +29,7 @@ apt-get install         \
     asciidoc            \
     libcap-dev          \
     lua5.1              \
-    liblua5.1-dev       \
+    liblua5.1-0-dev     \
     libsqlite3-dev      \
     libfuse-dev         \
     libpcap-dev         \
@@ -52,7 +52,6 @@ apt-get install         \
     ccache              \
     xfonts-terminus     \
     libwbxml2-dev       \
-    npm                 \
     python-psutil       \
     pulseaudio          \
     cmake               \
