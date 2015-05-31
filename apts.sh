@@ -61,4 +61,6 @@ apt-get install         \
     zsh                 \
     tmux                \
     python-pip          \
+    htop                \
+    sudo                \
     vlc
