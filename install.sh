@@ -33,3 +33,6 @@ ln -s CONFIG/tmux/tmux.conf ~/.tmux.conf
 
 # valgrind
 ln -s CONFIG/valgrind/valgrindrc ~/.valgrindrc
+
+# top
+ln -s CONFIG/top/toprc ~/.toprc
