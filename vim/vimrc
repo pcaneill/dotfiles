@@ -136,6 +136,12 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 
 " }}}
+" {{{ tern
+
+call tern#Enable()
+autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+" }}}
 " {{{ gitgutter
 
 let g:gitgutter_realtime = 1
