@@ -108,8 +108,6 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 
-let g:clang_library_path = '/srv/tools/clang_3.4/lib/'
-
 " }}}
 " {{{ gitgutter
 
