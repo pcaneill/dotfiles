@@ -1,0 +1,121 @@
+snippet thelpers
+	Template.${1:template_name}.helpers({
+		${2}
+	});
+endsnippet
+
+snippet te
+	Template.${1:template_name}.events({
+		${2}
+	});
+endsnippet
+
+snippet ehandler
+	'${1:selector}': function (e, tmpl) {
+		${3}
+	}${2:,}
+endsnippet
+
+snippet pub
+	Meteor.publish('${1}', function () {
+		${2}
+	});
+endsnippet
+
+snippet sub
+Meteor.subscribe('${1}');
+endsnippet
+
+snippet startup
+Meteor.startup(function () {
+    ${1}	
+});
+endsnippet
+
+snippet helper
+Handlebars.registerHelper('${1}', function (options) {
+    ${2}
+});
+endsnippet
+
+snippet filter
+function ${1} (context, page) {
+    ${2}
+}
+endsnippet
+
+snippet pages
+Meteor.pages({
+		${1}
+});
+endsnippet
+
+snippet rmap
+Router.map(function () {
+		${1}
+});
+endsnippet
+
+snippet rconfig
+Router.configure({
+		${1}
+});
+endsnippet
+
+snippet route
+Router.route('${1}', {
+		name: '${2}',
+		controller: '${3}',
+		action: '${4}'
+});
+endsnippet
+
+snippet sset
+Session.set('${1:key}', ${2:value});
+endsnippet
+
+snippet sget
+Session.get('${1:key}');
+endsnippet
+
+snippet sequals
+Session.equals('${1:key}', ${2:value});
+endsnippet
+
+
+snippet group
+/*****************************************************************************/
+/* ${1} */
+/*****************************************************************************/
+endsnippet
+
+snippet test
+Tinytest.add('${1}', function (test) {
+		${2}
+});
+endsnippet
+
+snippet auto
+Deps.autorun(function (c) {
+		${1}
+});
+endsnippet
+
+snippet client
+if (Meteor.isClient) {
+		${1}
+}
+endsnippet
+
+snippet server
+if (Meteor.isServer) {
+		${1}
+}
+endsnippet
+
+snippet methods
+Meteor.methods({
+  ${1}
+});
+endsnippet
+
