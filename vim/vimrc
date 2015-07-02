@@ -42,6 +42,33 @@ let g:syntastic_cpp_no_default_include_dirs = 1
 command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
 
 " }}}
+" {{{ signature
+
+let g:SignatureMap = {
+            \ 'Leader'             :  "m",
+            \ 'PlaceNextMark'      :  "m,",
+            \ 'ToggleMarkAtLine'   :  "m.",
+            \ 'PurgeMarksAtLine'   :  "m-",
+            \ 'DeleteMark'         :  "dm",
+            \ 'PurgeMarks'         :  "m<Space>",
+            \ 'PurgeMarkers'       :  "m<BS>",
+            \ 'GotoNextLineAlpha'  :  "'n",
+            \ 'GotoPrevLineAlpha'  :  "'p",
+            \ 'GotoNextSpotAlpha'  :  "`]",
+            \ 'GotoPrevSpotAlpha'  :  "`[",
+            \ 'GotoNextLineByPos'  :  "]'",
+            \ 'GotoPrevLineByPos'  :  "['",
+            \ 'GotoNextSpotByPos'  :  "]`",
+            \ 'GotoPrevSpotByPos'  :  "[`",
+            \ 'GotoNextMarker'     :  "[+",
+            \ 'GotoPrevMarker'     :  "[-",
+            \ 'GotoNextMarkerAny'  :  "]=",
+            \ 'GotoPrevMarkerAny'  :  "[=",
+            \ 'ListLocalMarks'     :  "m/",
+            \ 'ListLocalMarkers'   :  "m?"
+            \ }
+
+" }}}
 " {{{ UltiSnips
 
 let g:UltiSnipsExpandTrigger       = "<tab>"
