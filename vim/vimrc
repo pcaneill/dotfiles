@@ -267,15 +267,6 @@ au! Syntax {cpp,c,d,javascript}
 au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
 
 " }}}
-" {{{ Neo vim specific
-
-if has('nvim')
-    set ttimeout
-    set ttimeoutlen=0
-endif
-
-" }}}
-
 
 colo seoul256
 set nocompatible

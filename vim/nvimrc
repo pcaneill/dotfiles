@@ -1,0 +1,5 @@
+" Moeryn's nvim configuration
+
+" This makes neovim more responsive with tmux
+set ttimeout
+set ttimeoutlen=0

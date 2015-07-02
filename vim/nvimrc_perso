@@ -1,2 +1,3 @@
 set rtp=$HOME/.vim,~/CONFIG/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 source ~/CONFIG/vim/vimrc
+source ~/CONFIG/vim/nvimrc
