@@ -3,3 +3,14 @@
 " This makes neovim more responsive with tmux
 set ttimeout
 set ttimeoutlen=0
+
+" {{{ Neomake
+
+let g:syntastic_python_checkers = ['']
+let g:neomake_python_enable_makers = ['pylint']
+let g:neomake_open_list=1
+let g:neomake_serialize_abort_on_error=1
+let g:neomake_serialize=1
+autocmd BufWritePost *.py :Neomake pylint
+
+" }}}
