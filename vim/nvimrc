@@ -33,4 +33,20 @@ autocmd BufWinEnter,WinEnter term://* startinsert
 " always leave insert mode when leaving terminal
 autocmd BufLeave term://* stopinsert
 
+" Neoterm
+
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = ',tt'
+
+" Useful maps
+" hide/close all terminals
+nnoremap <silent> ,th :call neoterm#close_all()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+
+" Git commands
+command! -nargs=+ Tg :T git <args>
+
 " }}}

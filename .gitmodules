@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-spacebars"]
 	path = vim/bundle/vim-spacebars
 	url = https://github.com/Slava/vim-spacebars.git
+[submodule "vim/bundle/neoterm"]
+	path = vim/bundle/neoterm
+	url = https://github.com/kassio/neoterm.git
