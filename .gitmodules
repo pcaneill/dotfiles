@@ -88,3 +88,6 @@
 [submodule "vim/bundle/neoterm"]
 	path = vim/bundle/neoterm
 	url = https://github.com/kassio/neoterm.git
+[submodule "vim/bundle/vim-man"]
+	path = vim/bundle/vim-man
+	url = https://github.com/bruno-/vim-man.git

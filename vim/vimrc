@@ -168,6 +168,8 @@ map <S-Left> :lprev<cr>
 
 " follow tag
 map <F2> :exec("tag ".expand("<cword>"))<CR>
+" follow man
+map <F1> :exec("Vman ".expand("<cword>"))<CR>
 
 " bufExplorer
 map <F3> <Leader>be
