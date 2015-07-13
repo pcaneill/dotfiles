@@ -222,6 +222,11 @@ map <S-Up> <C-Y>
 " scroll down
 map <S-Down> <C-E>
 
+map <C-L> :exec("10winc >")<CR>
+map <C-H> :exec("10winc <")<CR>
+map <C-K> :exec("10winc -")<CR>
+map <C-J> :exec("10winc +")<CR>
+
 " }}}
 " {{{ various
 
