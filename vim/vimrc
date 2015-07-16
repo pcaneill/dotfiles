@@ -252,10 +252,14 @@ inoremap   <Space>
 " Uppercase last word
 inoremap <C-u> <esc>vbU<esc>ea
 
+" Surround last word with quotes
+inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lel
+
 " }}}
 " {{{ Visual
 
-
+" Surround selected text with quotes
+vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
 
 " }}}
 " }}}
