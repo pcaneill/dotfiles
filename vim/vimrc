@@ -258,7 +258,10 @@ inoremap   <Space>
 inoremap <C-u> <esc>vbU<esc>ea
 
 " Surround last word with quotes
-inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lel
+inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lela
+
+inoremap jk <esc>
+inoremap <esc> <nop>
 
 " }}}
 " {{{ Visual
