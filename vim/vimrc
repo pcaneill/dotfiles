@@ -203,6 +203,10 @@ noremap <S-Left> :lprev<cr>
 " change directory to the file being edited
 nnoremap ,cd :cd %:p:h<cr>
 
+" Move begining of line and end of line
+noremap H ^
+noremap L $
+
 " move to left buffer
 noremap  <C-Left>   <C-w><Left>
 noremap! <C-Left>   <Esc> <C-w><Left>
@@ -239,6 +243,7 @@ noremap <A-j> :exec("5winc +")<cr>
 noremap <leader>- ddp
 noremap <leader>_ ddkP
 
+" Open vimrc / nvimrc and source it
 nnoremap <leader>ev :vsplit $HOME/CONFIG/vim/vimrc<cr>
 nnoremap <leader>env :vsplit $HOME/CONFIG/vim/nvimrc<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
