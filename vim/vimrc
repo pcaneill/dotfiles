@@ -17,6 +17,7 @@ filetype plugin indent on
 set t_Co=256
 
 " }}}
+" {{{ Plugins
 " {{{ Synastic
 
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -147,87 +148,112 @@ autocmd FileType javascript setlocal omnifunc=tern#Complete
 let g:gitgutter_realtime = 1
 
 " }}}
+" }}}
 " {{{ mapping
 
-" change directory to the file being edited
-nnoremap ,cd :cd %:p:h<CR>
+let mapleader = ","
 
-" forbid non-breakable spaces
-imap   <Space>
+" {{{ Fn
 
-" next compilation error
-map +        :cnext<cr>
-map <kPlus>  :cnext<CR>
-" previous compilation error
-map -        :cprev<cr>
-map <kMinus> :cprev<CR>
-" next syntastic error
-map <S-Right> :lnext<cr>
-" previous syntastic error
-map <S-Left> :lprev<cr>
+" follow man
+noremap <F1> :exec("Vman ".expand("<cword>"))<CR>
 
 " follow tag
-map <F2> :exec("tag ".expand("<cword>"))<CR>
-" follow man
-map <F1> :exec("Vman ".expand("<cword>"))<CR>
+noremap <F2> :exec("tag ".expand("<cword>"))<CR>
 
 " bufExplorer
-map <F3> <Leader>be
+noremap <F3> <Leader>be
 
 " grep on the current word
-map <F4> :gr! -w <cword><cr>
+noremap <F4> :gr! -w <cword><cr>
 
 set pastetoggle=<F5>
 
 nnoremap <F6> :nohlsearch<CR>
 
 " spell check
-map <F8> :setlocal spell! spelllang=en_us<CR>
+noremap <F8> :setlocal spell! spelllang=en_us<CR>
 
 " horizontal split + next buffer
-map <F9> :split<cr>:bn<cr>
+noremap <F9> :split<cr>:bn<cr>
 " vertical split + next buffer
-map <F10> :vsplit<cr>:bn<cr>
+noremap <F10> :vsplit<cr>:bn<cr>
 
 " make
 noremap  <F11> :make!<cr><cr>
 inoremap <F11> <esc>:make!<cr><cr>
 
 " remove trailing spaces
-map <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
+noremap <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
+
+" }}}
+" {{{ Normal
+
+" next compilation error
+noremap +        :cnext<cr>
+noremap <kPlus>  :cnext<CR>
+" previous compilation error
+noremap -        :cprev<cr>
+noremap <kMinus> :cprev<CR>
+" next syntastic error
+noremap <S-Right> :lnext<cr>
+" previous syntastic error
+noremap <S-Left> :lprev<cr>
+
+" change directory to the file being edited
+nnoremap ,cd :cd %:p:h<CR>
 
 " move to left buffer
-map  <C-Left>   <C-w><Left>
-map! <C-Left>   <Esc> <C-w><Left>
-map  <C-h>      <C-w><Left>
-map! <C-h>      <Esc> <C-w><Left>
+noremap  <C-Left>   <C-w><Left>
+noremap! <C-Left>   <Esc> <C-w><Left>
+noremap  <C-h>      <C-w><Left>
+noremap! <C-h>      <Esc> <C-w><Left>
 " move to right buffer
-map  <C-Right>  <C-w><Right>
-map! <C-Right>  <Esc> <C-w><Right>
-map  <C-l>      <C-w><Right>
-map! <C-l>      <Esc> <C-w><Right>
+noremap  <C-Right>  <C-w><Right>
+noremap! <C-Right>  <Esc> <C-w><Right>
+noremap  <C-l>      <C-w><Right>
+noremap! <C-l>      <Esc> <C-w><Right>
 " move to buffer above
-map  <C-Up>     <C-w><Up>
-map! <C-Up>     <Esc> <C-w><Up>
-map  <C-k>      <C-w><Up>
-map! <C-k>      <Esc> <C-w><Up>
+noremap  <C-Up>     <C-w><Up>
+noremap! <C-Up>     <Esc> <C-w><Up>
+noremap  <C-k>      <C-w><Up>
+noremap! <C-k>      <Esc> <C-w><Up>
 " move to buffer below
-map  <C-Down>   <C-w><Down>
-map! <C-Down>   <Esc> <C-w><Down>
-map  <C-j>      <C-w><Down>
-map! <C-j>      <Esc> <C-w><Down>
+noremap  <C-Down>   <C-w><Down>
+noremap! <C-Down>   <Esc> <C-w><Down>
+noremap  <C-j>      <C-w><Down>
+noremap! <C-j>      <Esc> <C-w><Down>
 
 " scroll up
-map <S-Up> <C-Y>
+noremap <S-Up> <C-Y>
 " scroll down
-map <S-Down> <C-E>
+noremap <S-Down> <C-E>
 
 " resize windows
-map <A-l> :exec("5winc >")<CR>
-map <A-h> :exec("5winc <")<CR>
-map <A-k> :exec("5winc -")<CR>
-map <A-j> :exec("5winc +")<CR>
+noremap <A-l> :exec("5winc >")<CR>
+noremap <A-h> :exec("5winc <")<CR>
+noremap <A-k> :exec("5winc -")<CR>
+noremap <A-j> :exec("5winc +")<CR>
 
+" Move current line up and down
+noremap <leader>- ddp
+noremap <leader>_ ddkP
+
+" }}}
+" {{{ Interactive
+
+" forbid non-breakable spaces
+inoremap   <Space>
+
+" Uppercase last word
+inoremap <C-u> <esc>vbU<esc>ea
+
+" }}}
+" {{{ Visual
+
+
+
+" }}}
 " }}}
 " {{{ various
 
