@@ -156,10 +156,10 @@ let mapleader = ","
 " {{{ Fn
 
 " follow man
-noremap <F1> :exec("Vman ".expand("<cword>"))<CR>
+noremap <F1> :exec("Vman ".expand("<cword>"))<cr>
 
 " follow tag
-noremap <F2> :exec("tag ".expand("<cword>"))<CR>
+noremap <F2> :exec("tag ".expand("<cword>"))<cr>
 
 " bufExplorer
 noremap <F3> <Leader>be
@@ -169,10 +169,10 @@ noremap <F4> :gr! -w <cword><cr>
 
 set pastetoggle=<F5>
 
-nnoremap <F6> :nohlsearch<CR>
+nnoremap <F6> :nohlsearch<cr>
 
 " spell check
-noremap <F8> :setlocal spell! spelllang=en_us<CR>
+noremap <F8> :setlocal spell! spelllang=en_us<cr>
 
 " horizontal split + next buffer
 noremap <F9> :split<cr>:bn<cr>
@@ -191,17 +191,17 @@ noremap <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
 
 " next compilation error
 noremap +        :cnext<cr>
-noremap <kPlus>  :cnext<CR>
+noremap <kPlus>  :cnext<cr>
 " previous compilation error
 noremap -        :cprev<cr>
-noremap <kMinus> :cprev<CR>
+noremap <kMinus> :cprev<cr>
 " next syntastic error
 noremap <S-Right> :lnext<cr>
 " previous syntastic error
 noremap <S-Left> :lprev<cr>
 
 " change directory to the file being edited
-nnoremap ,cd :cd %:p:h<CR>
+nnoremap ,cd :cd %:p:h<cr>
 
 " move to left buffer
 noremap  <C-Left>   <C-w><Left>
@@ -230,14 +230,18 @@ noremap <S-Up> <C-Y>
 noremap <S-Down> <C-E>
 
 " resize windows
-noremap <A-l> :exec("5winc >")<CR>
-noremap <A-h> :exec("5winc <")<CR>
-noremap <A-k> :exec("5winc -")<CR>
-noremap <A-j> :exec("5winc +")<CR>
+noremap <A-l> :exec("5winc >")<cr>
+noremap <A-h> :exec("5winc <")<cr>
+noremap <A-k> :exec("5winc -")<cr>
+noremap <A-j> :exec("5winc +")<cr>
 
 " Move current line up and down
 noremap <leader>- ddp
 noremap <leader>_ ddkP
+
+nnoremap <leader>ev :vsplit $HOME/CONFIG/vim/vimrc<cr>
+nnoremap <leader>env :vsplit $HOME/CONFIG/vim/nvimrc<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " }}}
 " {{{ Interactive
@@ -336,4 +340,4 @@ au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
 " }}}
 
 colo seoul256
-set nocompatible
+
