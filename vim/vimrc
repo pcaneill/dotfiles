@@ -179,7 +179,7 @@ noremap <F1> :exec("Vman ".expand("<cword>"))<cr>
 noremap <F2> :exec("tag ".expand("<cword>"))<cr>
 
 " bufExplorer
-noremap <F3> <Leader>be
+map <F3> <leader>be
 
 " grep on the current word
 noremap <F4> :gr! -w <cword><cr>
