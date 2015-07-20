@@ -149,6 +149,23 @@ let g:gitgutter_realtime = 1
 
 " }}}
 " }}}
+" {{{ Functions
+
+let g:current_theme = "seoul256"
+function SwitchTheme()
+    if g:current_theme ==? "seoul256"
+        colo seoul256-light
+        let g:current_theme = "seoul256-light"
+        return
+    endif
+    if g:current_theme ==? "seoul256-light"
+        colo seoul256
+        let g:current_theme = "seoul256"
+        return
+    endif
+endfunction
+
+" }}}
 " {{{ mapping
 
 let mapleader = ","
@@ -169,7 +186,7 @@ noremap <F4> :gr! -w <cword><cr>
 
 set pastetoggle=<F5>
 
-nnoremap <F6> :nohlsearch<cr>
+nnoremap <F6> :exec("call SwitchTheme()")<cr>
 
 " spell check
 noremap <F8> :setlocal spell! spelllang=en_us<cr>
