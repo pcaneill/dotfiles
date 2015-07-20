@@ -261,7 +261,6 @@ inoremap <C-u> <esc>vbU<esc>ea
 inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lela
 
 inoremap jk <esc>
-inoremap <esc> <nop>
 
 " }}}
 " {{{ Visual
