@@ -292,9 +292,9 @@ vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
 " {{{ Operator-Pendig Mapping
 
 " inside parens
-:onoremap p i(
-:onoremap np :<c-u>normal! f(vi(<cr>
-:onoremap pp :<c-u>normal! F)vi(<cr>
+onoremap p i(
+onoremap np :<c-u>normal! f(vi(<cr>i
+onoremap pp :<c-u>normal! F)vi(i<cr>i
 
 " }}}
 " }}}
