@@ -265,6 +265,9 @@ nnoremap <leader>ev :vsplit $HOME/CONFIG/vim/vimrc<cr>
 nnoremap <leader>env :vsplit $HOME/CONFIG/vim/nvimrc<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Add semicolumn at the end of the line
+nnoremap <leader>; :exec("normal! mqA;\<lt>esc>`q")<cr>
+
 " }}}
 " {{{ Interactive
 
