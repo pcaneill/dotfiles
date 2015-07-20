@@ -152,7 +152,7 @@ let g:gitgutter_realtime = 1
 " {{{ Functions
 
 let g:current_theme = "seoul256"
-function SwitchTheme()
+function! SwitchTheme()
     if g:current_theme ==? "seoul256"
         colo seoul256-light
         let g:current_theme = "seoul256-light"
