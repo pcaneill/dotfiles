@@ -294,7 +294,8 @@ vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
 " inside parens
 onoremap p i(
 onoremap np :<c-u>normal! f(vi(<cr>i
-onoremap pp :<c-u>normal! F)vi(i<cr>i
+onoremap pp :<c-u>normal! F)vi(<cr>i
+onoremap n" :<c-u>normal! f"vi"<cr>i
 
 " }}}
 " }}}
