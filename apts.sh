@@ -62,5 +62,6 @@ apt-get install         \
     tmux                \
     python-pip          \
     htop                \
+    software-properties-common \
     sudo                \
     vlc
