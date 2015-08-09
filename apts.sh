@@ -27,6 +27,7 @@ apt-get install         \
     texinfo             \
     libffi-dev          \
     asciidoc            \
+    ipython             \
     libcap-dev          \
     lua5.1              \
     liblua5.1-0-dev     \
