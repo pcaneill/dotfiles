@@ -13,12 +13,6 @@
 [submodule "submodules/powerline"]
 	path = submodules/powerline
 	url = https://github.com/milkypostman/powerline.git
-[submodule "submodules/supertab"]
-	path = submodules/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "submodules/bufexplorer"]
-	path = submodules/bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer.git
 [submodule "submodules/git"]
 	path = submodules/git
 	url = https://github.com/git/git.git
@@ -91,3 +85,6 @@
 [submodule "submodules/vim/vim-man"]
 	path = submodules/vim/vim-man
 	url = https://github.com/bruno-/vim-man.git
+[submodule "submodules/vim/bufexplorer"]
+	path = submodules/vim/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
