@@ -77,12 +77,14 @@ let g:SignatureMap = {
 " }}}
 " {{{ UltiSnips
 
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsListSnippets        = "<c-l>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+if g:moeryn_ultisnips == 1
+    let g:UltiSnipsExpandTrigger       = "<tab>"
+    let g:UltiSnipsListSnippets        = "<c-l>"
+    let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+    let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-let g:UltiSnipsEditSplit = 'vertical'
+    let g:UltiSnipsEditSplit = 'vertical'
+endif
 
 " }}}
 " {{{ ctrlp
