@@ -4,3 +4,41 @@ let g:moeryn_ycm = 0
 
 set rtp=$HOME/.vim,~/CONFIG/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 source ~/.vim/vimrc
+
+if has("gui_running")
+    set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+	set guioptions-=L  "remove left-hand scroll bar
+    set guifont=Terminus_(TTF):h9:cANSI
+
+    " Activate full screen capabilities for gvim.
+    "
+    " The .dll must be compiled from:
+    "     https://github.com/derekmcloughlin/gvimfullscreen_win32
+    noremap <C-F11> <esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
+endif
+
+
+" {{{ mapping
+" {{{ Fn
+
+
+" }}}
+" {{{ Normal
+
+
+" }}}
+" {{{ Interactive
+
+
+" }}}
+" {{{ Visual
+
+
+" }}}
+" {{{ Operator-Pendig Mapping
+
+
+" }}}
+" }}}
