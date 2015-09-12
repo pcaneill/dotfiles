@@ -40,13 +40,8 @@ ln -s ../../submodules/vim/neomake            vim/bundle/neomake           2> /d
 ln -s ../../submodules/vim/neoterm            vim/bundle/neoterm           2> /dev/null
 ln -s ../../submodules/vim/YouCompleteMe      vim/bundle/YouCompleteMe     2> /dev/null
 
-cp submodules/supertab/doc/supertab.txt vim/doc/supertab.txt
-cp submodules/supertab/plugin/supertab.vim vim/plugin/supertab.vim
-
-cp submodules/bufexplorer/doc/bufexplorer.txt vim/doc/bufexplorer.txt
-cp submodules/bufexplorer/plugin/bufexplorer.vim vim/plugin/bufexplorer.vim
-
 cp ./vim/nvimrc_perso ~/.nvimrc
+cp ./vim/vimrc_perso ~/.vimrc
 
 # YouCompleteMe
 cd vim/bundle/YouCompleteMe/
