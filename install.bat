@@ -1,4 +1,4 @@
-mkdir vim/bundle
+md vim/bundle
 FOR /F "tokens=*" %%a in ('chdir') do SET moeryn_path=%%a
 echo %moeryn_path%
 
