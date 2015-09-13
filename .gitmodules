@@ -88,3 +88,6 @@
 [submodule "submodules/vim/bufexplorer"]
 	path = submodules/vim/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "submodules\\vim\\gvim-fullscreen"]
+	path = submodules\\vim\\gvim-fullscreen
+	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
