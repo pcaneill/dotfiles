@@ -16,7 +16,7 @@ if has("gui_running")
     " Activate full screen capabilities for gvim.
     "
     " The .dll must be compiled from:
-    "     https://github.com/derekmcloughlin/gvimfullscreen_win32
+    "   https://github.com/leonid-shevtsov/gvimfullscreen_win32
     noremap <C-F11> <esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
 

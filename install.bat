@@ -1,3 +1,5 @@
+@if "%INCLUDE%"=="" goto error
+
 :: {{{ Vim
 
 setlocal
@@ -5,6 +7,7 @@ setlocal
 FOR /F "tokens=*" %%a in ('chdir') do SET CONFIG_PATH=%%a
 set HOME_DIR="C:\Users\pycan"
 set VIM_INSTAL="C:\Vim"
+set VS_BIN="C:\C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"
 
 :: Loading plugin
 md vim/bundle
@@ -31,6 +34,18 @@ mklink /d vim\bundle\vim-spacebars       %CONFIG_PATH%\submodules\vim\vim-spaceb
 mklink /d %HOME_DIR%\vimfiles            %CONFIG_PATH%\vim
 xcopy vim\vimrc_work %HOME_DIR%\.vimrc
 
+cd submodules\vim\gvim-fullscreen
+cl.exe /LD user32.lib gdi32.lib gvimfullscreen.c
+xcopy gvimfullscreen.dll %VIM_INSTALL%\gvimfullscreen.dll
+cd ..\..\..\
+
 endlocal
 
 :: }}}
+
+@exit /B 0
+
+:error
+@echo "Don't forget to set global variables"
+@echo "Don't forget to run vcvars32.bat"
+
