@@ -31,6 +31,7 @@ ln -s ../../submodules/vim/vim-fugitive       vim/bundle/vim-fugitive      2> /d
 ln -s ../../submodules/vim/vim-gitgutter      vim/bundle/vim-gitgutter     2> /dev/null
 ln -s ../../submodules/vim/vim-javascript     vim/bundle/vim-javascript    2> /dev/null
 ln -s ../../submodules/vim/vim-man            vim/bundle/vim-man           2> /dev/null
+ln -s ../../submodules/vim/gtags              vim/bundle/gtags             2> /dev/null
 ln -s ../../submodules/vim/vim-signature      vim/bundle/vim-signature     2> /dev/null
 ln -s ../../submodules/vim/vim-spacebars      vim/bundle/vim-spacebars     2> /dev/null
 ln -s ../../submodules/vim/editorconfig-vim   vim/bundle/editorconfig-vim  2> /dev/null
