@@ -93,4 +93,4 @@
 	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
 [submodule "submodules\\vim\\gtags"]
 	path = submodules\\vim\\gtags
-	url = https://github.com/vim-scripts/gtags.vim.git
+	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
