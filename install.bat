@@ -6,7 +6,7 @@ setlocal
 
 FOR /F "tokens=*" %%a in ('chdir') do SET CONFIG_PATH=%%a
 set HOME_DIR="C:\Users\pycan"
-set VIM_INSTAL="C:\Vim"
+set VIM_INSTALL="C:\Vim\vim74"
 set VS_BIN="C:\C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"
 
 :: Loading plugin
