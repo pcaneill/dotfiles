@@ -1,2 +1,4 @@
 /vim/doc
 /vim/bundle
+
+*.bat~
