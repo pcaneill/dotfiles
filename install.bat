@@ -37,6 +37,10 @@ xcopy vim\vimrc_work %HOME_DIR%\.vimrc
 cd submodules\vim\gvim-fullscreen
 cl.exe /LD user32.lib gdi32.lib gvimfullscreen.c
 xcopy gvimfullscreen.dll %VIM_INSTALL%\gvimfullscreen.dll
+del gvimfullscreen.obj
+del gvimfullscreen.exp
+del gvimfullscreen.dll
+del gvimfullscreen.lib
 cd ..\..\..\
 
 endlocal
