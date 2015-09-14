@@ -91,6 +91,3 @@
 [submodule "submodules\\vim\\gvim-fullscreen"]
 	path = submodules\\vim\\gvim-fullscreen
 	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
-[submodule "submodules\\vim\\gtags"]
-	path = submodules\\vim\\gtags
-	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
