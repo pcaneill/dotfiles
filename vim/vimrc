@@ -184,6 +184,7 @@ noremap <F1> :exec("Vman ".expand("<cword>"))<cr>
 
 " follow tag
 noremap <F2> :exec("tag ".expand("<cword>"))<cr>
+noremap <C-F2> :GtagsCursor<cr>
 
 " bufExplorer
 map <F3> <leader>be
@@ -294,6 +295,9 @@ inoremap jk <esc>
 
 " Surround selected text with quotes
 vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
+
+" Search the references of the copied text
+vnoremap <C-F2> y<esc>:exec("Gtags -g ^[sg]et_ ".expand("<c-r>0"))<cr>
 
 " }}}
 " {{{ Operator-Pendig Mapping
