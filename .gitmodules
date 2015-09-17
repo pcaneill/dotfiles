@@ -97,12 +97,12 @@
 [submodule "submodules/vim/vim-cpp-enhanced-highlight"]
 	path = submodules/vim/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
-[submodule "submodules\\vim\\delimitMate"]
-	path = submodules\\vim\\delimitMate
+[submodule "submodules/vim/delimitMate"]
+	path = submodules/vim/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "submodules\\vim\\vim-perforce"]
-	path = submodules\\vim\\vim-perforce
+[submodule "submodules/vim/vim-perforce"]
+	path = submodules/vim/vim-perforce
 	url = https://github.com/Moeryn/vim-perforce.git
-[submodule "submodules\\vim\\genutils"]
-	path = submodules\\vim\\genutils
+[submodule "submodules/vim/genutils"]
+	path = submodules/vim/genutils
 	url = https://github.com/vim-scripts/genutils.git
