@@ -97,3 +97,6 @@
 [submodule "submodules/vim/vim-cpp-enhanced-highlight"]
 	path = submodules/vim/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "submodules\\vim\\delimitMate"]
+	path = submodules\\vim\\delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
