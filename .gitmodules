@@ -100,3 +100,9 @@
 [submodule "submodules\\vim\\delimitMate"]
 	path = submodules\\vim\\delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "submodules\\vim\\vim-perforce"]
+	path = submodules\\vim\\vim-perforce
+	url = https://github.com/Moeryn/vim-perforce.git
+[submodule "submodules\\vim\\genutils"]
+	path = submodules\\vim\\genutils
+	url = https://github.com/vim-scripts/genutils.git

@@ -29,6 +29,8 @@ mklink /d vim\bundle\vim-signature       %CONFIG_PATH%\submodules\vim\vim-signat
 mklink /d vim\bundle\vim-spacebars       %CONFIG_PATH%\submodules\vim\vim-spacebars
 mklink /d vim\bundle\gtags               %CONFIG_PATH%\submodules\vim\gtags
 mklink /d vim\bundle\delimitMate         %CONFIG_PATH%\submodules\vim\delimitMate
+mklink /d vim\bundle\vim-perforce        %CONFIG_PATH%\submodules\vim\vim-perforce
+mklink /d vim\bundle\genutils            %CONFIG_PATH%\submodules\vim\genutils
 mklink /d vim\bundle\vim-cpp-enhanced-highlight %CONFIG_PATH%\submodules\vim\vim-cpp-enhanced-hightlight
 ::mklink /d vim\bundle\editorconfig-vim  %CONFIG_PATH%\submodules\vim\editorconfig-vim
 ::mklink /d vim\bundle\syntastic         %CONFIG_PATH%\submodules\vim\syntastic
