@@ -2,6 +2,7 @@
 let g:moeryn_syntastic = 0
 let g:moeryn_ultisnips = 0
 let g:moeryn_ycm = 0
+let g:moeryn_tern = 0
 
 set rtp=$HOME/.vim,~/CONFIG/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 source ~/.vim/vimrc

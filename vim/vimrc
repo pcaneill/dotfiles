@@ -146,8 +146,10 @@ endif
 " }}}
 " {{{ tern
 
-call tern#Enable()
-autocmd FileType javascript setlocal omnifunc=tern#Complete
+if g:moeryn_tern == 1
+    call tern#Enable()
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
 
 " }}}
 " {{{ gitgutter
