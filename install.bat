@@ -19,7 +19,6 @@ mklink /d vim\bundle\nerdcommenter       %CONFIG_PATH%\submodules\vim\nerdcommen
 mklink /d vim\bundle\nerdtree            %CONFIG_PATH%\submodules\vim\nerdtree
 mklink /d vim\bundle\seoul256            %CONFIG_PATH%\submodules\vim\seoul256
 mklink /d vim\bundle\supertab            %CONFIG_PATH%\submodules\vim\supertab
-mklink /d vim\bundle\tern                %CONFIG_PATH%\submodules\vim\tern
 mklink /d vim\bundle\vim-airline         %CONFIG_PATH%\submodules\vim\vim-airline
 mklink /d vim\bundle\vim-fugitive        %CONFIG_PATH%\submodules\vim\vim-fugitive
 mklink /d vim\bundle\vim-gitgutter       %CONFIG_PATH%\submodules\vim\vim-gitgutter
