@@ -27,7 +27,7 @@
 	url = https://github.com/SirVer/ultisnips.git
 [submodule "submodules/vim/a"]
 	path = submodules/vim/a
-	url = https://github.com/SirVer/ultisnips.git
+	url = https://github.com/vim-scripts/a.vim.git
 [submodule "submodules/vim/syntastic"]
 	path = submodules/vim/syntastic
 	url = https://github.com/scrooloose/syntastic.git
