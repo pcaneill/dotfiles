@@ -21,7 +21,11 @@ if has("gui_running")
     noremap <C-F11> <esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
 endif
 
+" {{{ Macros
+" Add copy constructor and assignment as private
+let @c= "^^wveyj%Oprivate:opa (pa const&); // = deleteyypea& operator=Vkk=jjj%k"
 
+" }}}
 " {{{ Mapping
 " {{{ Fn
 
@@ -43,4 +47,16 @@ endif
 
 
 " }}}
+" }}}
+" {{{ Code formatting
+
+set tabstop=3
+set softtabstop=3
+set expandtab
+set textwidth=0
+set shiftwidth=3
+set cinoptions+=L0s      " align labels at 0.5 shiftwidth
+set cinoptions+=:0s,=0s  " same for case labels and code following labels
+set cinoptions+=g0s,h0s  " same for C++ stuff
+
 " }}}
