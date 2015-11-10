@@ -31,13 +31,14 @@ mklink /d vim\bundle\delimitMate         %CONFIG_PATH%\submodules\vim\delimitMat
 mklink /d vim\bundle\vim-perforce        %CONFIG_PATH%\submodules\vim\vim-perforce
 mklink /d vim\bundle\vim-ps1             %CONFIG_PATH%\submodules\vim\vim-ps1
 mklink /d vim\bundle\genutils            %CONFIG_PATH%\submodules\vim\genutils
-mklink /d vim\bundle\vim-cpp-enhanced-highlight %CONFIG_PATH%\submodules\vim\vim-cpp-enhanced-hightlight
+mklink /d vim\bundle\syntax              %CONFIG_PATH%\submodules\vim\vim-cpp-enhanced-highlight
 ::mklink /d vim\bundle\editorconfig-vim  %CONFIG_PATH%\submodules\vim\editorconfig-vim
 ::mklink /d vim\bundle\syntastic         %CONFIG_PATH%\submodules\vim\syntastic
 ::mklink /d vim\bundle\ultisnips         %CONFIG_PATH%\submodules\vim\ultisnips
 
 mklink /d %HOME_DIR%\vimfiles            %CONFIG_PATH%\vim
-xcopy vim\vimrc_work %HOME_DIR%\.vimrc
+:: Do not copy directly until configuration of the vimrc does not exists
+::xcopy vim\vimrc_work %HOME_DIR%\.vimrc
 
 cd submodules\vim\gvim-fullscreen
 cl.exe /LD user32.lib gdi32.lib gvimfullscreen.c
