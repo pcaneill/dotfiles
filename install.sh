@@ -14,7 +14,7 @@ xfconf-query -c xfce4-desktop                                 \
 # vim
 echo -ne "Initializing vim configuration ..."
 mkdir vim/plugin 2> /dev/null
-mkdir vim/doc 2> /dev/null
+mkdir vim/doc    2> /dev/null
 mkdir vim/bundle 2> /dev/null
 
 ln -s ../../submodules/vim/a                  vim/bundle/a                 2> /dev/null
@@ -43,8 +43,12 @@ ln -s ../../submodules/vim/YouCompleteMe      vim/bundle/YouCompleteMe     2> /d
 ln -s ../../submodules/vim/delimitMate        vim/bundle/delimitMate       2> /dev/null
 ln -s ../../submodules/vim/vim-cpp-enhanced-highlight vim/bundle/syntax    2> /dev/null
 
-cp ./vim/nvimrc_perso ~/.nvimrc
 cp ./vim/vimrc_perso ~/.vimrc
+
+# Neovim
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+mkdir -p ${XDG_CONFIG_HOME}/nvim
+ln -s  ${ROOT}/vim/nvimrc_perso ${XDG_CONFIG_HOME}/nvim/init.vim
 
 # YouCompleteMe
 cd vim/bundle/YouCompleteMe/
