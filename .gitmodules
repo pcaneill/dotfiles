@@ -1,111 +1,148 @@
 [submodule "submodules/liquidpromt"]
 	path = submodules/liquidpromt
 	url = https://github.com/nojhan/liquidprompt.git
+  ingore = dirty
 [submodule "submodules/highlight-parentheses"]
 	path = submodules/highlight-parentheses
 	url = https://github.com/nschum/highlight-parentheses.el.git
+  ingore = dirty
 [submodule "submodules/highlight-symbol"]
 	path = submodules/highlight-symbol
 	url = https://github.com/nschum/highlight-symbol.el.git
+  ingore = dirty
 [submodule "submodules/window-numbering"]
 	path = submodules/window-numbering
 	url = https://github.com/Moeryn/window-numbering.el.git
+  ingore = dirty
 [submodule "submodules/powerline"]
 	path = submodules/powerline
 	url = https://github.com/milkypostman/powerline.git
+  ingore = dirty
 [submodule "submodules/git"]
 	path = submodules/git
 	url = https://github.com/git/git.git
+  ingore = dirty
 [submodule "submodules/tig"]
 	path = submodules/tig
 	url = https://github.com/jonas/tig.git
+  ingore = dirty
 [submodule "tools/FlameGraph"]
 	path = tools/FlameGraph
 	url = https://github.com/brendangregg/FlameGraph.git
+  ingore = dirty
 [submodule "submodules/vim/ultisnips"]
 	path = submodules/vim/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+  ingore = dirty
 [submodule "submodules/vim/a"]
 	path = submodules/vim/a
 	url = https://github.com/vim-scripts/a.vim.git
+  ingore = dirty
 [submodule "submodules/vim/syntastic"]
 	path = submodules/vim/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+  ingore = dirty
 [submodule "submodules/vim/nerdtree"]
 	path = submodules/vim/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+  ingore = dirty
 [submodule "submodules/vim/nerdcommenter"]
 	path = submodules/vim/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+  ingore = dirty
 [submodule "submodules/vim/vim-fugitive"]
 	path = submodules/vim/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+  ingore = dirty
 [submodule "submodules/vim/ctrlp"]
 	path = submodules/vim/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+  ingore = dirty
 [submodule "submodules/vim/vim-airline"]
 	path = submodules/vim/vim-airline
 	url = https://github.com/bling/vim-airline.git
+  ingore = dirty
 [submodule "submodules/vim/seoul256"]
 	path = submodules/vim/seoul256
 	url = https://github.com/junegunn/seoul256.vim.git
+  ingore = dirty
 [submodule "submodules/vim/supertab"]
 	path = submodules/vim/supertab
 	url = https://github.com/ervandew/supertab.git
+  ingore = dirty
 [submodule "submodules/vim/vim-gitgutter"]
 	path = submodules/vim/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+  ingore = dirty
 [submodule "submodules/vim/editorconfig-vim"]
 	path = submodules/vim/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+  ingore = dirty
 [submodule "submodules/vim/neomake"]
 	path = submodules/vim/neomake
 	url = https://github.com/benekastah/neomake.git
+  ingore = dirty
 [submodule "submodules/vim/vim-javascript"]
 	path = submodules/vim/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+  ingore = dirty
 [submodule "submodules/vim/YouCompleteMe"]
 	path = submodules/vim/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+  ingore = dirty
 [submodule "submodules/vim/vim-signature"]
 	path = submodules/vim/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+  ingore = dirty
 [submodule "submodules/vim/tern"]
 	path = submodules/vim/tern
 	url = https://github.com/marijnh/tern_for_vim.git
+  ingore = dirty
 [submodule "submodules/vim/htlm5"]
 	path = submodules/vim/htlm5
 	url = https://github.com/othree/html5.vim.git
+  ingore = dirty
 [submodule "submodules/vim/vim-spacebars"]
 	path = submodules/vim/vim-spacebars
 	url = https://github.com/Slava/vim-spacebars.git
+  ingore = dirty
 [submodule "submodules/vim/neoterm"]
 	path = submodules/vim/neoterm
 	url = https://github.com/kassio/neoterm.git
+  ingore = dirty
 [submodule "submodules/vim/vim-man"]
 	path = submodules/vim/vim-man
 	url = https://github.com/bruno-/vim-man.git
+  ingore = dirty
 [submodule "submodules/vim/bufexplorer"]
 	path = submodules/vim/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+  ingore = dirty
 [submodule "submodules/vim/gvim-fullscreen"]
 	path = submodules/vim/gvim-fullscreen
 	url = https://github.com/leonid-shevtsov/gvimfullscreen_win32.git
+  ingore = dirty
 [submodule "submodules/vim/gtags"]
 	path = submodules/vim/gtags
 	url = https://github.com/vim-scripts/gtags.vim.git
+  ingore = dirty
 [submodule "submodules/vim/vim-cpp-enhanced-highlight"]
 	path = submodules/vim/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+  ingore = dirty
 [submodule "submodules/vim/delimitMate"]
 	path = submodules/vim/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+  ingore = dirty
 [submodule "submodules/vim/vim-perforce"]
 	path = submodules/vim/vim-perforce
 	url = https://github.com/Moeryn/vim-perforce.git
+  ingore = dirty
 [submodule "submodules/vim/genutils"]
 	path = submodules/vim/genutils
 	url = https://github.com/vim-scripts/genutils.git
+  ingore = dirty
 [submodule "submodules/vim/vim-ps1"]
 	path = submodules/vim/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
+  ingore = dirty
