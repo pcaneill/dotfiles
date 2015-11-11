@@ -51,6 +51,7 @@ apt-get install         \
     xclip               \
     tig                 \
     ccache              \
+    kde-full            \
     xfonts-terminus     \
     libwbxml2-dev       \
     python-psutil       \
