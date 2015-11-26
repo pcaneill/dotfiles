@@ -40,6 +40,7 @@ ln -s ../../submodules/vim/ultisnips          vim/bundle/ultisnips         2> /d
 ln -s ../../submodules/vim/neomake            vim/bundle/neomake           2> /dev/null
 ln -s ../../submodules/vim/neoterm            vim/bundle/neoterm           2> /dev/null
 ln -s ../../submodules/vim/YouCompleteMe      vim/bundle/YouCompleteMe     2> /dev/null
+ln -s ../../submodules/vim/badwolf            vim/bundle/badwolf           2> /dev/null
 ln -s ../../submodules/vim/delimitMate        vim/bundle/delimitMate       2> /dev/null
 ln -s ../../submodules/vim/vim-cpp-enhanced-highlight vim/bundle/syntax    2> /dev/null
 

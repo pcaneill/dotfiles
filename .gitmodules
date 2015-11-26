@@ -146,3 +146,6 @@
 	path = submodules/vim/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
   ignore = dirty
+[submodule "submodules/vim/badwolf"]
+	path = submodules/vim/badwolf
+	url = https://github.com/sjl/badwolf.git

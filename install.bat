@@ -32,7 +32,8 @@ mklink /d vim\bundle\vim-perforce        %CONFIG_PATH%\submodules\vim\vim-perfor
 mklink /d vim\bundle\vim-ps1             %CONFIG_PATH%\submodules\vim\vim-ps1
 mklink /d vim\bundle\genutils            %CONFIG_PATH%\submodules\vim\genutils
 mklink /d vim\bundle\syntax              %CONFIG_PATH%\submodules\vim\vim-cpp-enhanced-highlight
-::mklink /d vim\bundle\editorconfig-vim  %CONFIG_PATH%\submodules\vim\editorconfig-vim
+mklink /d vim\bundle\YouCompleteMe       %CONFIG_PATH%\submodules\vim\YouCompleteMe
+mklink /d vim\bundle\badwolf             %CONFIG_PATH%\submodules\vim\badwolf
 ::mklink /d vim\bundle\syntastic         %CONFIG_PATH%\submodules\vim\syntastic
 ::mklink /d vim\bundle\ultisnips         %CONFIG_PATH%\submodules\vim\ultisnips
 
@@ -50,6 +51,10 @@ del gvimfullscreen.lib
 cd ..\..\..\
 
 endlocal
+
+:: In order to install correctly YouCompleteMe when there are problem with the python libraries,
+:: one could hardcode the path to the lib "C:\Python\2.7\libs\python27.lib"
+:: and of the include
 
 :: }}}
 
