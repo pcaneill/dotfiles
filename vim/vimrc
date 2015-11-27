@@ -212,6 +212,11 @@ let g:gitgutter_realtime = 1
 let g:cpp_class_scope_highlight=1
 
 " }}}
+" {{{ delimitMate
+
+let delimitMate_expand_cr=1
+
+" }}}
 " }}}
 " {{{ Functions
 
@@ -364,7 +369,10 @@ inoremap <C-u> <esc>vbU<esc>ea
 inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lela
 
 inoremap jk <esc>
-inoremap <esc> :call input("use `jk` instead")<cr>
+
+inoremap <C-l> <esc>la
+inoremap <C-h> <esc>ha
+inoremap <C-e> <esc>ea
 
 " }}}
 " {{{ Visual
