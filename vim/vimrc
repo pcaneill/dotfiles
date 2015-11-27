@@ -241,9 +241,6 @@ let mapleader = ","
 
 " {{{ Fn
 
-" follow man
-noremap <F1> :exec("Vman ".expand("<cword>"))<cr>
-
 " follow tag
 noremap <F2> :exec("tag ".expand("<cword>"))<cr>
 noremap <C-F2> :GtagsCursor<cr>
