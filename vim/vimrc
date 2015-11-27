@@ -1,3 +1,5 @@
+" .vimrc
+" Author: Caneill Pierre-Yves <pyc@moeryn.com>
 " Moeryn's vim configuration
 
 set nocompatible
@@ -9,6 +11,105 @@ call pathogen#helptags()
 
 filetype plugin on
 filetype plugin indent on
+
+" }}}
+" {{{ Basic options
+" {{{ cursor line
+
+set cursorline
+hi CursorLine term=bold cterm=bold ctermbg=black
+
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+
+"* }}}
+"  {{{ Wildmenu completion
+
+set wildmenu
+set wildmode=list:longest,full
+
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.luac                           " Lua byte code
+set wildignore+=*.pyc                            " Python byte code
+set wildignore+=*.orig                           " Merge resolution files
+
+" }}}
+" {{{ restore cursor position
+
+au BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+" }}}
+" {{{ color scheme
+
+syntax on
+set background=dark
+colo badwolf
+
+" Reload the colorscheme whenever we write the file.
+augroup color_badwolf_dev
+    au!
+    au BufWritePost badwolf.vim color badwolf
+augroup END
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" }}}
+
+"TODO set encoding=utf-8
+set backspace=indent,eol,start
+
+set incsearch
+set hlsearch
+
+set autoindent
+set noswapfile
+
+set hidden
+set noesckeys
+set splitbelow
+set splitright
+set showbreak=↪
+
+" list
+set listchars=eol:¬,tab:▸\ ,trail:-,extends:>,precedes:<,nbsp:¤
+set list
+"hi SpecialKey ctermbg=red
+
+
+" modeline
+set modeline
+set modelines=5
+
+set lazyredraw
+set undolevels=1000   " increase number of undos possible
+set ttyfast           " fast terminal
+set showmatch         " show matching bracket
+set report=0          " report the number of lines changed
+set laststatus=2      " always have a status line
+set foldmethod=marker " folding => {{{ }}}
+set wildmenu
+set tags=tags;/,.tags;/,TAG;/
+
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
+
+set complete=.,w,b,u,i,t
+
+"undo settings
+set undodir=~/.vim/undofiles
+set undofile
+set colorcolumn=+1 "mark the ideal max text width
 
 " }}}
 " {{{ Terminal
@@ -317,63 +418,6 @@ onoremap n" :<c-u>normal! f"vi"<cr>i
 
 " }}}
 " }}}
-" {{{ various
-
-" cursor line
-set cursorline
-hi CursorLine term=bold cterm=bold ctermbg=black
-
-" syntax
-syntax on
-
-set encoding=utf-8
-set backspace=indent,eol,start
-
-set incsearch
-set hlsearch
-
-set autoindent
-
-set hidden
-set noesckeys
-
-
-" list
-set listchars=eol:\ ,tab:\ \ ,trail:-,extends:>,precedes:<,nbsp:¤
-set list
-"hi SpecialKey ctermbg=red
-
-
-" modeline
-set modeline
-set modelines=5
-
-set lazyredraw
-set undolevels=1000   " increase number of undos possible
-set ttyfast           " fast terminal
-set showmatch         " show matching bracket
-set report=0          " report the number of lines changed
-set laststatus=2      " always have a status line
-set foldmethod=marker " folding => {{{ }}}
-set wildmenu
-set tags=tags;/,.tags;/,TAG;/
-
-if v:version >= 703
-    "undo settings
-    set undodir=~/.vim/undofiles
-    set undofile
-    set colorcolumn=+1 "mark the ideal max text width
-endif
-
-" }}}
-" {{{ restore cursor position
-
-au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-" }}}
 " {{{ code formatting
 
 set tabstop=2
@@ -402,6 +446,3 @@ au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
 let g:cpp_class_scope_highlight=1
 
 " }}}
-
-colo badwolf
-
