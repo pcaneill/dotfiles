@@ -48,22 +48,6 @@ au BufReadPost *
     \ endif
 
 " }}}
-" {{{ color scheme
-
-syntax on
-set background=dark
-colo badwolf
-
-" Reload the colorscheme whenever we write the file.
-augroup color_badwolf_dev
-    au!
-    au BufWritePost badwolf.vim color badwolf
-augroup END
-
-" Highlight VCS conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-" }}}
 
 "TODO set encoding=utf-8
 set backspace=indent,eol,start
@@ -187,37 +171,6 @@ endif
 " {{{ ctrlp
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
-
-" }}}
-" {{{ colors
-
-hi Comment      cterm=none       ctermfg=blue       ctermbg=none
-hi doxygenBrief cterm=none       ctermfg=cyan       ctermbg=none
-hi Folded       cterm=none       ctermfg=brown      ctermbg=none
-
-hi Visual       cterm=reverse    ctermfg=none       ctermbg=none
-hi IncSearch    cterm=none       ctermfg=red        ctermbg=none
-hi Search       cterm=underline  ctermfg=red        ctermbg=none
-
-hi StatusLine   cterm=none       ctermfg=white      ctermbg=blue
-hi StatusLineNc cterm=none       ctermfg=black      ctermbg=white
-hi WildMenu     cterm=none       ctermfg=white      ctermbg=none
-hi VertSplit    cterm=none       ctermfg=darkgray   ctermbg=none
-hi NonText      cterm=none       ctermfg=darkgray   ctermbg=none
-
-hi MatchParen   cterm=underline  ctermfg=white      ctermbg=red
-hi Pmenu        cterm=none       ctermfg=gray       ctermbg=black
-hi PmenuSel     cterm=none       ctermfg=black      ctermbg=gray
-hi PmenuSbar    cterm=none       ctermfg=blue       ctermbg=blue
-hi PmenuThumb   cterm=none       ctermfg=gray       ctermbg=gray
-
-hi SpellBad     cterm=underline  ctermfg=lightred   ctermbg=none
-hi SpellCap     cterm=none       ctermfg=lightred   ctermbg=none
-hi SpellLocal   cterm=underline  ctermfg=darkgreen  ctermbg=none
-hi SpellRare    cterm=none       ctermfg=none       ctermbg=none
-
-hi javaScriptTpl       cterm=none ctermfg=darkgreen ctermbg=none
-hi javaScriptTplMark   cterm=none ctermfg=magenta ctermbg=none
 
 " }}}
 " {{{ youcompleteme
@@ -597,5 +550,50 @@ function! s:NextTextObject(motion, dir)
         endif
     endif
 endfunction
+
+" }}}
+" {{{ Color scheme
+
+syntax on
+set background=dark
+
+hi Comment      cterm=none       ctermfg=blue       ctermbg=none
+hi doxygenBrief cterm=none       ctermfg=cyan       ctermbg=none
+hi Folded       cterm=none       ctermfg=brown      ctermbg=none
+
+hi Visual       cterm=reverse    ctermfg=none       ctermbg=none
+hi IncSearch    cterm=none       ctermfg=red        ctermbg=none
+hi Search       cterm=underline  ctermfg=red        ctermbg=none
+
+hi StatusLine   cterm=none       ctermfg=white      ctermbg=blue
+hi StatusLineNc cterm=none       ctermfg=black      ctermbg=white
+hi WildMenu     cterm=none       ctermfg=white      ctermbg=none
+hi VertSplit    cterm=none       ctermfg=darkgray   ctermbg=none
+hi NonText      cterm=none       ctermfg=darkgray   ctermbg=none
+
+hi MatchParen   cterm=underline  ctermfg=white      ctermbg=red
+hi Pmenu        cterm=none       ctermfg=gray       ctermbg=black
+hi PmenuSel     cterm=none       ctermfg=black      ctermbg=gray
+hi PmenuSbar    cterm=none       ctermfg=blue       ctermbg=blue
+hi PmenuThumb   cterm=none       ctermfg=gray       ctermbg=gray
+
+hi SpellBad     cterm=underline  ctermfg=lightred   ctermbg=none
+hi SpellCap     cterm=none       ctermfg=lightred   ctermbg=none
+hi SpellLocal   cterm=underline  ctermfg=darkgreen  ctermbg=none
+hi SpellRare    cterm=none       ctermfg=none       ctermbg=none
+
+hi javaScriptTpl       cterm=none ctermfg=darkgreen ctermbg=none
+hi javaScriptTplMark   cterm=none ctermfg=magenta ctermbg=none
+
+" Reload the colorscheme whenever we write the file.
+augroup color_badwolf_dev
+    au!
+    au BufWritePost badwolf.vim color badwolf
+augroup END
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+colo badwolf
 
 " }}}
