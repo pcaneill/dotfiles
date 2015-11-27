@@ -281,7 +281,7 @@ function! SwitchTheme()
 endfunction
 
 " }}}
-" {{{ mapping
+" {{{ Mapping
 
 let mapleader = ","
 
@@ -384,6 +384,22 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Add semicolumn at the end of the line
 nnoremap <leader>; :exec("normal! mqA;\<lt>esc>`q")<cr>
 
+nnoremap K :q<cr>
+nnoremap :q<cr> :call input("use `K` instead")<cr>
+
+nnoremap s :w<cr>
+nnoremap :w<cr> :call input("use `s` instead")<cr>
+
+" Toggle line numbers
+nnoremap <leader>n :setlocal number!<cr>
+
+nnoremap <leader>s vip:!sort<cr>
+
+" Reselect last-pasted text
+nnoremap gp `[v`]
+
+nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
+
 " }}}
 " {{{ Interactive
 
@@ -397,6 +413,7 @@ inoremap <C-u> <esc>vbU<esc>ea
 inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lela
 
 inoremap jk <esc>
+inoremap <esc> :call input("use `jk` instead")<cr>
 
 " }}}
 " {{{ Visual
