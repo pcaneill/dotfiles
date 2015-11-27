@@ -1,6 +1,5 @@
 " .vimrc
 " Author: Caneill Pierre-Yves <pyc@moeryn.com>
-" Moeryn's vim configuration
 
 set nocompatible
 
@@ -110,9 +109,6 @@ set complete=.,w,b,u,i,t
 set undodir=~/.vim/undofiles
 set undofile
 set colorcolumn=+1 "mark the ideal max text width
-
-" }}}
-" {{{ Terminal
 
 " Enable color in the terminal for the powerline in some terminal
 set t_Co=256
@@ -256,6 +252,11 @@ endif
 " {{{ gitgutter
 
 let g:gitgutter_realtime = 1
+
+" }}}
+" {{{ code syntax
+
+let g:cpp_class_scope_highlight=1
 
 " }}}
 " }}}
@@ -435,7 +436,7 @@ onoremap n" :<c-u>normal! f"vi"<cr>i
 
 " }}}
 " }}}
-" {{{ code formatting
+" {{{ Code formatting
 
 set tabstop=2
 set softtabstop=2
@@ -444,14 +445,14 @@ set textwidth=0
 set shiftwidth=2
 
 set cinoptions=
-set cinoptions+=N-s            " No namespace indentation
-set cinoptions+=L0.5s          " align labels at 0.5 shiftwidth
-set cinoptions+=:0.5s,=0.5s    " same for case labels and code following labels
-set cinoptions+=g0.5s,h0.5s    " same for C++ stuff
-set cinoptions+=t0             " type on the line before the function is not indented
-set cinoptions+=(0,Ws          " indent in functions ( ... ) when it breaks
-set cinoptions+=m1             " align the closing ) properly
-set cinoptions+=j1,J1          " java/javascript -> fixes blocks
+set cinoptions+=N-s         " No namespace indentation
+set cinoptions+=L0.5s       " align labels at 0.5 shiftwidth
+set cinoptions+=:0.5s,=0.5s " same for case labels and code following labels
+set cinoptions+=g0.5s,h0.5s " same for C++ stuff
+set cinoptions+=t0          " type on the line before the function is not indented
+set cinoptions+=(0,Ws       " indent in functions ( ... ) when it breaks
+set cinoptions+=m1          " align the closing ) properly
+set cinoptions+=j1,J1       " java/javascript -> fixes blocks
 
 " Doxygen
 au! Syntax {cpp,c,d,javascript}
