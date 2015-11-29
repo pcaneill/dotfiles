@@ -354,7 +354,7 @@ nnoremap <leader>s vip:!sort<cr>
 " Reselect last-pasted text
 nnoremap gp `[v`]
 
-nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
+nnoremap <c-s> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " }}}
 " {{{ Interactive

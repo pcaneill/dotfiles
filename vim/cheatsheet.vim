@@ -16,13 +16,11 @@ s vsplit
 O rec open
 x close parent
 X rec close parent
-
 P root node
 p root node parent
 r refresh
 ? help
 
-" mapping
 " Insert
 <C-u> upper
 <l>" last word quote
@@ -40,4 +38,7 @@ r refresh
 gp select last past
 <c-z> center
 
-
+"(b [r {B
+din delete in next
+can change around next
+vin select inside
