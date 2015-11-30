@@ -49,7 +49,8 @@ au BufReadPost *
 
 " }}}
 
-"TODO set encoding=utf-8
+"TODO fails when reloading
+set encoding=utf-8
 set backspace=indent,eol,start
 
 set incsearch
@@ -62,10 +63,10 @@ set hidden
 set noesckeys
 set splitbelow
 set splitright
-set showbreak=↪
+set showbreak=
 
 " list
-set listchars=eol:¬,tab:▸\ ,trail:-,extends:>,precedes:<,nbsp:¤
+set listchars=eol:¬,tab:➤\ ,trail:-,extends:>,precedes:<,nbsp:¤
 set list
 "hi SpecialKey ctermbg=red
 
