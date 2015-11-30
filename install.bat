@@ -52,9 +52,17 @@ cd ..\..\..\
 
 endlocal
 
+:: YouCompleteMe
+:: -------------
+::
 :: In order to install correctly YouCompleteMe when there are problem with the python libraries,
-:: one could hardcode the path to the lib "C:\Python\2.7\libs\python27.lib"
-:: and of the include
+:: one could hardcode the path to the lib "C:\Python\2.7\libs\python27.lib" and of the include
+:: Run:
+::      python .\install.py --clang-completer --msvc 12
+:: If it works correctly there might have somme issue with C run time library. This is "expected",
+:: a solution is to call:
+::      where msvcr90.dll msvcp90.dll
+:: And replace it by the updated one (newer version for example). (often CMake and python)
 
 :: }}}
 
