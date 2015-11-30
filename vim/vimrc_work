@@ -14,11 +14,9 @@ if has("gui_running")
     set guioptions-=L  "remove left-hand scroll bar
     set guifont=Terminus_(TTF):h9:cANSI
 
-    " Activate full screen capabilities for gvim.
-    "
-    " The .dll must be compiled from:
-    "   https://github.com/leonid-shevtsov/gvimfullscreen_win32
-    noremap <C-F11> <esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<cr>
+    " Full screen with gvim
+    noremap <C-F11> <esc>:WToggleFullScreen<cr>
+    autocmd GUIEnter * silent! WToggleClean
 endif
 
 " {{{ Macros

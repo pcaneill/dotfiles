@@ -149,3 +149,6 @@
 [submodule "submodules/vim/badwolf"]
 	path = submodules/vim/badwolf
 	url = https://github.com/sjl/badwolf.git
+[submodule "submodules/vim/wimproved.vim"]
+	path = submodules/vim/wimproved.vim
+	url = https://github.com/kkoenig/wimproved.vim.git

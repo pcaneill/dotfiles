@@ -34,6 +34,7 @@ mklink /d vim\bundle\genutils            %CONFIG_PATH%\submodules\vim\genutils
 mklink /d vim\bundle\syntax              %CONFIG_PATH%\submodules\vim\vim-cpp-enhanced-highlight
 mklink /d vim\bundle\YouCompleteMe       %CONFIG_PATH%\submodules\vim\YouCompleteMe
 mklink /d vim\bundle\badwolf             %CONFIG_PATH%\submodules\vim\badwolf
+mklink /d vim\bundle\vimproved.vim       %CONFIG_PATH%\submodules\vim\vimproved.vim
 ::mklink /d vim\bundle\syntastic         %CONFIG_PATH%\submodules\vim\syntastic
 ::mklink /d vim\bundle\ultisnips         %CONFIG_PATH%\submodules\vim\ultisnips
 
@@ -41,14 +42,18 @@ mklink /d %HOME_DIR%\vimfiles            %CONFIG_PATH%\vim
 :: Do not copy directly until configuration of the vimrc does not exists
 ::xcopy vim\vimrc_work %HOME_DIR%\.vimrc
 
-cd submodules\vim\gvim-fullscreen
-cl.exe /LD user32.lib gdi32.lib gvimfullscreen.c
-xcopy gvimfullscreen.dll %VIM_INSTALL%\gvimfullscreen.dll
-del gvimfullscreen.obj
-del gvimfullscreen.exp
-del gvimfullscreen.dll
-del gvimfullscreen.lib
-cd ..\..\..\
+:: gvimfullscreen
+:: --------------
+:: LEGACY: has been replaced by vimproved.vim
+::
+:: cd submodules\vim\gvim-fullscreen
+:: cl.exe /LD user32.lib gdi32.lib gvimfullscreen.c
+:: xcopy gvimfullscreen.dll %VIM_INSTALL%\gvimfullscreen.dll
+:: del gvimfullscreen.obj
+:: del gvimfullscreen.exp
+:: del gvimfullscreen.dll
+:: del gvimfullscreen.lib
+:: cd ..\..\..\
 
 endlocal
 
