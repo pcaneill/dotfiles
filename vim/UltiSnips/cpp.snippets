@@ -1,0 +1,300 @@
+# {{{ C++ construct
+
+snippet if "if" !b
+if (${1:/* cond */}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet ife "if...else" !b
+if (${1:/* cond */}) {
+  ${VISUAL}${2:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+} else {
+  ${0:/* code */}
+}
+endsnippet
+
+snippet for "for (;;) {" !b
+for (${1};${2};${3}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet fora "for (auto v : ...) {" !b
+for (auto ${1:v} : ${2}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet fori "for (int i = 0; i < 10; i++) {" !b
+for (int ${1:i} = 0; $1 < ${2:10}; ${3:$1++}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet iter "std::iterator for-each loop"
+for (${1:vector<T>}::iterator ${3:it} = ${2:items.}begin(); $3 != $2end(); ++$3) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet itera "C++-11 auto iterator"
+for (auto ${1:it} = ${2}.begin(); $1 != $2.end(); ++$1) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet iiter  "iterator"
+for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:it} = ${5:container}.begin(); $4 != $5.end(); ++$4) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet wh "while" !b
+while (${1:/* cond */}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet do "do .. while (cond);" !b
+do {
+    ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+} while (${1:/* condition */});
+endsnippet
+
+snippet switch "switch" !b
+switch (${1:/* value */}) {
+  case ${2:/* value */}:
+    ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+    break;
+
+  default:
+    break;
+}
+endsnippet
+
+snippet case "case" !b
+case ${1:/* value */}:
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+  break;
+endsnippet
+
+snippet fun "function" !
+${1:int} ${2:function_name}(${3:void})
+{
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
+snippet fund "function declaration" !
+${1:int} ${2:function_name}(${3:void});
+endsnippet
+
+snippet fold "Add a new vim fold" !b
+/* {{{ ${1:topic} */
+
+${0:${VISUAL}}
+
+/* }}} */
+endsnippet
+
+snippet class "class"
+class ${1:Test}
+{
+public:
+  $1(${2});
+  ${3:virtual }~$1();
+
+private:
+  ${0:/* data */}
+
+private:
+  $1(const $1&) = delete;
+  $1($1&&) = delete;
+  $1& operator=(const $1&) = delete;
+};
+endsnippet
+
+snippet iclass "Interface"
+class I${1:Test}
+{
+public:
+  ${3:virtual }~I$1();
+
+  virtual ${0} = 0;
+};
+endsnippet
+
+snippet dtor "destructor"
+virtual ~${1:`!p snip.rv = snip.basename`}();${0}
+endsnippet
+
+# }}}
+# {{{ Casts
+
+snippet scast "Static Cast"
+static_cast<${1}>(${2})${0}
+endsnippet
+
+snippet rcast "Reinterpret Cast"
+reinterpret_cast<${1}>(${2})${0}
+endsnippet
+
+snippet dcast "Dynamic Cast"
+dynamic_cast<${1}>(${2})${0}
+endsnippet
+
+snippet ccast "Const Cast"
+const_cast<${1}>(${2})${0}
+endsnippet
+
+# }}}
+# {{{ Commenting
+
+snippet todo "create a TODO comment" !b
+//TODO: ${0: ??? }
+endsnippet
+
+snippet xxx "create a XXX comment" !b
+//XXX: ${0: ??? }
+endsnippet
+
+snippet fix "create a FIXME comment" !b
+//FIXME: ${0: ??? }
+endsnippet
+
+snippet dox "Create a doxygen comment section" !b
+// ${1:Brief description}.
+//
+// ${0:Long description.}
+//
+// \param[in]  param1  description of param 1.
+// \param[in]  param2  description of param 2.
+//
+// \return  description of return value.
+//
+endsnippet
+
+# }}}
+# {{{ Tests
+
+snippet tg "Create a Google Test group"
+/* {{{ Tests */
+
+/* LCOV_EXCL_START */
+
+#include <gtest/gtest.h>
+
+TEST(${1:`!p snip.rv = (snip.basename.replace('-', '_') or 'group_name')`}, ${2})
+{
+  ${0:/* code */}
+}
+
+/* LCOV_EXCL_STOP */
+
+/* }}} */
+endsnippet
+
+snippet tt "Create a Google Test test"
+TEST(${1:`!p snip.rv = (snip.basename.replace('-', '_') or 'group_name')`}, ${2})
+{
+  ${0:/* code */}
+}
+endsnippet
+
+# }}}
+# {{{ Logging easylogging++
+
+snippet fatal "fatal" !b
+LOG(FATAL) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet err "error" !b
+LOG(ERROR) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet warn "warning" !b
+LOG(WARNING) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet info "info" !b
+LOG(INFO) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet debug "debug" !b
+LOG(DEBUG) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet trace "trace" !b
+LOG(TRACE) << "${0:${VISUAL:text}}";
+endsnippet
+
+snippet verb "verbose" !b
+VLOG(${1:1}) << "${0:${VISUAL:text}}";
+endsnippet
+
+# }}}
+# {{{ Copyright & header
+
+snippet copyright "Include copyright" !b
+// The MIT License (MIT)
+//
+// Copyright (c) `date +%Y` CANEILL Pierre-Yves <pyc@moeryn.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation
+// the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+// DEALINGS IN THE SOFTWARE.
+endsnippet
+
+snippet header "Include copyright and guard" !b
+// The MIT License (MIT)
+//
+// Copyright (c) `date +%Y` CANEILL Pierre-Yves <pyc@moeryn.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation
+// the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+// DEALINGS IN THE SOFTWARE.
+
+#ifndef ${1:`!p
+if not snip.c:
+    import string
+    name = re.sub(r'[^A-Za-z0-9]+','_', path).upper()
+    snip.rv = ('%s' % ( name)).upper()
+else:
+    snip.rv = snip.c`}
+#define $1
+
+${0}
+
+#endif /* $1 */
+endsnippet
+
+# }}}
