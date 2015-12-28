@@ -6,12 +6,14 @@ echo -ne "Initializing submodules ..."
 script -q -c 'git submodule update --init --recursive' > /dev/null
 echo " [OK]"
 
-# Set Desktop Background
+# {{{ Desktop Background
+
 xfconf-query -c xfce4-desktop                                 \
              --property /backdrop/screen0/monitor0/image-path \
              --set ~/CONFIG/desktop/paris.jpg
+# }}}
+# {{{ Vim
 
-# vim
 echo -ne "Initializing vim configuration ..."
 mkdir vim/plugin 2> /dev/null
 mkdir vim/doc    2> /dev/null
@@ -46,12 +48,15 @@ ln -s ../../submodules/vim/vim-cpp-enhanced-highlight vim/bundle/syntax    2> /d
 
 cp ./vim/vimrc_perso ~/.vimrc
 
-# Neovim
+# {{{ Neovim
+
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 mkdir -p ${XDG_CONFIG_HOME}/nvim
 ln -s  ${ROOT}/vim/nvimrc_perso ${XDG_CONFIG_HOME}/nvim/init.vim
 
-# YouCompleteMe
+# }}}
+# {{{ YouCompleteMe
+
 cd vim/bundle/YouCompleteMe/
 script -q -c './install.py --clang-completer' > /dev/null
 if [ $? -ne 0 ]; then
@@ -60,7 +65,9 @@ if [ $? -ne 0 ]; then
 fi
 cd $ROOT
 
-# Tern
+# }}}
+# {{{ Tern
+
 cd vim/bundle/tern/
 npm install > /dev/null
 cd node_modules/tern/plugin/
@@ -70,32 +77,56 @@ if [ $? -ne 0 ]; then
     exit
 fi
 cd $ROOT
+# }}}
+# {{{ Rtags
+
+#git clone --recursive https://github.com/Andersbakken/rtags.git
+#cd tools/rtags
+#cmake -DLIBCLANG_LLVM_CONFIG_EXECUTABLE="/usr/bin/llvm-config-3.7" -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang .
+#make
+#./bin/rdm &
+#./bin/rc -J .
+
+# }}}
+
 echo " [OK]"
 
-# git
+# }}}
+# {{{ Git
+
 echo -ne "Initializing git configuration ..."
 ln -s CONFIG/git/gitconfig ~/.gitconfig 2> /dev/null
 echo " [OK]"
 
-# tig
+# }}}
+# {{{ Tig
+
 echo -ne "Initializing tig configuration ..."
 ln -s CONFIG/tig/tigrc ~/.tigrc 2> /dev/null
 echo " [OK]"
 
-# tmux
+# }}}
+# {{{ Tmux
+
 echo -ne "Initializing tmux configuration ..."
 ln -s CONFIG/tmux/tmux.conf ~/.tmux.conf 2> /dev/null
 echo " [OK]"
 
-# valgrind
+# }}}
+# {{{ Valgrind
+
 echo -ne "Initializing valgrind configuration ..."
 ln -s CONFIG/valgrind/valgrindrc ~/.valgrindrc 2> /dev/null
 echo " [OK]"
 
-# top
+# }}}
+# {{{ Top
+
 echo -ne "Initializing top configuration ..."
 ln -s CONFIG/top/toprc ~/.toprc  2> /dev/null
 echo " [OK]"
+
+# }}}
 
 # Core generation
 #mkdir -p /srv/data/cores
