@@ -66,4 +66,7 @@ apt-get install         \
     htop                \
     software-properties-common \
     sudo                \
+    llvm                \
+    lldb                \
+    llvm-dev            \
     vlc
