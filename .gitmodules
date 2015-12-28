@@ -152,3 +152,6 @@
 [submodule "submodules/vim/wimproved.vim"]
 	path = submodules/vim/wimproved.vim
 	url = https://github.com/kkoenig/wimproved.vim.git
+[submodule "submodules/vim/vim-rtags"]
+	path = submodules/vim/vim-rtags
+	url = https://github.com/lyuts/vim-rtags.git
