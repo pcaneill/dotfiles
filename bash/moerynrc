@@ -154,4 +154,9 @@ alias vs=" v **/*(.)"       # show all files in all subdirs plain in a list
 
 # }}}
 
+RTAGS_DEST=~/CONFIG/tools/rtags/bin
+if [ -d "`echo ${RTAGS_DEST//>}`" ]; then
+  export PATH=~/CONFIG/tools/rtags/bin:$PATH
+fi
+
 # vim: syn=sh
