@@ -17,7 +17,6 @@ apt-get install         \
     gperf               \
     htop                \
     ipython             \
-    kde-full            \
     libcap-dev          \
     libffi-dev          \
     libfuse-dev         \
@@ -60,6 +59,7 @@ apt-get install         \
     tcl8.5              \
     texinfo             \
     texlive-fonts-extra \
+    valgrind            \
     tig                 \
     tmux                \
     tofrodos            \
