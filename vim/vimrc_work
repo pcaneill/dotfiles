@@ -5,7 +5,7 @@ let g:moeryn_ycm = 0
 let g:moeryn_tern = 0
 
 set rtp=$HOME/.vim,~/CONFIG/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-source ~/CONFIG/vimr/vimrc
+source ~/CONFIG/vimrc/vimrc
 
 if has("gui_running")
     set guioptions-=m  "remove menu bar
