@@ -47,13 +47,25 @@ ln -s ../../submodules/vim/vim-signature      vim/bundle/vim-signature     2> /d
 ln -s ../../submodules/vim/vim-spacebars      vim/bundle/vim-spacebars     2> /dev/null
 ln -s ../../submodules/vim/vim-cpp-enhanced-highlight vim/bundle/syntax    2> /dev/null
 
-cp ./vim/vimrc_perso ~/.vimrc
+cp vim/vimrc_perso ~/.vimrc
+
+if [ ${IS_WORK} ]; then
+  ln -s ../../submodules/vim/vim-perfoce        vim/bundle/vim-perfoce       2> /dev/null
+  ln -s ../../submodules/vim/genutils           vim/bundle/genutils          2> /dev/null
+  cp vim/vimrc_work ~/.vimrc
+fi
+
 
 # {{{ Neovim
 
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 mkdir -p ${XDG_CONFIG_HOME}/nvim
 ln -s  ${ROOT}/vim/nvimrc_perso ${XDG_CONFIG_HOME}/nvim/init.vim
+
+if  [ ${IS_WORK} ]; then
+  ln -s  ${ROOT}/vim/nvimrc_work ${XDG_CONFIG_HOME}/nvim/init.vim
+fi
+
 
 # }}}
 # {{{ YouCompleteMe
