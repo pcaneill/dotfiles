@@ -140,6 +140,14 @@ ln -s CONFIG/top/toprc ~/.toprc  2> /dev/null
 echo " [OK]"
 
 # }}}
+# {{{ Awesome
+
+echo -ne "Initializing awesome configuration ..."
+git clone --recursive https://github.com/copycat-killer/awesome-copycats.git ~/.config/awesome 2> /dev/null
+cp ~/CONFIG/awesome/rc.lua ~/.config/awesome/rc.lua
+echo " [OK]"
+
+# }}}
 
 # Core generation
 #mkdir -p /srv/data/cores
