@@ -15,8 +15,10 @@ apt-get install         \
     flex                \
     git                 \
     gperf               \
+    help2man            \
     htop                \
     ipython             \
+    lcov                \
     libcap-dev          \
     libffi-dev          \
     libfuse-dev         \
@@ -46,6 +48,7 @@ apt-get install         \
     python-dev          \
     python-pip          \
     python-psutil       \
+    qt5-default         \
     rlwrap              \
     rtorrent            \
     ruby-dev            \
@@ -58,16 +61,14 @@ apt-get install         \
     tcl8.5              \
     texinfo             \
     texlive-fonts-extra \
-    valgrind            \
     tig                 \
     tmux                \
     tofrodos            \
+    valgrind            \
     valgrind            \
     vim                 \
     vlc                 \
     xclip               \
     xfonts-terminus     \
     xsltproc            \
-    help2man            \
-    qt5-default         \
     zsh
