@@ -41,7 +41,6 @@ apt-get install         \
     lua5.1              \
     mtasc               \
     perl                \
-    php5-dev            \
     pulseaudio          \
     pylint              \
     python-dev          \
@@ -69,4 +68,6 @@ apt-get install         \
     xclip               \
     xfonts-terminus     \
     xsltproc            \
+    help2man            \
+    qt5-default         \
     zsh
