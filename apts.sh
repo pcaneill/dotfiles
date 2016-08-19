@@ -57,6 +57,7 @@ apt-get install         \
     software-properties-common \
     source-highlight    \
     sudo                \
+    subversion          \
     swfmill             \
     tcl8.5              \
     texinfo             \
