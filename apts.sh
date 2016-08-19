@@ -42,6 +42,7 @@ apt-get install         \
     llvm-dev            \
     lua5.1              \
     mtasc               \
+    npm                 \
     perl                \
     pulseaudio          \
     pylint              \
