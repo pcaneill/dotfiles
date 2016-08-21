@@ -7,6 +7,11 @@ set ttimeoutlen=0
 " {{{ Neomake
 
 let g:syntastic_python_checkers = ['']
+
+let g:neomake_cpp_enabled_makers = ['clangcheck']
+let g:neomake_cpp_clangcheck_args=['-p', '/home/caneill/dev/cppskeleton/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
+autocmd BufWritePost *.cpp :Neomake
+
 let g:neomake_python_enable_makers = ['pylint']
 let g:neomake_javascript_enable_makers = ['jshint']
 let g:neomake_open_list=1
@@ -48,5 +53,20 @@ nnoremap <silent> ,tc :call neoterm#kill()<cr>
 
 " Git commands
 command! -nargs=+ Tg :T git <args>
+
+" }}}
+" {{{ deoplete
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
+
+set noshowmode " I use airline anyway + it tampers with echodoc.
+set completeopt+=menuone
+set completeopt-=preview
+set shortmess+=c
+
+let g:echodoc_enable_at_startup = 1
+
 
 " }}}

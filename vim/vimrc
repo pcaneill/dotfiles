@@ -5,11 +5,57 @@ set nocompatible
 
 " {{{ Pathogen
 
+
 call pathogen#infect()
 call pathogen#helptags()
 
 filetype plugin on
 filetype plugin indent on
+
+" }}}
+" {{{ Plugins
+
+call plug#begin('~/.vim/bundle')
+
+Plug 'SirVer/ultisnips'
+Plug 'vim-scripts/a.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/seoul256.vim'
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'benekastah/neomake'
+Plug 'pangloss/vim-javascript'
+Plug 'kshenoy/vim-signature'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install'}
+Plug 'othree/html5.vim'
+Plug 'Slava/vim-spacebars'
+Plug 'kassio/neoterm'
+Plug 'bruno-/vim-man'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'vim-scripts/gtags.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-scripts/genutils'
+Plug 'sjl/badwolf'
+Plug 'lyuts/vim-rtags'
+Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+
+Plug 'Shougo/echodoc.vim'
+Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/context_filetype.vim'
+
+" Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
+" Plug 'scrooloose/syntastic'
+
+" Plug 'Moeryn/vim-perforce'
+
+call plug#end()
 
 " }}}
 " {{{ Basic options
@@ -160,10 +206,11 @@ let g:SignatureMap = {
 " {{{ UltiSnips
 
 if g:moeryn_ultisnips == 1
-    let g:UltiSnipsExpandTrigger       = "<tab>"
+    let g:UltiSnipsExpandTrigger       = "<c-k>"
     let g:UltiSnipsListSnippets        = "<c-l>"
-    let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-    let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+    "let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+    "let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+    "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
     let g:UltiSnipsEditSplit = 'vertical'
 endif
@@ -179,7 +226,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q f
 if g:moeryn_ycm == 1
     let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-    let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
     set completeopt+=preview
 
