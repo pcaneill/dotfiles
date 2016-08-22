@@ -40,7 +40,10 @@ apt-get install         \
     lldb                \
     llvm                \
     llvm-dev            \
-    lua5.1              \
+    clang               \
+    libclang-dev        \
+    lua5.3              \
+    liblua5.3*          \
     mtasc               \
     npm                 \
     perl                \
