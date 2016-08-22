@@ -40,15 +40,23 @@ Plug 'equalsraf/neovim-gui-shim'
 
 Plug 'Shougo/echodoc.vim'
 
-"Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
-"Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/context_filetype.vim'
+if exists("g:moeryn_deoplete") && g:moeryn_deoplete != 0
+  " August 2016: As the time of writing deoplete-clang is not stable enough to
+  " be used, compilation database is hard to load, does not automatically open
+  " it, and does not work well with many includes
 
+  Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
+endif
+
+Plug 'Shougo/context_filetype.vim'
 Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 " Plug 'scrooloose/syntastic'
 
-" Plug 'Moeryn/vim-perforce'
+if exists("g:moeryn_work") && g:moeryn_work == 1
+    Plug 'Moeryn/vim-perforce'
+endif
 
 call plug#end()
 
@@ -91,7 +99,7 @@ au BufReadPost *
 " }}}
 
 "TODO fails when reloading
-set encoding=utf-8
+"set encoding=utf-8
 set backspace=indent,eol,start
 
 set ttimeout
@@ -146,7 +154,7 @@ set t_Co=256
 " {{{ Plugins
 " {{{ Synastic
 
-if g:moeryn_syntastic == 1
+if exists("g:moeryn_syntastic") && g:moeryn_syntastic != 0
     let g:syntastic_error_symbol = '✗'
     let g:syntastic_warning_symbol = '⚠'
 
@@ -203,7 +211,7 @@ let g:SignatureMap = {
 " }}}
 " {{{ UltiSnips
 
-if g:moeryn_ultisnips == 1
+if exists("g:moeryn_ultisnips") && g:moeryn_ultisnips != 0
     let g:UltiSnipsExpandTrigger       = "<c-k>"
     let g:UltiSnipsListSnippets        = "<c-l>"
     "let g:UltiSnipsJumpForwardTrigger  = "<tab>"
@@ -240,7 +248,7 @@ endif
 " }}}
 " {{{ Completion
 
-if g:moeryn_ycm == 1
+if exists("g:moeryn_ycm") && g:moeryn_ycm != 0
     let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 
@@ -311,7 +319,7 @@ endif
 " }}}
 " {{{ tern
 
-if g:moeryn_tern == 1
+if exists("g:moeryn_tern") && g:moeryn_tern != 0
     call tern#Enable()
     autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
