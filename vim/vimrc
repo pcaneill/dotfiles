@@ -43,14 +43,16 @@ Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/genutils'
 Plug 'sjl/badwolf'
 Plug 'lyuts/vim-rtags'
-Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+Plug 'equalsraf/neovim-gui-shim'
 
 Plug 'Shougo/echodoc.vim'
-Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
+
+"Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/context_filetype.vim'
 
-" Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 " Plug 'scrooloose/syntastic'
 
 " Plug 'Moeryn/vim-perforce'
@@ -98,6 +100,9 @@ au BufReadPost *
 "TODO fails when reloading
 set encoding=utf-8
 set backspace=indent,eol,start
+
+set ttimeout
+set ttimeoutlen=0
 
 set incsearch
 set hlsearch
@@ -221,7 +226,26 @@ endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
 
 " }}}
-" {{{ youcompleteme
+" {{{ Neomake
+
+if has("nvim")
+    let g:syntastic_python_checkers = ['']
+
+    let g:neomake_cpp_enabled_makers = ['clangcheck']
+    let g:neomake_cpp_clangcheck_args=['-p', '/home/pcaneill/dev/murex/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
+    autocmd BufWritePost *.cpp :Neomake
+
+    let g:neomake_python_enable_makers = ['pylint']
+    let g:neomake_javascript_enable_makers = ['jshint']
+    let g:neomake_open_list=1
+    let g:neomake_serialize_abort_on_error=1
+    let g:neomake_serialize=1
+    autocmd BufWritePost *.py :Neomake pylint
+    autocmd BufWritePost *.js :Neomake jshint
+endif
+
+" }}}
+" {{{ Completion
 
 if g:moeryn_ycm == 1
     let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
@@ -240,6 +264,57 @@ if g:moeryn_ycm == 1
     let g:ycm_complete_in_strings = 1
 endif
 
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources#clang#libclang_path = '/usr/local/lib/libclang.so.3.9'
+"let g:deoplete#sources#clang#clang_header='/usr/local/lib/clang'
+"let g:deoplete#sources#clang#clang_complete_database='/home/pcaneill/dev/murex/.build/compile_flags/'
+
+" }}}
+" {{{ echodoc
+
+
+let g:echodoc_enable_at_startup = 1
+set noshowmode " I use airline anyway + it tampers with echodoc.
+set completeopt+=menuone
+set completeopt-=preview
+set shortmess+=c
+
+" }}}
+" {{{ Terminal & Neoterm
+
+if has("nvim")
+    " escape
+    tnoremap <esc> <C-\><C-n>
+
+    " move from terminal to other pane
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+
+    " always be in insert mode when entering terminal
+    autocmd BufWinEnter,WinEnter term://* startinsert
+
+    " always leave insert mode when leaving terminal
+    autocmd BufLeave term://* stopinsert
+
+    " Neoterm
+
+    let g:neoterm_position = 'vertical'
+    let g:neoterm_automap_keys = ',tt'
+
+    " Useful maps
+    " hide/close all terminals
+    nnoremap <silent> ,th :call neoterm#close_all()<cr>
+    " clear terminal
+    nnoremap <silent> ,tl :call neoterm#clear()<cr>
+    " kills the current job (send a <c-c>)
+    nnoremap <silent> ,tc :call neoterm#kill()<cr>
+
+    " Git commands
+    command! -nargs=+ Tg :T git <args>
+endif
+
 " }}}
 " {{{ tern
 
@@ -256,7 +331,8 @@ let g:gitgutter_realtime = 1
 " }}}
 " {{{ code syntax
 
-let g:cpp_class_scope_highlight=1
+let g:cpp_class_scope_highlight=0
+let g:cpp_experimental_template_highlight=1
 
 " }}}
 " {{{ delimitMate
