@@ -3,16 +3,9 @@
 
 set nocompatible
 
-" {{{ Pathogen
-
-
-call pathogen#infect()
-call pathogen#helptags()
-
 filetype plugin on
 filetype plugin indent on
 
-" }}}
 " {{{ Plugins
 
 call plug#begin('~/.vim/bundle')
