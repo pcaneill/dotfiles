@@ -211,7 +211,7 @@ let g:SignatureMap = {
 " }}}
 " {{{ UltiSnips
 
-if exists("g:moeryn_ultisnips") && g:moeryn_ultisnips != 0
+"if exists("g:moeryn_ultisnips") && g:moeryn_ultisnips != 0
     let g:UltiSnipsExpandTrigger       = "<c-k>"
     let g:UltiSnipsListSnippets        = "<c-l>"
     "let g:UltiSnipsJumpForwardTrigger  = "<tab>"
@@ -219,7 +219,7 @@ if exists("g:moeryn_ultisnips") && g:moeryn_ultisnips != 0
     "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
     let g:UltiSnipsEditSplit = 'vertical'
-endif
+"endif
 
 " }}}
 " {{{ ctrlp
@@ -248,7 +248,7 @@ endif
 " }}}
 " {{{ Completion
 
-if exists("g:moeryn_ycm") && g:moeryn_ycm != 0
+"if exists("g:moeryn_ycm") && g:moeryn_ycm != 0
     let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 
@@ -263,7 +263,7 @@ if exists("g:moeryn_ycm") && g:moeryn_ycm != 0
     let g:ycm_add_preview_to_completeopt = 1
     let g:ycm_complete_in_comments = 1
     let g:ycm_complete_in_strings = 1
-endif
+"endif
 
 "let g:deoplete#enable_at_startup = 1
 "let g:deoplete#sources#clang#libclang_path = '/usr/local/lib/libclang.so.3.9'
@@ -371,7 +371,8 @@ let mapleader = ","
 " {{{ Fn
 
 " follow tag
-noremap <F2> :exec("tag ".expand("<cword>"))<cr>
+noremap <F2> :YcmCompleter GoToDefinition<cr>
+"noremap <F2> :exec("tag ".expand("<cword>"))<cr>
 noremap <C-F2> :GtagsCursor<cr>
 
 " bufExplorer
@@ -402,16 +403,18 @@ noremap <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
 " }}}
 " {{{ Normal
 
-" next compilation error
+" next quickfix
 noremap +        :cnext<cr>
 noremap <kPlus>  :cnext<cr>
-" previous compilation error
+
+" previous quickfix
 noremap -        :cprev<cr>
 noremap <kMinus> :cprev<cr>
-" next syntastic error
-noremap <S-Right> :lnext<cr>
-" previous syntastic error
-noremap <S-Left> :lprev<cr>
+
+" next loclist (YcmDiags)
+noremap <leader>n :lnext<cr>
+" previous loclist (YcmDiags)
+noremap <leader>b :lprev<cr>
 
 " change directory to the file being edited
 nnoremap ,cd :cd %:p:h<cr>
@@ -471,14 +474,22 @@ nnoremap s :w<cr>
 nnoremap :w<cr> :call input("use `s` instead")<cr>
 
 " Toggle line numbers
-nnoremap <leader>n :setlocal number!<cr>
+nnoremap <leader>l :setlocal number!<cr>
 
+" Select a block and sort it
 nnoremap <leader>s vip:!sort<cr>
 
 " Reselect last-pasted text
 nnoremap gp `[v`]
 
 nnoremap <c-s> mzzMzvzz15<c-e>`z:Pulse<cr>
+
+nnoremap <leader>i :YcmCompleter GoToInclude<cr>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<cr>
+nnoremap <leader>t :YcmCompleter GoTo<cr>
+nnoremap <leader>gt :YcmCompleter GetType<cr>
+nnoremap <leader>gp :YcmCompleter GetParent<cr>
+nnoremap <leader>c :YcmDiags<cr>
 
 " }}}
 " {{{ Interactive
