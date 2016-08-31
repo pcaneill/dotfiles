@@ -489,6 +489,7 @@ nnoremap <leader>d :YcmCompleter GoToDeclaration<cr>
 nnoremap <leader>t :YcmCompleter GoTo<cr>
 nnoremap <leader>gt :YcmCompleter GetType<cr>
 nnoremap <leader>gp :YcmCompleter GetParent<cr>
+nnoremap <leader>f :YcmCompleter FixIt<cr>:ll<cr>
 nnoremap <leader>c :YcmDiags<cr>
 
 " }}}
