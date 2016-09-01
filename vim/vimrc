@@ -58,6 +58,9 @@ if exists("g:moeryn_work") && g:moeryn_work == 1
     Plug 'Moeryn/vim-perforce'
 endif
 
+Plug 'mileszs/ack.vim'
+Plug 'rhysd/vim-clang-format'
+
 call plug#end()
 
 " }}}
@@ -336,9 +339,22 @@ let g:cpp_class_scope_highlight=0
 let g:cpp_experimental_template_highlight=1
 
 " }}}
+" {{{ Ag
+
+let g:ackprg = 'ag --vimgrep'
+
+" }}}
 " {{{ delimitMate
 
 let delimitMate_expand_cr=1
+
+" }}}
+" {{{ ClangFormat
+
+let g:clang_format#detect_style_file = 1
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 " }}}
 " }}}
@@ -379,7 +395,7 @@ noremap <C-F2> :GtagsCursor<cr>
 map <F3> <leader>be
 
 " grep on the current word
-noremap <F4> :gr! -w <cword><cr>
+noremap <F4> :Ack <cword><cr>
 
 set pastetoggle=<F5>
 
