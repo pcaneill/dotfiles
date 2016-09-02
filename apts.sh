@@ -67,6 +67,7 @@ apt-get install         \
     texinfo             \
     texlive-fonts-extra \
     tig                 \
+    silversearcher-ag   \
     tmux                \
     tofrodos            \
     valgrind            \
