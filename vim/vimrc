@@ -37,8 +37,11 @@ Plug 'vim-scripts/genutils'
 Plug 'sjl/badwolf'
 Plug 'lyuts/vim-rtags'
 Plug 'equalsraf/neovim-gui-shim'
-
 Plug 'Shougo/echodoc.vim'
+
+if has("nvim")
+   Plug 'critiqjo/lldb.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 if exists("g:moeryn_deoplete") && g:moeryn_deoplete != 0
   " August 2016: As the time of writing deoplete-clang is not stable enough to
@@ -235,9 +238,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q f
 if has("nvim")
     let g:syntastic_python_checkers = ['']
 
-    let g:neomake_cpp_enabled_makers = ['clangcheck']
+    let g:neomake_cpp_enabled_makers = ['clangcheck', 'clangtidy']
     let g:neomake_cpp_clangcheck_args=['-p', '/home/pcaneill/dev/murex/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
-    autocmd BufWritePost *.cpp :Neomake
+    let g:neomake_cpp_clangtidy_args=['-p', '/home/pcaneill/dev/murex/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
+    "autocmd BufWritePost *.cpp :Neomake clangcheck
+    "autocmd BufWritePost *.c :Neomake clangcheck
+    "autocmd BufWritePost *.hpp :Neomake clangcheck
+    "autocmd BufWritePost *.h :Neomake clangcheck
 
     let g:neomake_python_enable_makers = ['pylint']
     let g:neomake_javascript_enable_makers = ['jshint']
@@ -427,9 +434,9 @@ noremap <kPlus>  :cnext<cr>
 noremap -        :cprev<cr>
 noremap <kMinus> :cprev<cr>
 
-" next loclist (YcmDiags)
+" next loclist (YcmDiags, neomake)
 noremap <leader>n :lnext<cr>
-" previous loclist (YcmDiags)
+" previous loclist (YcmDiags, neomake)
 noremap <leader>b :lprev<cr>
 
 " change directory to the file being edited
@@ -506,7 +513,9 @@ nnoremap <leader>t :YcmCompleter GoTo<cr>
 nnoremap <leader>gt :YcmCompleter GetType<cr>
 nnoremap <leader>gp :YcmCompleter GetParent<cr>
 nnoremap <leader>f :YcmCompleter FixIt<cr>:ll<cr>
-nnoremap <leader>c :YcmDiags<cr>
+"nnoremap <leader>c :YcmDiags<cr>
+nnoremap <leader>ct :Neomake clangtidy<cr>
+nnoremap <leader>cn :Neomake clangcheck<cr>
 
 " }}}
 " {{{ Interactive
