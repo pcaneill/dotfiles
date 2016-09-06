@@ -74,6 +74,13 @@ ln -s CONFIG/tig/tigrc ~/.tigrc 2> /dev/null
 echo " [OK]"
 
 # }}}
+# {{{ GDB
+
+echo -ne "Initializing gdb configuration ..."
+ln -s CONFIG/gdb/gdbinit ~/.gdbinit 2> /dev/null
+echo " [OK]"
+
+# }}}
 # {{{ Tmux
 
 echo -ne "Initializing tmux configuration ..."
