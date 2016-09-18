@@ -1,0 +1,91 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/dev/java/oc1" />
+        <option value="$USER_HOME$/dev/java" />
+        <option value="$USER_HOME$/dev/simple-petstore" />
+        <option value="$USER_HOME$/dev/fitness-example" />
+        <option value="$USER_HOME$/dev/java/HelloWorld" />
+        <option value="$USER_HOME$/dev/java/test" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="$USER_HOME$/dev/java" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/dev/java/oc1" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/dev/fitness-example">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474120082708" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474190992494" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/HelloWorld">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1473884470318" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/oc1">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474191114053" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/test">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1473602261625" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/simple-petstore">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474190938556" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/dev/java" />
+  </component>
+</application>

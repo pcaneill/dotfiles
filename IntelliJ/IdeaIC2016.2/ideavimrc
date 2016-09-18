@@ -1,0 +1,11 @@
+let mapleader = ","
+
+nnoremap <leader>ec :action ExtractClass<cr>
+nnoremap <leader>esc :action ExtractSuperClass<cr>
+nnoremap <leader>ef :action ExtractFunction<cr>
+nnoremap <leader>efs :action ExtractFunctionToScope<cr>
+nnoremap <leader>em :action ExtractMethod<cr>
+nnoremap <leader>ei :action ExtractInclude<cr>
+
+nnoremap <leader>if :action IntroduceField<cr>
+nnoremap <leader>if :action IntroduceVariable<cr>

@@ -1,0 +1,42 @@
+<application>
+  <component name="DimensionService">
+    <location key="FileChooserDialogImpl.1920.0.2560.1440" x="1921" y="1" />
+    <location key="new project wizard.1920.0.2560.1440" x="2478" y="411" />
+    <location key="WELCOME_SCREEN.1920.0.2560.1440" x="2880" y="230" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080" x="2666" y="206" />
+    <location key="new project wizard.0.0.1920.1080" x="2661" y="259" />
+    <location key="WELCOME_SCREEN.0.0.1920.1080" x="961" y="230" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080" x="1" y="386" />
+    <location key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog.1920.0.2560.1440" x="1" y="1" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.1920.0.2560.1440" x="2345" y="313" />
+    <location key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog.1920.0.2560.1440" x="2956" y="454" />
+    <location key="SettingsEditor.1920.0.2560.1440" x="0" y="20" />
+    <location key="com.intellij.ide.util.TipDialog.1920.0.2560.1440" x="2221" y="159" />
+    <location key="NewModule_or_Project.wizard.1920.0.2560.1440" x="2313" y="388" />
+    <location key="extract.method.dialog.1920.0.2560.1440" x="2150" y="176" />
+    <location key="ReplaceDuplicatesPrompt.1920.0.2560.1440" x="0" y="20" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.1920.0.2560.1440" x="2300" y="481" />
+    <location key="RefactorJ.ExtractClass.1920.0.2560.1440" x="-2166" y="-631" />
+    <location key="#Vim_Emulation.1920.0.2560.1440" x="0" y="20" />
+    <location key="#Browse_Repositories.1920.0.2560.1440" x="2783" y="558" />
+    <location key="GitCloneDialog.1920.0.2560.1440" x="3649" y="642" />
+    <size key="new project wizard.0.0.1920.1080" width="734" height="731" />
+    <size key="GridCell.Tab.0.left.1920.0.2560.1440" width="1190" height="377" />
+    <size key="GridCell.Tab.0.center.1920.0.2560.1440" width="1190" height="377" />
+    <size key="GridCell.Tab.0.right.1920.0.2560.1440" width="1190" height="377" />
+    <size key="GridCell.Tab.0.bottom.1920.0.2560.1440" width="1190" height="377" />
+    <size key="GridCell.Tab.1.left.1920.0.2560.1440" width="2560" height="522" />
+    <size key="GridCell.Tab.1.center.1920.0.2560.1440" width="2560" height="522" />
+    <size key="GridCell.Tab.1.right.1920.0.2560.1440" width="2560" height="522" />
+    <size key="GridCell.Tab.1.bottom.1920.0.2560.1440" width="2560" height="522" />
+    <size key="SettingsEditor.1920.0.2560.1440" width="4515" height="2040" />
+    <size key="NewModule_or_Project.wizard.1920.0.2560.1440" width="839" height="664" />
+    <size key="com.intellij.ide.util.TipDialog.1920.0.2560.1440" width="1920" height="1060" />
+    <size key="FileChooserDialogImpl.1920.0.2560.1440" width="5011" height="2892" />
+    <size key="ReplaceDuplicatesPrompt.1920.0.2560.1440" width="4729" height="2926" />
+    <size key="RefactorJ.ExtractClass.1920.0.2560.1440" width="4908" height="3270" />
+    <size key="#Vim_Emulation.1920.0.2560.1440" width="4509" height="2896" />
+    <size key="extract.method.dialog.1920.0.2560.1440" width="1920" height="1060" />
+    <size key="javadoc.popup.1920.0.2560.1440" width="483" height="178" />
+  </component>
+</application>

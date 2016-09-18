@@ -1,0 +1,7 @@
+<application>
+  <component name="UISettings">
+    <option name="FONT_FACE" value="Source Code Pro Medium" />
+    <option name="FONT_SIZE" value="10" />
+    <option name="SHOW_MEMORY_INDICATOR" value="true" />
+  </component>
+</application>
