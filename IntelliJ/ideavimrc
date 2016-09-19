@@ -2,15 +2,29 @@ let mapleader = ","
 
 # Extract
 nnoremap <leader>ec :action ExtractClass<cr>
+vnoremap <leader>ec :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractClass<cr>
 nnoremap <leader>esc :action ExtractSuperClass<cr>
+vnoremap <leader>esc :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractSuperClass<cr>
 nnoremap <leader>ef :action ExtractFunction<cr>
+vnoremap <leader>ef :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractSuperClass<cr>
 nnoremap <leader>efs :action ExtractFunctionToScope<cr>
+vnoremap <leader>efs :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractFunctionToScope<cr>
 nnoremap <leader>em :action ExtractMethod<cr>
+vnoremap <leader>em :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractMethod<cr>
 nnoremap <leader>ei :action ExtractInclude<cr>
+vnoremap <leader>ei :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractInclude<cr>
 
 # Introduce
 nnoremap <leader>if :action IntroduceField<cr>
+vnoremap <leader>if :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<cr>
 nnoremap <leader>iv :action IntroduceVariable<cr>
+vnoremap <leader>iv :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<cr>
+
+# Refactor
+nnoremap <leader>rn :action RenameElement<cr>
+vnoremap <leader>rn :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action RenameElement<cr>
+nnoremap <leader>ri :action Inline<cr>
+vnoremap <leader>ri :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action Inline<cr>
 
 # New
 nnoremap <leader>nc :action NewClass<cr>
