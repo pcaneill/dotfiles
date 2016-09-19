@@ -1,5 +1,6 @@
 let mapleader = ","
 
+# Extract
 nnoremap <leader>ec :action ExtractClass<cr>
 nnoremap <leader>esc :action ExtractSuperClass<cr>
 nnoremap <leader>ef :action ExtractFunction<cr>
@@ -7,5 +8,16 @@ nnoremap <leader>efs :action ExtractFunctionToScope<cr>
 nnoremap <leader>em :action ExtractMethod<cr>
 nnoremap <leader>ei :action ExtractInclude<cr>
 
+# Introduce
 nnoremap <leader>if :action IntroduceField<cr>
-nnoremap <leader>if :action IntroduceVariable<cr>
+nnoremap <leader>iv :action IntroduceVariable<cr>
+
+# New
+nnoremap <leader>nc :action NewClass<cr>
+nnoremap <leader>np :action NewPackage<cr>
+
+# Generate
+nnoremap <leader>gc :action GenerateConstructor<cr>
+nnoremap <leader>go :action OverrideMethods<cr>
+nnoremap <leader>gi :action ImplementMethods<cr>
+
