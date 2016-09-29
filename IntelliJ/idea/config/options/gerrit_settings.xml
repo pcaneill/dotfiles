@@ -1,0 +1,3 @@
+<application>
+  <component name="GerritSettings" Login="py.caneill@gmail.com" Host="https://gerrit-review.googlesource.com" ListAllChanges="true" AutomaticRefresh="false" RefreshTimeout="0" ReviewNotifications="false" PushToGerrit="false" ShowChangeNumberColumn="true" ShowChangeIdColumn="false" />
+</application>

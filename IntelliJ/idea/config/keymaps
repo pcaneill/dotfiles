@@ -1,0 +1,71 @@
+<keymap version="1" name="Default for XWin copy" parent="Default for XWin">
+  <action id="ActivateFavoritesToolWindow">
+    <keyboard-shortcut first-keystroke="alt 2" />
+    <keyboard-shortcut first-keystroke="alt #10000e9" />
+  </action>
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="alt 1" />
+    <keyboard-shortcut first-keystroke="alt ampersand" />
+  </action>
+  <action id="ActivateRunToolWindow">
+    <keyboard-shortcut first-keystroke="alt 4" />
+    <keyboard-shortcut first-keystroke="alt quote" />
+  </action>
+  <action id="ActivateStructureToolWindow">
+    <keyboard-shortcut first-keystroke="alt 7" />
+    <keyboard-shortcut first-keystroke="alt #10000e8" />
+  </action>
+  <action id="ActivateTODOToolWindow">
+    <keyboard-shortcut first-keystroke="alt 6" />
+    <keyboard-shortcut first-keystroke="alt minus" />
+  </action>
+  <action id="ActivateVersionControlToolWindow">
+    <keyboard-shortcut first-keystroke="alt 9" />
+    <keyboard-shortcut first-keystroke="alt #10000c7" />
+  </action>
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="#1000153" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="GotoNextError" />
+  <action id="HippieCompletion">
+    <keyboard-shortcut first-keystroke="alt slash" />
+    <keyboard-shortcut first-keystroke="tab" />
+    <keyboard-shortcut first-keystroke="alt colon" />
+  </action>
+  <action id="JumpToLastWindow" />
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="Resume" />
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="f9" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="f10" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="shift alt enter" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="shift alt left" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="shift alt right" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="TypeHierarchy" />
+  <action id="TypeHierarchyBase.BaseOnThisType" />
+  <action id="Vcs.Log.FocusTextFilter" />
+</keymap>

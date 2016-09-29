@@ -1,15 +1,15 @@
 <application>
   <component name="PropertiesComponent">
     <property name="installed.kotlin.plugin.version" value="1.0.3-release-IJ2016.1-120" />
-    <property name="project.wizard.group" value="JAVA_MODULE" />
-    <property name="ideavim.statistics.timestamp" value="1474144985643" />
+    <property name="project.wizard.group" value="JavaEE" />
+    <property name="ideavim.statistics.timestamp" value="1474915662647" />
     <property name="project.wizard.template" value="Java" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/dev/java/oc1&#10;/home/caneill/dev/java/oc1/openclassroom1.iml&#10;/home/caneill/.ideavimrc&#10;/home/caneill/dev/java&#10;/home/caneill/dev/fitness-example/pom.xml&#10;/home/caneill/dev/simple-petstore&#10;/usr/lib/jvm/java-1.8.0-openjdk-amd64&#10;/home/caneill/dev/simple-petstore/build.gradle&#10;/usr/lib/jvm/java-8-openjdk-amd64" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/tools/gwt-2.8.0-rc1&#10;/home/caneill/dev/java/gwt&#10;/home/caneill/dev/gerrit&#10;/home/caneill/dev/java/oc1&#10;/home/caneill/dev/java/oc1/openclassroom1.iml&#10;/home/caneill/.ideavimrc&#10;/home/caneill/dev/java&#10;/home/caneill/dev/fitness-example/pom.xml&#10;/home/caneill/dev/simple-petstore&#10;/usr/lib/jvm/java-1.8.0-openjdk-amd64&#10;/home/caneill/dev/simple-petstore/build.gradle&#10;/usr/lib/jvm/java-8-openjdk-amd64" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8 (1)" />
     <property name="GradleModuleWizard.inheritGroupId" value="true" />
     <property name="GradleModuleWizard.inheritVersion" value="true" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
-    <property name="lastTip" value="15" />
+    <property name="lastTip" value="27" />
     <property name="ExpandBeforeRunStepsPanel" value="true" />
     <property name="BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR" value="true" />
     <property name="BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />
@@ -41,10 +41,18 @@
     <property name="settings.code.style.selected.tab.JAVA" value="Tabs and Indents" />
     <property name="search.everywhere.max.popup.width" value="640" />
     <property name="JUnitSupport.hidePassedTests" value="false" />
-    <property name="PLUGIN_FILTER" value="gerr&#10;innerbuilder&#10;vim" />
+    <property name="PLUGIN_FILTER" value="completion&#10;gwt&#10;eclipse&#10;gerr&#10;innerbuilder" />
     <property name="decompiler.legal.notice.accepted" value="true" />
-    <property name="last.imported.location" value="$USER_HOME$/dev/java/oc1" />
-    <property name="create.project.preferred.importer" value="Existing Sources" />
+    <property name="last.imported.location" value="$USER_HOME$/dev/gerrit" />
+    <property name="create.project.preferred.importer" value="Eclipse" />
     <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="eclipse.project.dir" value="$USER_HOME$/dev/gerrit" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
+    <property name="KEYMAP" value="lookup&#10;down&#10;navigate&#10;todo&#10;favorites" />
+    <property name="evlsprt3.162" value="16" />
+    <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="false" />
+    <property name="FrameworksFinderRecursivePanel[0]" value="0.16625103" />
   </component>
 </application>

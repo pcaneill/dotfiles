@@ -2,7 +2,11 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/dev/java/StockWatcher" />
+        <option value="$USER_HOME$/dev/java/untitled" />
         <option value="$USER_HOME$/dev/java/oc1" />
+        <option value="$USER_HOME$/dev/java/gwt" />
+        <option value="$USER_HOME$/dev/gerrit" />
         <option value="$USER_HOME$/dev/java" />
         <option value="$USER_HOME$/dev/simple-petstore" />
         <option value="$USER_HOME$/dev/fitness-example" />
@@ -12,10 +16,10 @@
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/dev/java" />
+        <option value="$USER_HOME$/dev/java/StockWatcher" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/dev/java/oc1" />
+    <option name="lastPath" value="$USER_HOME$/dev/java/StockWatcher" />
     <option name="additionalInfo">
       <map>
         <entry key="$USER_HOME$/dev/fitness-example">
@@ -25,6 +29,17 @@
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="projectOpenTimestamp" value="1474120082708" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/gerrit">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-162.2032.8" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474729560062" />
               <option name="buildTimestamp" value="1473372000000" />
             </RecentProjectMetaInfo>
           </value>
@@ -51,13 +66,35 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/dev/java/oc1">
+        <entry key="$USER_HOME$/dev/java/StockWatcher">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2032.8" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474915661725" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/gwt">
           <value>
             <RecentProjectMetaInfo>
               <option name="build" value="IC-162.2032.8" />
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1474191114053" />
+              <option name="projectOpenTimestamp" value="1474804348608" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/oc1">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2032.8" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474807815883" />
               <option name="buildTimestamp" value="1473372000000" />
             </RecentProjectMetaInfo>
           </value>
@@ -69,6 +106,17 @@
               <option name="productionCode" value="IC" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="projectOpenTimestamp" value="1473602261625" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/java/untitled">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2032.8" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1474813806961" />
               <option name="buildTimestamp" value="1473372000000" />
             </RecentProjectMetaInfo>
           </value>

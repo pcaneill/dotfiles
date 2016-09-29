@@ -2,19 +2,31 @@
   <component name="UsageTrigger">
     <counts>
       <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="JSDebugConfig.Debug.browser-default.preferredBrowser-null.no_mappings" count="6" />
+      <entry feature="OpenInBrowser.Opera" count="1" />
       <entry feature="execute.Application.Coverage" count="1" />
       <entry feature="execute.Application.Debug" count="1" />
-      <entry feature="execute.Application.Run" count="13" />
+      <entry feature="execute.Application.Run" count="15" />
+      <entry feature="execute.GWT.ConfigurationType.Debug" count="12" />
+      <entry feature="execute.GWT.ConfigurationType.Run" count="18" />
       <entry feature="execute.GroovyScriptRunConfiguration.Debug" count="1" />
       <entry feature="execute.GroovyScriptRunConfiguration.Run" count="9" />
-      <entry feature="execute.JUnit.Run" count="22" />
+      <entry feature="execute.JUnit.Coverage" count="4" />
+      <entry feature="execute.JUnit.Run" count="86" />
+      <entry feature="execute.JavascriptDebugType.Debug" count="6" />
       <entry feature="ide.settings.Appearance" count="4" />
       <entry feature="ide.settings.Colors_&amp;_Fonts" count="1" />
       <entry feature="ide.settings.Console_Font" count="4" />
       <entry feature="ide.settings.Font" count="4" />
       <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Gerrit" count="4" />
       <entry feature="ide.settings.Java" count="1" />
-      <entry feature="ideaapp.started" count="16" />
+      <entry feature="ide.settings.Keymap" count="12" />
+      <entry feature="ide.settings.Vim_Emulation" count="2" />
+      <entry feature="idea.caches.invalidated" count="1" />
+      <entry feature="ideaapp.started" count="28" />
+      <entry feature="terminal.linux" count="2" />
+      <entry feature="uml.ShowDiagram.JAVA" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.Configure" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="2" />
     </counts>
