@@ -1,6 +1,11 @@
 let mapleader = ","
 
-# Extract
+
+nnoremap K :action CloseContent<cr>
+
+
+" {{{ Extract <leader>e
+
 nnoremap <leader>ec :action ExtractClass<cr>
 vnoremap <leader>ec :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractClass<cr>
 nnoremap <leader>esc :action ExtractSuperClass<cr>
@@ -14,24 +19,42 @@ vnoremap <leader>em :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:acti
 nnoremap <leader>ei :action ExtractInclude<cr>
 vnoremap <leader>ei :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractInclude<cr>
 
-# Introduce
-nnoremap <leader>if :action IntroduceField<cr>
-vnoremap <leader>if :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<cr>
-nnoremap <leader>iv :action IntroduceVariable<cr>
-vnoremap <leader>iv :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<cr>
+" }}}
+" {{{ Introduce <leader>i
 
-# Refactor
+nnoremap <leader>nf :action IntroduceField<cr>
+vnoremap <leader>nf :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<cr>
+nnoremap <leader>nv :action IntroduceVariable<cr>
+vnoremap <leader>nv :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<cr>
+nnoremap <leader>nc :action NewClass<cr>
+nnoremap <leader>np :action NewPackage<cr>
+nnoremap <leader>nr :action GenerateConstructor<cr>
+nnoremap <leader>no :action OverrideMethods<cr>
+nnoremap <leader>ni :action ImplementMethods<cr>
+
+" }}}
+" {{{ Refactor <leader>r
+
 nnoremap <leader>rn :action RenameElement<cr>
 vnoremap <leader>rn :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action RenameElement<cr>
 nnoremap <leader>ri :action Inline<cr>
 vnoremap <leader>ri :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action Inline<cr>
 
-# New
-nnoremap <leader>nc :action NewClass<cr>
-nnoremap <leader>np :action NewPackage<cr>
+" }}}
+" {{{ GoTo <leader>g
 
-# Generate
-nnoremap <leader>gc :action GenerateConstructor<cr>
-nnoremap <leader>go :action OverrideMethods<cr>
-nnoremap <leader>gi :action ImplementMethods<cr>
+nnoremap <leader>gt :action GotoTest<cr>
+nnoremap <leader>gi :action GotoImplementation<cr>
+nnoremap <leader>gd :action GotoDeclaration<cr>
+nnoremap <F2> :action GotoDeclaration<cr>
+nnoremap <C-t> :action Back<cr>
+
+" }}}
+" {{{ Run
+
+nnoremap <leader>rt :action RunClass<cr>
+nnoremap <leader>rc :action ChooseRunConfiguration<cr>
+
+
+" }}}
 
