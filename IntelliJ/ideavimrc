@@ -31,6 +31,7 @@ nnoremap <leader>np :action NewPackage<cr>
 nnoremap <leader>nr :action GenerateConstructor<cr>
 nnoremap <leader>no :action OverrideMethods<cr>
 nnoremap <leader>ni :action ImplementMethods<cr>
+nnoremap <leader>nt :action GenerateTestMethod<cr>
 
 " }}}
 " {{{ Refactor <leader>r
