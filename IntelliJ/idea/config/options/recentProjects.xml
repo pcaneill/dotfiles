@@ -2,6 +2,8 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/dev/budgetor" />
+        <option value="$USER_HOME$/dev/beta" />
         <option value="$USER_HOME$/dev/java/StockWatcher" />
         <option value="$USER_HOME$/dev/java/untitled" />
         <option value="$USER_HOME$/dev/java/oc1" />
@@ -16,12 +18,34 @@
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/dev/java/StockWatcher" />
+        <option value="$USER_HOME$/dev/budgetor" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/dev/java/StockWatcher" />
+    <option name="lastPath" value="$USER_HOME$/dev/budgetor" />
     <option name="additionalInfo">
       <map>
+        <entry key="$USER_HOME$/dev/beta">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2032.8" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1475177553193" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/dev/budgetor">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2032.8" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1475184255692" />
+              <option name="buildTimestamp" value="1473372000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/dev/fitness-example">
           <value>
             <RecentProjectMetaInfo>
@@ -72,7 +96,7 @@
               <option name="build" value="IU-162.2032.8" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1474915661725" />
+              <option name="projectOpenTimestamp" value="1475173996269" />
               <option name="buildTimestamp" value="1473372000000" />
             </RecentProjectMetaInfo>
           </value>
@@ -134,6 +158,6 @@
         </entry>
       </map>
     </option>
-    <option name="lastProjectLocation" value="$USER_HOME$/dev/java" />
+    <option name="lastProjectLocation" value="$USER_HOME$/dev" />
   </component>
 </application>
