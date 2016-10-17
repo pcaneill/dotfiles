@@ -442,14 +442,17 @@ end
 -- }}}
 
 -- {{{ Mouse Bindings
+
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
+
 -- }}}
 
 -- {{{ Key bindings
+
 globalkeys = awful.util.table.join(
     -- Take a screenshot
     -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
@@ -467,34 +470,34 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "Print", function () awful.util.spawn_with_shell("scrot -e 'mv $f ~/Desktop/'' 2> /dev/null && xfe ~/Desktop/ & sleep 1 && sxiv ~/Desktop/$f'") end),
 
     -- Default client focus
-    awful.key({ modkey, "Shift" }, "k",
+    awful.key({ modkey }, "k",
         function ()
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey, "Shift" }, "j",
+    awful.key({ modkey }, "j",
         function ()
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
 
     -- By direction client focus
-    awful.key({ modkey }, "j",
+    awful.key({ modkey, "Control" }, "j",
         function()
             awful.client.focus.bydirection("down")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "k",
+    awful.key({ modkey, "Control" }, "k",
         function()
             awful.client.focus.bydirection("up")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "h",
+    awful.key({ modkey, "Control" }, "h",
         function()
             awful.client.focus.bydirection("left")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "l",
+    awful.key({ modkey, "Control" }, "l",
         function()
             awful.client.focus.bydirection("right")
             if client.focus then client.focus:raise() end
@@ -513,8 +516,8 @@ globalkeys = awful.util.table.join(
     end),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
+    awful.key({ modkey, "Shift"}, "j", function () awful.client.swap.byidx(  1)    end),
+    awful.key({ modkey, "Shift"}, "k", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
@@ -807,6 +810,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- {{{ Arrange signal handler
+
 for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
         local clients = awful.client.visible(s)
         local layout  = awful.layout.getname(awful.layout.get(s))
@@ -830,4 +834,5 @@ for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
         end
       end)
 end
+
 -- }}}
