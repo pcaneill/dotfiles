@@ -14,7 +14,6 @@ awful.rules     = require("awful.rules")
 local wibox     = require("wibox")
 local beautiful = require("beautiful")
 local naughty   = require("naughty")
-local drop      = require("scratchdrop")
 local lain      = require("lain")
 
 -- }}}
@@ -89,6 +88,11 @@ local layouts = {
     awful.layout.suit.max,
 }
 
+-- quake terminal
+local quakeconsole = {}
+for s = 1, screen.count() do
+   quakeconsole[s] = lain.util.quake({ app = terminal })
+end
 -- }}}
 
 -- {{{ Tags
@@ -226,10 +230,9 @@ tempwidget = lain.widgets.temp({
 baticon = wibox.widget.imagebox(beautiful.widget_batt)
 batwidget = lain.widgets.bat({
     settings = function()
-        if bat_now.perc == "N/A" then
-            perc = "AC "
-        else
-            perc = bat_now.perc .. "% "
+        perc = bat_now.perc .. "% "
+        if bat_now.ac_status == 1 then
+            perc = perc .. "Plug "
         end
         widget:set_text(perc)
     end
@@ -544,7 +547,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
     -- Dropdown terminal
-    awful.key({ modkey,           }, "z",      function () drop(terminal) end),
+    awful.key({ modkey,	          }, "z",      function () quakeconsole[mouse.screen]:toggle() end),
 
     -- Widgets popups
     awful.key({ altkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
@@ -600,19 +603,14 @@ globalkeys = awful.util.table.join(
 
     -- User programs
     awful.key({ modkey }, "q", function () awful.util.spawn(browser) end),
-    awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
     awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end)
+    awful.key({ modkey }, "x", function ()
+        awful.util.spawn(string.format("dmenu_run -i -fn 'Tamsyn' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+        beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
+		end)
 )
 
 clientkeys = awful.util.table.join(
@@ -796,43 +794,32 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
--- No border for maximized clients
+-- No border for maximized or single clients
 client.connect_signal("focus",
     function(c)
         if c.maximized_horizontal == true and c.maximized_vertical == true then
-            c.border_color = beautiful.border_normal
-        else
+            c.border_width = 0
+        elseif #awful.client.visible(mouse.screen) > 1 then
+            c.border_width = beautiful.border_width
             c.border_color = beautiful.border_focus
         end
     end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
 -- }}}
 
 -- {{{ Arrange signal handler
-
-for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
+for s = 1, screen.count() do screen[s]:connect_signal("arrange",
+    function ()
         local clients = awful.client.visible(s)
         local layout  = awful.layout.getname(awful.layout.get(s))
 
-        if #clients > 0 then -- Fine grained borders and floaters control
+        if #clients > 0 then
             for _, c in pairs(clients) do -- Floaters always have borders
-                -- No borders with only one humanly visible client
-                if layout == "max" then
-                    c.border_width = 0
-                elseif awful.client.floating.get(c) or layout == "floating" then
-                    c.border_width = beautiful.border_width
-                elseif #clients == 1 then
-                    clients[1].border_width = 0
-                    if layout ~= "max" then
-                        awful.client.moveresize(0, 0, 2, 0, clients[1])
-                    end
-                else
+                if awful.client.floating.get(c) or layout == "floating" then
                     c.border_width = beautiful.border_width
                 end
             end
         end
-      end)
+    end)
 end
-
 -- }}}
