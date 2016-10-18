@@ -239,8 +239,8 @@ if has("nvim")
     let g:syntastic_python_checkers = ['']
 
     let g:neomake_cpp_enabled_makers = ['clangcheck', 'clangtidy']
-    let g:neomake_cpp_clangcheck_args=['-p', '/home/pcaneill/dev/murex/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
-    let g:neomake_cpp_clangtidy_args=['-p', '/home/pcaneill/dev/murex/.build/compile_flags', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
+    let g:neomake_cpp_clangcheck_args=['-p', '/home/pcaneill/dev/murex/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
+    let g:neomake_cpp_clangtidy_args=['-p', '/home/pcaneill/dev/murex/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location', '-extra-arg=-fshow-column"']
     "autocmd BufWritePost *.cpp :Neomake clangcheck
     "autocmd BufWritePost *.c :Neomake clangcheck
     "autocmd BufWritePost *.hpp :Neomake clangcheck
