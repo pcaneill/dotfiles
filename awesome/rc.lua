@@ -172,7 +172,7 @@ lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
 -- Weather
 weathericon = wibox.widget.imagebox(beautiful.widget_weather)
 myweather = lain.widgets.weather({
-    city_id = 123456, -- placeholder
+    city_id = 2988507, -- placeholder
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
@@ -233,6 +233,9 @@ batwidget = lain.widgets.bat({
         perc = bat_now.perc .. "% "
         if bat_now.ac_status == 1 then
             perc = perc .. "Plug "
+        end
+        if perc ~= "N/A" then
+           perc = ""
         end
         widget:set_text(perc)
     end
@@ -607,6 +610,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
 
     -- Prompt
+    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey }, "x", function ()
         awful.util.spawn(string.format("dmenu_run -i -fn 'Tamsyn' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
