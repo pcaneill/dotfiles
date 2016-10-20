@@ -1,0 +1,15 @@
+#!/bin/sh
+
+touchpadID=$(xinput list | grep "TouchPad" | awk -F " " '{print $6}' | awk -F "=" '{print $2}')
+touchpadEnabled=$(xinput list-props $touchpadID | grep "Device Enabled" | awk -F ":" '{print $2}')
+
+# change to other state
+if [ $touchpadEnabled = 0 ]; then
+   xinput --set-prop $touchpadID "Device Enabled" 1 
+elif [ $touchpadEnabled = 1 ]; then
+   xinput --set-prop $touchpadID "Device Enabled" 0
+else
+    echo "Couldn't get touchpad status from xinput"
+    exit 1
+fi
+exit 0

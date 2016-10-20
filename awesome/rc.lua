@@ -234,7 +234,7 @@ batwidget = lain.widgets.bat({
         if bat_now.ac_status == 1 then
             perc = perc .. "Plug "
         end
-        if perc ~= "N/A" then
+        if perc == "N/A" then
            perc = ""
         end
         widget:set_text(perc)
@@ -463,6 +463,8 @@ globalkeys = awful.util.table.join(
     -- Take a screenshot
     -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
     awful.key({ altkey }, "p", function() os.execute("screenshot") end),
+
+    awful.key({ modkey }, "t", function() os.execute("switchtouchpad") end),
 
     -- Tag browsing
     awful.key({ modkey }, "Left",   awful.tag.viewprev       ),
