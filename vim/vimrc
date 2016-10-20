@@ -43,16 +43,6 @@ if has("nvim")
    Plug 'critiqjo/lldb.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 
-if exists("g:moeryn_deoplete") && g:moeryn_deoplete != 0
-  " August 2016: As the time of writing deoplete-clang is not stable enough to
-  " be used, compilation database is hard to load, does not automatically open
-  " it, and does not work well with many includes
-
-  Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/neoinclude.vim', { 'do': ':UpdateRemotePlugins' }
-endif
-
 Plug 'Shougo/context_filetype.vim'
 Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 " Plug 'scrooloose/syntastic'
@@ -79,7 +69,7 @@ augroup cline
     au WinEnter,InsertLeave * set cursorline
 augroup END
 
-"* }}}
+" }}}
 "  {{{ Wildmenu completion
 
 set wildmenu
@@ -160,30 +150,28 @@ set t_Co=256
 " {{{ Plugins
 " {{{ Synastic
 
-if exists("g:moeryn_syntastic") && g:moeryn_syntastic != 0
-    let g:syntastic_error_symbol = '✗'
-    let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
-    let g:syntastic_mode_map = { 'mode': 'active',
-                               \ 'passive_filetypes': [ ] }
-    let g:syntastic_ignore_files = ['^/usr/include/']
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_auto_jump=0
-    let g:syntastic_check_on_open=1
-    let g:syntastic_silent_make=0
+let g:syntastic_mode_map = { 'mode': 'active',
+         \ 'passive_filetypes': [ ] }
+let g:syntastic_ignore_files = ['^/usr/include/']
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_jump=0
+let g:syntastic_check_on_open=1
+let g:syntastic_silent_make=0
 
-    let g:syntastic_c_compiler = 'clang'
-    let g:syntastic_c_compiler_options = ''
-    let g:syntastic_c_include_dirs = [ ]
-    let g:syntastic_c_no_include_search = 1
-    let g:syntastic_c_no_default_include_dirs = 1
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = ''
+let g:syntastic_c_include_dirs = [ ]
+let g:syntastic_c_no_include_search = 1
+let g:syntastic_c_no_default_include_dirs = 1
 
-    let g:syntastic_cpp_compiler = 'clang++'
-    let g:syntastic_cpp_compiler_options = ''
-    let g:syntastic_cpp_include_dirs = [ ]
-    let g:syntastic_cpp_no_include_search = 1
-    let g:syntastic_cpp_no_default_include_dirs = 1
-endif
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ''
+let g:syntastic_cpp_include_dirs = [ ]
+let g:syntastic_cpp_no_include_search = 1
+let g:syntastic_cpp_no_default_include_dirs = 1
 
 command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
 
@@ -217,15 +205,13 @@ let g:SignatureMap = {
 " }}}
 " {{{ UltiSnips
 
-"if exists("g:moeryn_ultisnips") && g:moeryn_ultisnips != 0
-    let g:UltiSnipsExpandTrigger       = "<c-k>"
-    let g:UltiSnipsListSnippets        = "<c-l>"
-    "let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-    "let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-    "let g:SuperTabDefaultCompletionType = '<C-Tab>'
+let g:UltiSnipsExpandTrigger       = "<c-k>"
+let g:UltiSnipsListSnippets        = "<c-l>"
+"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+"let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
-    let g:UltiSnipsEditSplit = 'vertical'
-"endif
+let g:UltiSnipsEditSplit = 'vertical'
 
 " }}}
 " {{{ ctrlp
@@ -258,27 +244,20 @@ endif
 " }}}
 " {{{ Completion
 
-"if exists("g:moeryn_ycm") && g:moeryn_ycm != 0
-    let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
-    let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 
-    set completeopt+=preview
+set completeopt+=preview
 
-    let g:ycm_seed_identifiers_with_syntax = 1
-    let g:ycm_autoclose_preview_window_after_insertion = 1
-    let g:ycm_open_loclist_on_ycm_diags = 1
-    let g:ycm_always_populate_location_list = 1
-    let g:ycm_confirm_extra_conf = 0
-    let g:ycm_collect_identifiers_from_tags_files = 0
-    let g:ycm_add_preview_to_completeopt = 1
-    let g:ycm_complete_in_comments = 1
-    let g:ycm_complete_in_strings = 1
-"endif
-
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#sources#clang#libclang_path = '/usr/local/lib/libclang.so.3.9'
-"let g:deoplete#sources#clang#clang_header='/usr/local/lib/clang'
-"let g:deoplete#sources#clang#clang_complete_database='/home/pcaneill/dev/murex/.build/compile_flags/'
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_open_loclist_on_ycm_diags = 1
+let g:ycm_always_populate_location_list = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
 
 " }}}
 " {{{ echodoc
@@ -359,7 +338,6 @@ let delimitMate_expand_cr=1
 " {{{ ClangFormat
 
 let g:clang_format#detect_style_file = 1
-" map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<cr>zo
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<cr>zo
 

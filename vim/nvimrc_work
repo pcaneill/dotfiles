@@ -1,9 +1,3 @@
-" Plugin activation
-let g:moeryn_syntastic = 1
-let g:moeryn_ultisnips = 1
-let g:moeryn_ycm = 1
-let g:moeryn_tern = 1
-
 set rtp=$HOME/.vim,~/CONFIG/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 source ~/CONFIG/vim/vimrc_work
 source ~/CONFIG/vim/nvimrc
