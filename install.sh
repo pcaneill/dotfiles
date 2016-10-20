@@ -110,6 +110,11 @@ cp ~/CONFIG/awesome/rc.lua ~/.config/awesome/rc.lua
 echo " [OK]"
 
 # }}}
+# {{{ Personal Scripts
+
+cp ~/CONFIG/bin/switchtouchpad /usr/local/bin/
+
+# }}}
 
 # Core generation
 #mkdir -p /srv/data/cores
