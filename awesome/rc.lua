@@ -465,6 +465,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey }, "p", function() os.execute("screenshot") end),
 
     awful.key({ modkey }, "t", function() os.execute("switchtouchpad") end),
+    awful.key({"Control", altkey}, "l", function() os.execute("xscreensaver-command -lock") end),
 
     -- Tag browsing
     awful.key({ modkey }, "Left",   awful.tag.viewprev       ),
