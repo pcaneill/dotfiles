@@ -205,11 +205,11 @@ let g:SignatureMap = {
 " }}}
 " {{{ UltiSnips
 
-let g:UltiSnipsExpandTrigger       = "<c-k>"
+let g:UltiSnipsExpandTrigger       = "<tab>"
 let g:UltiSnipsListSnippets        = "<c-l>"
-"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-"let g:SuperTabDefaultCompletionType = '<C-Tab>'
+let g:UltiSnipsJumpForwardTrigger  = "<c-tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:SuperTabDefaultCompletionType = '<C-tab>'
 
 let g:UltiSnipsEditSplit = 'vertical'
 
