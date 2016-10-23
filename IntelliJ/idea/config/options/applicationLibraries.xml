@@ -1,7 +1,0 @@
-<application>
-  <component name="GwtSdkManager">
-    <gwt-sdk-list>
-      <gwt-sdk url="file://$USER_HOME$/tools/gwt-2.8.0-rc1" />
-    </gwt-sdk-list>
-  </component>
-</application>
