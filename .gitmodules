@@ -10,10 +10,6 @@
 	path = submodules/highlight-symbol
 	url = https://github.com/nschum/highlight-symbol.el.git
   ignore = dirty
-[submodule "submodules/window-numbering"]
-	path = submodules/window-numbering
-	url = https://github.com/Moeryn/window-numbering.el.git
-  ignore = dirty
 [submodule "submodules/powerline"]
 	path = submodules/powerline
 	url = https://github.com/milkypostman/powerline.git
@@ -149,9 +145,12 @@
 [submodule "submodules/vim/badwolf"]
 	path = submodules/vim/badwolf
 	url = https://github.com/sjl/badwolf.git
+	ignore = dirty
 [submodule "submodules/vim/wimproved.vim"]
 	path = submodules/vim/wimproved.vim
 	url = https://github.com/kkoenig/wimproved.vim.git
+	ignore = dirty
 [submodule "submodules/vim/vim-rtags"]
 	path = submodules/vim/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
+	ignore = dirty
