@@ -6,22 +6,7 @@ echo -ne "Initializing submodules ..."
 script -q -c 'git submodule update --init --recursive' > /dev/null
 echo " [OK]"
 
-# {{{ Desktop Background
-
-xfconf-query -c xfce4-desktop                                 \
-             --property /backdrop/screen0/monitor0/image-path \
-             --set ~/CONFIG/desktop/paris.jpg
-# }}}
 # {{{ Vim
-
-cp vim/vimrc_perso ~/.vimrc
-
-if [ ${IS_WORK} ]; then
-  ln -s ../../submodules/vim/vim-perfoce        vim/bundle/vim-perfoce       2> /dev/null
-  ln -s ../../submodules/vim/genutils           vim/bundle/genutils          2> /dev/null
-  cp vim/vimrc_work ~/.vimrc
-fi
-
 # {{{ Neovim
 
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
