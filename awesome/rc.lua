@@ -133,7 +133,8 @@ end
 
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        -- gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        gears.wallpaper.maximized(os.getenv("HOME") .. '/CONFIG/desktop/paris.jpg', s, true)
     end
 end
 
