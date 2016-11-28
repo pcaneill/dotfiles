@@ -99,13 +99,13 @@ end
 
 tags = {
    names = {
-      "1 - main",
+      "1 - dev1",
       "2 - www",
       "3 - mail",
-      "4 - gqaf",
-      "5 - p4v",
-      "6 - dtk",
-      "7 - pidgin",
+      "4 - dev2",
+      "5 - dev3",
+      "6 - dev4",
+      "7 - chat",
       "8 - perso",
       "9 - else"
    },
