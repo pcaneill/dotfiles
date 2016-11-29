@@ -20,18 +20,23 @@ nnoremap <leader>ei :action ExtractInclude<cr>
 vnoremap <leader>ei :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action ExtractInclude<cr>
 
 " }}}
-" {{{ Introduce <leader>i
+" {{{ New <leader>n
 
-nnoremap <leader>nf :action IntroduceField<cr>
-vnoremap <leader>nf :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<cr>
-nnoremap <leader>nv :action IntroduceVariable<cr>
-vnoremap <leader>nv :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<cr>
+nnoremap <leader>nf :action NewFile<cr>
 nnoremap <leader>nc :action NewClass<cr>
 nnoremap <leader>np :action NewPackage<cr>
-nnoremap <leader>nr :action GenerateConstructor<cr>
-nnoremap <leader>no :action OverrideMethods<cr>
-nnoremap <leader>ni :action ImplementMethods<cr>
-nnoremap <leader>nt :action GenerateTestMethod<cr>
+
+" }}}
+" {{{ Introduce <leader>i
+
+nnoremap <leader>if :action IntroduceField<cr>
+vnoremap <leader>if :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceField<cr>
+nnoremap <leader>iv :action IntroduceVariable<cr>
+vnoremap <leader>iv :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action IntroduceVariable<cr>
+nnoremap <leader>it :action GenerateTestMethod<cr>
+nnoremap <leader>ic :action GenerateConstructor<cr>
+nnoremap <leader>io :action OverrideMethods<cr>
+nnoremap <leader>ii :action ImplementMethods<cr>
 
 " }}}
 " {{{ Refactor <leader>r
