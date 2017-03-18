@@ -1,3 +1,16 @@
+# Configurations
+
+* awesome
+* bash
+* gdb
+* git
+* IntelliJ
+* powershell
+* tig
+* tmux
+* top
+* valgrind
+* vim
 
 # Notes
 
