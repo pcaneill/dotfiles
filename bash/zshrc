@@ -1,5 +1,5 @@
 source ~/CONFIG/bash/liquidpromptrc
-source ~/CONFIG/submodules/liquidpromt/liquidprompt
+source ~/CONFIG/submodules/liquidprompt/liquidprompt
 source ~/CONFIG/bash/moerynrc
 
 # {{{ completions

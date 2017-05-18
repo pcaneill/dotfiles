@@ -6,3 +6,6 @@
 	path = tools/FlameGraph
 	url = https://github.com/brendangregg/FlameGraph.git
 	ignore = dirty
+[submodule "submodules/liquidprompt"]
+	path = submodules/liquidprompt
+	url = https://github.com/nojhan/liquidprompt.git
