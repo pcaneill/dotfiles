@@ -1,7 +1,7 @@
-[submodule "submodules/liquidpromt"]
-	path = submodules/liquidpromt
-	url = https://github.com/nojhan/liquidprompt.git
-	ignore = dirty
+#[submodule "submodules/liquidpromt"]
+#	path = submodules/liquidpromt
+#	url = https://github.com/nojhan/liquidprompt.git
+#	ignore = dirty
 [submodule "tools/FlameGraph"]
 	path = tools/FlameGraph
 	url = https://github.com/brendangregg/FlameGraph.git
