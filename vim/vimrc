@@ -29,6 +29,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'SirVer/ultisnips'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/goyo.vim'
 
 " DOC
 Plug 'Shougo/echodoc.vim'
