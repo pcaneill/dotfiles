@@ -1,17 +1,29 @@
 dnf install \
-  git                 \
-  cmake               \
-  ccache              \
-  cmake               \
   autoconf            \
+  awesome             \
+  ccache              \
+  chromium            \
+  konsole             \
+  qutebrowser         \
+  qt5                 \
+  qt5-devel           \
+  neovim              \
+  python2-neovim      \
+  python3-neovim      \
+  cmake               \
+  cmake               \
+  ctags               \
+  git                 \
+  libtool             \
+  lldb                \
+  lcov                \
   llvm                \
-  valgrind            \
+  htop                \
+  pylint              \
+  python-pip          \
+  clang               \
+  ipython             \
+  zsh                 \
   tig                 \
   tmux                \
-  pylint              \
-  lldb                \
-  ctags               \
-  python-devel        \
-  python-pip          \
-  python-psutil       \
-  libtool
+  valgrind
