@@ -5,76 +5,40 @@ apt-get install         \
     bison               \
     build-essential     \
     ccache              \
+    clang               \
     cmake               \
-    dejagnu             \
     dos2unix            \
     doxygen             \
-    emacs               \
-    expect              \
     exuberant-ctags     \
     flex                \
     git                 \
     gperf               \
-    help2man            \
     htop                \
     ipython             \
     lcov                \
-    libcap-dev          \
-    libffi-dev          \
-    libfuse-dev         \
-    libgeos-dev         \
-    libimlib2-dev       \
-    liblua5.1-0-dev     \
-    libmysqlclient-dev  \
-    libncurses5-dev     \
-    libpcap-dev         \
-    libpcre3-dev        \
-    libsctp-dev         \
-    libsqlite3-dev      \
+    libclang-dev        \
     libssl-dev          \
     libtool             \
-    libunbound-dev      \
-    libwbxml2-dev       \
-    libxml2-dev         \
-    libxmlsec1-dev      \
     lldb                \
     llvm                \
     llvm-dev            \
-    clang               \
-    libclang-dev        \
-    lua5.3              \
-    liblua5.3*          \
-    mtasc               \
-    npm                 \
     perl                \
     pulseaudio          \
-    pylint              \
     python-dev          \
     python-pip          \
-    python-psutil       \
+    python3-dev         \
+    python3-pip         \
     qt5-default         \
-    rlwrap              \
-    rtorrent            \
-    ruby-dev            \
-    scons               \
-    smitools            \
+    silversearcher-ag   \
     software-properties-common \
     source-highlight    \
-    sudo                \
     subversion          \
-    swfmill             \
-    tcl8.5              \
-    texinfo             \
-    texlive-fonts-extra \
+    sudo                \
     tig                 \
-    silversearcher-ag   \
     tmux                \
-    tofrodos            \
-    valgrind            \
     valgrind            \
     vim                 \
     vlc                 \
     xclip               \
     xfonts-terminus     \
-    xsltproc            \
     zsh
