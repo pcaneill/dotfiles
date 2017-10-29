@@ -11,7 +11,7 @@ echo " [OK]"
 
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 mkdir -p ${XDG_CONFIG_HOME}/nvim
-ln -s  ${ROOT}/vim/vimrc ${XDG_CONFIG_HOME}/nvim/init.vim
+ln -s  ${ROOT}/vim/nvimrc ${XDG_CONFIG_HOME}/nvim/init.vim
 
 if  [ ${IS_WORK} ]; then
   ln -s  ${ROOT}/vim/nvimrc_work ${XDG_CONFIG_HOME}/nvim/init.vim
