@@ -1,7 +1,7 @@
 rm ~/.gitconfig
 rm ~/.tmux.conf
 rm ~/.tigrc
-rm ~/.emacs
+rm ~/.ideavimrc
 rm ~/.git-prompt.sh
 rm ~/.git-completion.bash
 rm ~/.valgrindrc

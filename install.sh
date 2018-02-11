@@ -52,6 +52,14 @@ ln -s CONFIG/git/gitconfig ~/.gitconfig 2> /dev/null
 echo " [OK]"
 
 # }}}
+# {{{ Jetbrain
+
+echo -ne "Initializing Jetbrain configuration ..."
+ln -s CONFIG/IntelliJ/ideavimrc ~/.ideavimrc 2> /dev/null
+echo " [OK]"
+
+
+# }}}
 # {{{ Tig
 
 echo -ne "Initializing tig configuration ..."
