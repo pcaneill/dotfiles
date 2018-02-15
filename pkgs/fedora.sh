@@ -4,7 +4,6 @@ dnf install \
   ccache              \
   chromium            \
   konsole             \
-  qutebrowser         \
   qt5                 \
   qt5-devel           \
   neovim              \
