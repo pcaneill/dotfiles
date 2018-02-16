@@ -29,6 +29,7 @@ Plug 'ervandew/supertab'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/goyo.vim'
@@ -48,7 +49,7 @@ Plug 'fatih/vim-go'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
 Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
 Plug 'lyuts/vim-rtags', { 'for': [ 'cpp', 'c'] }
-"Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 
 " WEB
 Plug 'othree/html5.vim'
@@ -63,10 +64,6 @@ Plug 'vim-scripts/genutils'
 " Theme
 Plug 'junegunn/seoul256.vim'
 Plug 'sjl/badwolf'
-
-if exists("g:moeryn_work") && g:moeryn_work == 1
-    Plug 'Moeryn/vim-perforce'
-endif
 
 if has('nvim')
     " Enable deoplete on startup
@@ -256,7 +253,16 @@ let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 " {{{ ctrlp
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " }}}
 " {{{ Neomake
@@ -366,8 +372,13 @@ let g:cpp_experimental_template_highlight=1
 
 " }}}
 " {{{ Ag
+"
+" The Silver Searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
 
-let g:ackprg = 'ag --vimgrep'
 
 " }}}
 " {{{ delimitMate
@@ -410,6 +421,7 @@ endfunction
 
 function! LoadGoLang()
     noremap <F2> :GoDef GoToDefinition<cr>
+    noremap <C-F2> :GoReferrers<cr>
 endfunction
 
 nnoremap <leader>gm :exec("call LoadGoLang()")<cr>
@@ -459,7 +471,8 @@ noremap <C-F2> :GtagsCursor<cr>
 map <F3> <leader>be
 
 " grep on the current word
-noremap <F4> :Ack <cword><cr>
+noremap <C-F4> :Ack <cword><cr>
+noremap <F4> :Ggrep! -w <cword><cr><cr>
 
 set pastetoggle=<F5>
 
@@ -564,15 +577,15 @@ nnoremap gp `[v`]
 
 nnoremap <c-s> mzzMzvzz15<c-e>`z:Pulse<cr>
 
-nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
-nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>ct :YcmCompleter GoTo<cr>
-nnoremap <leader>cgt :YcmCompleter GetType<cr>
-nnoremap <leader>cgp :YcmCompleter GetParent<cr>
-nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
-"nnoremap <leader>c :YcmDiags<cr>
-nnoremap <leader>ct :Neomake clangtidy<cr>
-nnoremap <leader>cn :Neomake clangcheck<cr>
+"nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
+"nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
+"nnoremap <leader>ct :YcmCompleter GoTo<cr>
+"nnoremap <leader>cgt :YcmCompleter GetType<cr>
+"nnoremap <leader>cgp :YcmCompleter GetParent<cr>
+"nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
+""nnoremap <leader>c :YcmDiags<cr>
+"nnoremap <leader>ct :Neomake clangtidy<cr>
+"nnoremap <leader>cn :Neomake clangcheck<cr>
 
 " }}}
 " {{{ Interactive
