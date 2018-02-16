@@ -25,4 +25,5 @@ dnf install \
   zsh                 \
   tig                 \
   tmux                \
+  the_silver_searcher \
   valgrind
