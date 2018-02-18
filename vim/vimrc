@@ -19,7 +19,6 @@ if has("nvim")
    Plug 'zchee/deoplete-go'
 endif
 
-Plug 'vim-scripts/a.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
@@ -46,17 +45,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 
 " CPP
-Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
-Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
-Plug 'lyuts/vim-rtags', { 'for': [ 'cpp', 'c'] }
-Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
+ Plug 'vim-scripts/a.vim'
+ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
+ Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
+ Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 
 " WEB
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'kshenoy/vim-signature'
 Plug 'Slava/vim-spacebars'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install'}
 
 " Utils
 Plug 'vim-scripts/genutils'
@@ -64,6 +62,7 @@ Plug 'vim-scripts/genutils'
 " Theme
 Plug 'junegunn/seoul256.vim'
 Plug 'sjl/badwolf'
+Plug 'NLKNguyen/papercolor-theme'
 
 if has('nvim')
     " Enable deoplete on startup
@@ -71,14 +70,6 @@ if has('nvim')
 endif
 
 call plug#end()
-
-
-" Neomake {
-    autocmd! BufWritePost * Neomake
-    let g:neomake_php_phpcs_args_standard = 'psr2'
-
-    let g:neomake_javascript_enabled_makers = ['eslint']
-" }
 
 
 let g:NERDTreeIndicatorMapCustom = {
@@ -132,8 +123,7 @@ au BufReadPost *
 
 " }}}
 
-"TODO fails when reloading
-"set encoding=utf-8
+set encoding=utf-8
 set backspace=indent,eol,start
 
 set ttimeout
@@ -142,8 +132,13 @@ set ttimeoutlen=0
 set incsearch
 set hlsearch
 
-set autoindent
-set noswapfile
+set autoindent    " take indent from new line from previous line
+set autowrite     " write when switching buffer
+
+set noswapfile    " disable swapfile usage
+set noerrorbells  " no bells
+set novisualbell  " no bells
+set title         " let vim set the terminal title
 
 set hidden
 set splitbelow
@@ -280,6 +275,7 @@ if has("nvim")
 
     let g:neomake_python_enable_makers = ['pylint']
     let g:neomake_javascript_enable_makers = ['jshint']
+    let g:neomake_go_enabled_makers = []
     let g:neomake_open_list=1
     let g:neomake_serialize_abort_on_error=1
     let g:neomake_serialize=1
@@ -308,8 +304,7 @@ let g:ycm_complete_in_strings = 1
 " }}}
 " {{{ echodoc
 
-
-set noshowmode " I use airline anyway + it tampers with echodoc.
+set noshowmode 
 let g:echodoc_enable_at_startup = 1
 set completeopt+=menuone
 set completeopt-=preview
@@ -349,14 +344,6 @@ if has("nvim")
 
     " Git commands
     command! -nargs=+ Tg :T git <args>
-endif
-
-" }}}
-" {{{ tern
-
-if exists("g:moeryn_tern") && g:moeryn_tern != 0
-    call tern#Enable()
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
 " }}}
@@ -417,21 +404,39 @@ endfunction
 
 " }}}
 " {{{ Mapping Programming Languages
+" {{{ General
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set textwidth=0
+
+set cinoptions=
+set cinoptions+=N-s         " No namespace indentation
+set cinoptions+=L0.5s       " align labels at 0.5 shiftwidth
+set cinoptions+=:0.5s,=0.5s " same for case labels and code following labels
+set cinoptions+=g0.5s,h0.5s " same for C++ stuff
+set cinoptions+=t0          " type on the line before the function is not indented
+set cinoptions+=(0,Ws       " indent in functions ( ... ) when it breaks
+set cinoptions+=m1          " align the closing ) properly
+set cinoptions+=j1,J1       " java/javascript -> fixes blocks
+
+" Doxygen
+au! Syntax {cpp,c,d,javascript}
+au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
+
+" }}}
 " {{{ Golang
 
-function! LoadGoLang()
-    noremap <F2> :GoDef GoToDefinition<cr>
-    noremap <C-F2> :GoReferrers<cr>
-endfunction
-
-nnoremap <leader>gm :exec("call LoadGoLang()")<cr>
-nnoremap <leader>gd :GoDoc<cr>
-nnoremap <leader>gdb :GoDocBrowser<cr>
-nnoremap <leader>grt :GoTestFunc<cr>
-nnoremap <leader>gt :GoTest<cr>
-nnoremap <leader>gj :GoAddTags<cr>
-
-"au FileType go nmap <F12> <Plug>(go-def)
+au FileType go nnoremap <leader>gd :GoDoc<cr>
+au FileType go nnoremap <leader>gdb :GoDocBrowser<cr>
+au FileType go nnoremap <leader>grt :GoTestFunc<cr>
+au FileType go nnoremap <leader>gt :GoTest<cr>
+au FileType go nnoremap <leader>gj :GoAddTags<cr>
+au FileType go nnoremap <leader>gf :GoFillStruct<cr>
+au FileType go noremap <F2> :GoDef GoToDefinition<cr>
+au FileType go noremap <C-F2> :GoReferrers<cr>
 
 au FileType go set noexpandtab
 au FileType go set shiftwidth=2
@@ -446,13 +451,28 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_variable_declarations = 1
 
-let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
-let g:go_addtags_transform = "snakecase"
+"let g:go_auto_sameids = 1
+"let g:go_auto_type_info = 1
+"let g:go_addtags_transform = "snakecase"
 
 " }}}
 " {{{ CPP
+
+au FileType cpp,c noremap <F2> :YcmCompleter GoToDefinition<cr>
+au FileType cpp,c nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
+au FileType cpp,c nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
+au FileType cpp,c nnoremap <leader>ct :YcmCompleter GoTo<cr>
+au FileType cpp,c nnoremap <leader>cgt :YcmCompleter GetType<cr>
+au FileType cpp,c nnoremap <leader>cgp :YcmCompleter GetParent<cr>
+au FileType cpp,c nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
+au FileType cpp,c nnoremap <leader>ct :Neomake clangtidy<cr>
+au FileType cpp,c nnoremap <leader>cn :Neomake clangcheck<cr>
 
 " }}}
 " }}}
@@ -460,37 +480,32 @@ let g:go_addtags_transform = "snakecase"
 
 let mapleader = ","
 
-" {{{ Fn
+" {{{ Fonction Keys
 
-" follow tag
-noremap <F2> :YcmCompleter GoToDefinition<cr>
-"noremap <F2> :exec("tag ".expand("<cword>"))<cr>
-noremap <C-F2> :GtagsCursor<cr>
-
-" bufExplorer
+" Open BufferExplorer
 map <F3> <leader>be
 
-" grep on the current word
+" Grep (using ag, the_silver_search) on the current word
 noremap <C-F4> :Ack <cword><cr>
+
+" Git-Grep on the current word, and fill quickfix
 noremap <F4> :Ggrep! -w <cword><cr><cr>
 
+" Switch to paste mode
 set pastetoggle=<F5>
 
+" Switch between themes
 nnoremap <F6> :exec("call SwitchTheme()")<cr>
 
-" spell check
+" Spell check
 noremap <F8> :setlocal spell! spelllang=en_us<cr>
 
-" horizontal split + next buffer
+" Horizontal split + next buffer
 noremap <F9> :split<cr>:bn<cr>
-" vertical split + next buffer
+" Vertical split + next buffer
 noremap <F10> :vsplit<cr>:bn<cr>
 
-" make
-noremap  <F11> :make!<cr><cr>
-inoremap <F11> <esc>:make!<cr><cr>
-
-" remove trailing spaces
+" Remove trailing spaces
 noremap <F12> mcHmh:%s/ \+$//ge<cr>'hzt`c
 
 " }}}
@@ -509,47 +524,53 @@ noremap <leader>n :lnext<cr>
 " previous loclist (YcmDiags, neomake)
 noremap <leader>b :lprev<cr>
 
-" change directory to the file being edited
+" Change directory to the file being edited
 nnoremap ,cd :cd %:p:h<cr>
 
-" Move begining of line and end of line
+" Move to the begining of line
 noremap H ^
+
+" Move to the end of the line
 noremap L $
 
-" move to left buffer
-noremap  <C-Left>   <C-w><Left>
-noremap! <C-Left>   <Esc> <C-w><Left>
+" Move to left buffer
 noremap  <C-h>      <C-w><Left>
 noremap! <C-h>      <Esc> <C-w><Left>
-" move to right buffer
-noremap  <C-Right>  <C-w><Right>
-noremap! <C-Right>  <Esc> <C-w><Right>
+
+" Move to right buffer
 noremap  <C-l>      <C-w><Right>
 noremap! <C-l>      <Esc> <C-w><Right>
-" move to buffer above
+
+" Move to buffer above
 noremap  <C-Up>     <C-w><Up>
 noremap! <C-Up>     <Esc> <C-w><Up>
 noremap  <C-k>      <C-w><Up>
 noremap! <C-k>      <Esc> <C-w><Up>
-" move to buffer below
+
+" Move to buffer below
 noremap  <C-Down>   <C-w><Down>
 noremap! <C-Down>   <Esc> <C-w><Down>
 noremap  <C-j>      <C-w><Down>
 noremap! <C-j>      <Esc> <C-w><Down>
 
-" scroll up
+" Scroll up
 noremap <S-Up> <C-Y>
-" scroll down
+
+" Scroll down
 noremap <S-Down> <C-E>
 
-" resize windows
-noremap <A-l> :exec("5winc >")<cr>
-noremap <A-h> :exec("5winc <")<cr>
-noremap <A-k> :exec("5winc -")<cr>
-noremap <A-j> :exec("5winc +")<cr>
+" Resize windows
+noremap <C-Left> :exec("5winc >")<cr>
+noremap! <C-Left> <Esc>:exec("5winc >")<cr>
+noremap <C-Right> :exec("5winc <")<cr>
+noremap! <C-Right> <Esc>:exec("5winc <")<cr>
+noremap <C-Up> :exec("5winc -")<cr>
+noremap <C-Down> :exec("5winc +")<cr>
 
-" Move current line up and down
+" Move current line up
 noremap <leader>- ddp
+
+" Move current line down
 noremap <leader>_ ddkP
 
 " Open vimrc / nvimrc and source it
@@ -560,9 +581,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Add semicolumn at the end of the line
 nnoremap <leader>; :exec("normal! mqA;\<lt>esc>`q")<cr>
 
-nnoremap K :q<cr>
+" Close buffer
+nnoremap K :q!<cr>
 nnoremap :q<cr> :call input("use `K` instead")<cr>
 
+" Save buffer
 nnoremap s :w<cr>
 nnoremap :w<cr> :call input("use `s` instead")<cr>
 
@@ -575,17 +598,8 @@ nnoremap <leader>s vip:!sort<cr>
 " Reselect last-pasted text
 nnoremap gp `[v`]
 
+" Recenter cursor
 nnoremap <c-s> mzzMzvzz15<c-e>`z:Pulse<cr>
-
-"nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
-"nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
-"nnoremap <leader>ct :YcmCompleter GoTo<cr>
-"nnoremap <leader>cgt :YcmCompleter GetType<cr>
-"nnoremap <leader>cgp :YcmCompleter GetParent<cr>
-"nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
-""nnoremap <leader>c :YcmDiags<cr>
-"nnoremap <leader>ct :Neomake clangtidy<cr>
-"nnoremap <leader>cn :Neomake clangcheck<cr>
 
 " }}}
 " {{{ Interactive
@@ -599,20 +613,14 @@ inoremap <C-u> <esc>vbU<esc>ea
 " Surround last word with quotes
 inoremap <leader>" <esc>viw<esc>a"<esc>hbi"<esc>lela
 
+" Exit insert mode
 inoremap jk <esc>
-
-inoremap <C-l> <esc>la
-inoremap <C-h> <esc>ha
-inoremap <C-e> <esc>ea
 
 " }}}
 " {{{ Visual
 
 " Surround selected text with quotes
 vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
-
-" Search the references of the copied text
-vnoremap <C-F2> y<esc>:exec("Gtags -g ^[sg]et_ ".expand("<c-r>0"))<cr>
 
 " }}}
 " {{{ Operator-Pendig Mapping
@@ -624,29 +632,6 @@ onoremap pp :<c-u>normal! F)vi(<cr>i
 onoremap n" :<c-u>normal! f"vi"<cr>i
 
 " }}}
-" }}}
-" {{{ Code formatting
-
-set tabstop=2
-set softtabstop=2
-set expandtab
-set textwidth=0
-set shiftwidth=2
-
-set cinoptions=
-set cinoptions+=N-s         " No namespace indentation
-set cinoptions+=L0.5s       " align labels at 0.5 shiftwidth
-set cinoptions+=:0.5s,=0.5s " same for case labels and code following labels
-set cinoptions+=g0.5s,h0.5s " same for C++ stuff
-set cinoptions+=t0          " type on the line before the function is not indented
-set cinoptions+=(0,Ws       " indent in functions ( ... ) when it breaks
-set cinoptions+=m1          " align the closing ) properly
-set cinoptions+=j1,J1       " java/javascript -> fixes blocks
-
-" Doxygen
-au! Syntax {cpp,c,d,javascript}
-au Syntax {cpp,c,d,javascript} runtime syntax/doxygen.vim
-
 " }}}
 " {{{ Next and Last
 "
@@ -830,6 +815,17 @@ augroup END
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-colo badwolf
+"colo badwolf
+"colo seoul256
+
+set background=dark
+colorscheme PaperColor
+
+" Override the search highlight color with a combination that is easier to
+" read. The default PaperColor is dark green backgroun with black foreground.
+"
+" Reference:
+" - http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+highlight Search guibg=DeepPink4 guifg=White ctermbg=53 ctermfg=White
 
 " }}}
