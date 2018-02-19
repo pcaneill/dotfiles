@@ -50,12 +50,6 @@ Plug 'fatih/vim-go'
  Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
  Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 
-" WEB
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'kshenoy/vim-signature'
-Plug 'Slava/vim-spacebars'
-
 " Utils
 Plug 'vim-scripts/genutils'
 
@@ -72,22 +66,10 @@ endif
 call plug#end()
 
 
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-
 
 " }}}
 " {{{ Basic options
-" {{{ cursor line
+" {{{ Cursor line
 
 set cursorline
 hi CursorLine term=bold cterm=bold ctermbg=black
@@ -114,7 +96,7 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.orig                           " Merge resolution files
 
 " }}}
-" {{{ restore cursor position
+" {{{ Restore cursor position
 
 au BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -148,7 +130,6 @@ set showbreak=
 " list
 set listchars=eol:¬,tab:➤\ ,trail:-,extends:>,precedes:<,nbsp:¤
 set list
-"hi SpecialKey ctermbg=red
 
 
 " modeline
@@ -180,59 +161,19 @@ set t_Co=256
 
 " }}}
 " {{{ Plugins
-" {{{ Synastic
+" {{{ NERDTree
 
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-
-let g:syntastic_mode_map = { 'mode': 'active',
-         \ 'passive_filetypes': [ ] }
-let g:syntastic_ignore_files = ['^/usr/include/']
-let g:syntastic_auto_loc_list=1
-let g:syntastic_auto_jump=0
-let g:syntastic_check_on_open=1
-let g:syntastic_silent_make=0
-
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = ''
-let g:syntastic_c_include_dirs = [ ]
-let g:syntastic_c_no_include_search = 1
-let g:syntastic_c_no_default_include_dirs = 1
-
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ''
-let g:syntastic_cpp_include_dirs = [ ]
-let g:syntastic_cpp_no_include_search = 1
-let g:syntastic_cpp_no_default_include_dirs = 1
-
-command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
-
-" }}}
-" {{{ signature
-
-let g:SignatureMap = {
-            \ 'Leader'             :  "m",
-            \ 'PlaceNextMark'      :  "m,",
-            \ 'ToggleMarkAtLine'   :  "m.",
-            \ 'PurgeMarksAtLine'   :  "m-",
-            \ 'DeleteMark'         :  "dm",
-            \ 'PurgeMarks'         :  "m<Space>",
-            \ 'PurgeMarkers'       :  "m<BS>",
-            \ 'GotoNextLineAlpha'  :  "'n",
-            \ 'GotoPrevLineAlpha'  :  "'p",
-            \ 'GotoNextSpotAlpha'  :  "`]",
-            \ 'GotoPrevSpotAlpha'  :  "`[",
-            \ 'GotoNextLineByPos'  :  "]'",
-            \ 'GotoPrevLineByPos'  :  "['",
-            \ 'GotoNextSpotByPos'  :  "]`",
-            \ 'GotoPrevSpotByPos'  :  "[`",
-            \ 'GotoNextMarker'     :  "[+",
-            \ 'GotoPrevMarker'     :  "[-",
-            \ 'GotoNextMarkerAny'  :  "]=",
-            \ 'GotoPrevMarkerAny'  :  "[=",
-            \ 'ListLocalMarks'     :  "m/",
-            \ 'ListLocalMarkers'   :  "m?"
-            \ }
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 " }}}
 " {{{ UltiSnips
@@ -263,25 +204,18 @@ endif
 " {{{ Neomake
 
 if has("nvim")
-    let g:syntastic_python_checkers = ['']
+  " Open the quickfix, but leave the cursor
+  let g:neomake_open_list = 2
 
-    let g:neomake_cpp_enabled_makers = ['clangcheck', 'clangtidy']
-    let g:neomake_cpp_clangcheck_args=['-p', '/home/caneill/dev/house/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location']
-    let g:neomake_cpp_clangtidy_args=['-p', '/home/caneill/dev/house/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location']
-    "autocmd BufWritePost *.cpp :Neomake clangcheck
-    "autocmd BufWritePost *.c :Neomake clangcheck
-    "autocmd BufWritePost *.hpp :Neomake clangcheck
-    "autocmd BufWritePost *.h :Neomake clangcheck
+  " Makers are run one after the other
+  let g:neomake_serialize = 0
+  let g:neomake_serialize_abort_on_error = 1
 
-    let g:neomake_python_enable_makers = ['pylint']
-    let g:neomake_javascript_enable_makers = ['jshint']
-    let g:neomake_go_enabled_makers = []
-    let g:neomake_open_list=1
-    let g:neomake_serialize_abort_on_error=1
-    let g:neomake_serialize=1
-    autocmd BufWritePost *.py :Neomake pylint
-    autocmd BufWritePost *.js :Neomake jshint
-endif
+  let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+  let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
+  let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+  let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+  let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
 
 " }}}
 " {{{ Completion
@@ -304,7 +238,7 @@ let g:ycm_complete_in_strings = 1
 " }}}
 " {{{ echodoc
 
-set noshowmode 
+set noshowmode
 let g:echodoc_enable_at_startup = 1
 set completeopt+=menuone
 set completeopt-=preview
@@ -352,12 +286,6 @@ endif
 let g:gitgutter_realtime = 1
 
 " }}}
-" {{{ code syntax
-
-let g:cpp_class_scope_highlight=0
-let g:cpp_experimental_template_highlight=1
-
-" }}}
 " {{{ Ag
 "
 " The Silver Searcher
@@ -371,13 +299,6 @@ endif
 " {{{ delimitMate
 
 let delimitMate_expand_cr=1
-
-" }}}
-" {{{ ClangFormat
-
-let g:clang_format#detect_style_file = 1
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<cr>zo
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<cr>zo
 
 " }}}
 " }}}
@@ -457,22 +378,74 @@ let g:go_highlight_function_arguments = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
-"let g:go_auto_sameids = 1
-"let g:go_auto_type_info = 1
-"let g:go_addtags_transform = "snakecase"
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_addtags_transform = "snakecase"
+
+if has("nvim")
+  autocmd BufWritePost *.go Neomake
+  let g:neomake_go_enabled_makers = ['go', 'gometalinter']
+  let g:neomake_go_gometalinter_maker = {
+    \ 'args': [
+    \   '--tests',
+    \   '--enable-gc',
+    \   '--concurrency=3',
+    \   '--fast',
+    \   '-D', 'aligncheck',
+    \   '-D', 'dupl',
+    \   '-D', 'gocyclo',
+    \   '-D', 'gotype',
+    \   '-E', 'errcheck',
+    \   '-E', 'misspell',
+    \   '-E', 'unused',
+    \   '%:p:h',
+    \ ],
+    \ 'append_file': 0,
+    \ 'errorformat':
+    \   '%E%f:%l:%c:%trror: %m,' .
+    \   '%W%f:%l:%c:%tarning: %m,' .
+    \   '%E%f:%l::%trror: %m,' .
+    \   '%W%f:%l::%tarning: %m'
+    \ }
+  endif
+
+endif
+
 
 " }}}
 " {{{ CPP
+"
+let g:clang_format#detect_style_file = 1
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<cr>zo
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<cr>zo
 
-au FileType cpp,c noremap <F2> :YcmCompleter GoToDefinition<cr>
-au FileType cpp,c nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
-au FileType cpp,c nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
-au FileType cpp,c nnoremap <leader>ct :YcmCompleter GoTo<cr>
-au FileType cpp,c nnoremap <leader>cgt :YcmCompleter GetType<cr>
-au FileType cpp,c nnoremap <leader>cgp :YcmCompleter GetParent<cr>
-au FileType cpp,c nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
-au FileType cpp,c nnoremap <leader>ct :Neomake clangtidy<cr>
-au FileType cpp,c nnoremap <leader>cn :Neomake clangcheck<cr>
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+
+au FileType cpp,c,objc noremap <F2> :YcmCompleter GoToDefinition<cr>
+au FileType cpp,c,objc nnoremap <leader>ci :YcmCompleter GoToInclude<cr>
+au FileType cpp,c,objc nnoremap <leader>cd :YcmCompleter GoToDeclaration<cr>
+au FileType cpp,c,objc nnoremap <leader>ct :YcmCompleter GoTo<cr>
+au FileType cpp,c,objc nnoremap <leader>cgt :YcmCompleter GetType<cr>
+au FileType cpp,c,objc nnoremap <leader>cgp :YcmCompleter GetParent<cr>
+au FileType cpp,c,objc nnoremap <leader>cf :YcmCompleter FixIt<cr>:ll<cr>
+au FileType cpp,c,objc nnoremap <leader>ct :Neomake clangtidy<cr>
+au FileType cpp,c,objc nnoremap <leader>cn :Neomake clangcheck<cr>
+
+if has('nvim')
+    let g:neomake_cpp_enabled_makers = ['clangcheck', 'clangtidy']
+    let g:neomake_cpp_clangcheck_args=['-p', '/home/caneill/dev/house/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location']
+    let g:neomake_cpp_clangtidy_args=['-p', '/home/caneill/dev/house/.build/normal', '-extra-arg=-fno-color-diagnostics', '-extra-arg=-fdiagnostics-format=clang', '-extra-arg=-fno-caret-diagnostics',  '-extra-arg=-fshow-source-location']
+endif
+
+" }}}
+" {{{ Python
+
+if has("nvim")
+  let g:neomake_python_enable_makers = ['pylint']
+  autocmd BufWritePost *.py :Neomake pylint
+endif
 
 " }}}
 " }}}
@@ -807,10 +780,10 @@ hi javaScriptTpl       cterm=none ctermfg=darkgreen ctermbg=none
 hi javaScriptTplMark   cterm=none ctermfg=magenta ctermbg=none
 
 " Reload the colorscheme whenever we write the file.
-augroup color_badwolf_dev
-    au!
-    au BufWritePost badwolf.vim color badwolf
-augroup END
+" augroup color_badwolf_dev
+"     au!
+"     au BufWritePost badwolf.vim color badwolf
+" augroup END
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
