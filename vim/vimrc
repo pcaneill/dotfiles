@@ -44,6 +44,9 @@ Plug 'airblade/vim-gitgutter'
 " GO
 Plug 'fatih/vim-go'
 
+" Python
+Plug 'vim-python/python-syntax'
+
 " CPP
  Plug 'vim-scripts/a.vim'
  Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
@@ -216,6 +219,7 @@ if has("nvim")
   let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
   let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
   let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
+endif
 
 " }}}
 " {{{ Completion
@@ -378,26 +382,25 @@ let g:go_highlight_function_arguments = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
+" Deactivate 'K' mapping
+let g:go_doc_keywordprg_enabled = 0 
+
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
 let g:go_addtags_transform = "snakecase"
+let g:go_term_enabled = 1
+let g:go_term_mode = "vsplit"
 
 if has("nvim")
   autocmd BufWritePost *.go Neomake
-  let g:neomake_go_enabled_makers = ['go', 'gometalinter']
+  let g:neomake_go_enabled_makers = ['go']
+  "let g:neomake_go_enabled_makers = ['go', 'gometalinter']
   let g:neomake_go_gometalinter_maker = {
     \ 'args': [
     \   '--tests',
     \   '--enable-gc',
-    \   '--concurrency=3',
+    \   '--concurrency=1',
     \   '--fast',
-    \   '-D', 'aligncheck',
-    \   '-D', 'dupl',
-    \   '-D', 'gocyclo',
-    \   '-D', 'gotype',
-    \   '-E', 'errcheck',
-    \   '-E', 'misspell',
-    \   '-E', 'unused',
     \   '%:p:h',
     \ ],
     \ 'append_file': 0,
@@ -407,8 +410,6 @@ if has("nvim")
     \   '%E%f:%l::%trror: %m,' .
     \   '%W%f:%l::%tarning: %m'
     \ }
-  endif
-
 endif
 
 
@@ -446,6 +447,9 @@ if has("nvim")
   let g:neomake_python_enable_makers = ['pylint']
   autocmd BufWritePost *.py :Neomake pylint
 endif
+
+let g:python_highlight_all = 1
+let g:python_highlight_indent_errors = 1
 
 " }}}
 " }}}
