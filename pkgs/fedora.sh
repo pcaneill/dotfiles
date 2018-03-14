@@ -26,4 +26,5 @@ dnf install \
   tig                 \
   tmux                \
   the_silver_searcher \
+  xclip               \
   valgrind
