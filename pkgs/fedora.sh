@@ -27,4 +27,5 @@ dnf install \
   tmux                \
   the_silver_searcher \
   xclip               \
+  gnome-screensaver   \
   valgrind
