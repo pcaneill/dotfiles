@@ -269,7 +269,7 @@ if has("nvim")
 
     " Neoterm
 
-    let g:neoterm_position = 'vertical'
+    let g:neoterm_default_mod = 'vertical'
     let g:neoterm_automap_keys = ',tt'
 
     " Useful maps
