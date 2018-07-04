@@ -43,5 +43,6 @@
 
 [rebase]
     stat = true
+
 [push]
-	default = matching
+    default = current
