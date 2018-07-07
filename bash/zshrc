@@ -82,3 +82,32 @@ function set-tab-window-titles {
   echo -ne "\e]1;${tab_label: -24}\a" # set tab title to rightmost 24 characters
 }
 add-zsh-hook precmd set-tab-window-titles
+
+
+# history management
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=8000
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+
+autoload -Uz compinit promptinit colors zcalc tetris vcs_info
+colors
+compinit
+promptinit;
+
+autoload -U zutil
+autoload -U complist
+
+# next lets set some enviromental/shell pref stuff up
+# setopt NOHUP
+#setopt NOTIFY
+#setopt NO_FLOW_CONTROL
+setopt NO_EQUALS
+setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt APPEND_HISTORY
+unsetopt BG_NICE        # do NOT nice bg commands
+setopt CORRECT          # command CORRECTION
+setopt EXTENDED_HISTORY # puts timestamps in the history
