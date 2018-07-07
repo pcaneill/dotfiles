@@ -108,6 +108,11 @@ echo " [OK]"
 cp ~/CONFIG/bin/switchtouchpad /usr/local/bin/
 
 # }}}
+# {{{ Bash / Zsh
+
+chsh -s $(which zsh)
+
+# }}}
 
 # Core generation
 #mkdir -p /srv/data/cores
