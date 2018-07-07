@@ -1,29 +1,9 @@
-apt-get install         \
-    asciidoc            \
-    autoconf            \
-    autotools-dev       \
-    bison               \
+apt install             \
     build-essential     \
-    ccache              \
-    clang               \
-    cmake               \
-    dos2unix            \
-    doxygen             \
-    exuberant-ctags     \
-    flex                \
     git                 \
-    gperf               \
     htop                \
     ipython             \
-    lcov                \
-    libclang-dev        \
-    libssl-dev          \
-    libtool             \
-    lldb                \
-    llvm                \
-    llvm-dev            \
-    perl                \
-    pulseaudio          \
+    ipython3            \
     python-dev          \
     python-pip          \
     python3-dev         \
@@ -31,14 +11,11 @@ apt-get install         \
     qt5-default         \
     silversearcher-ag   \
     software-properties-common \
-    source-highlight    \
-    subversion          \
-    sudo                \
     tig                 \
     tmux                \
-    valgrind            \
     vim                 \
     vlc                 \
     xclip               \
     xfonts-terminus     \
+    awesome             \
     zsh
