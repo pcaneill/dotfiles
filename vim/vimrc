@@ -48,10 +48,10 @@ Plug 'fatih/vim-go'
 Plug 'vim-python/python-syntax'
 
 " CPP
- Plug 'vim-scripts/a.vim'
- Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
- Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
- Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
+" Plug 'vim-scripts/a.vim'
+" Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
+" Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
+" Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
 
 " Utils
 Plug 'vim-scripts/genutils'
