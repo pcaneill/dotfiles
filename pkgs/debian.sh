@@ -18,4 +18,7 @@ apt install             \
     xclip               \
     xfonts-terminus     \
     awesome             \
+    neovim              \
+    python3-neovim      \
+    python-neovim       \
     zsh
