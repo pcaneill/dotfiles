@@ -21,4 +21,5 @@ apt install             \
     neovim              \
     python3-neovim      \
     python-neovim       \
+    gnome-screensaver   \
     zsh
