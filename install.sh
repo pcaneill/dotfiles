@@ -103,6 +103,13 @@ cp ~/CONFIG/awesome/rc.lua ~/.config/awesome/rc.lua
 echo " [OK]"
 
 # }}}
+# {{{ Sakora
+
+echo -ne "Initializing sakura configuration ..."
+ln -s CONFIG/sakura/sakura.conf ~/.config/sakura/sakura.conf 2> /dev/null
+echo " [OK]"
+
+# }}}
 # {{{ Personal Scripts
 
 cp ~/CONFIG/bin/switchtouchpad /usr/local/bin/

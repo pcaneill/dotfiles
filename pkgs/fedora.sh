@@ -28,4 +28,5 @@ dnf install \
   the_silver_searcher \
   xclip               \
   gnome-screensaver   \
+  sakura              \
   valgrind

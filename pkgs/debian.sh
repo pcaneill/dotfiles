@@ -22,4 +22,5 @@ apt install             \
     python3-neovim      \
     python-neovim       \
     gnome-screensaver   \
+    sakura              \
     zsh
