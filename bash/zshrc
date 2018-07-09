@@ -2,6 +2,9 @@ source ~/CONFIG/bash/liquidpromptrc
 source ~/CONFIG/submodules/liquidprompt/liquidprompt
 source ~/CONFIG/bash/moerynrc
 
+zmodload zsh/complist
+setopt menucomplete
+
 # {{{ completions
 
 # for all completions: color
@@ -23,7 +26,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;47
 zstyle ':completion:*' special-dirs true
 
 # fault tolerance
-zstyle ':completion:*' completer _complete _correct _approximate
+zstyle ':completion:*' menu select=0 completer _complete _correct _approximate search
 # (1 error on 3 characters)
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
 
