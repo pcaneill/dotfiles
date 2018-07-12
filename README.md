@@ -19,3 +19,22 @@ To get wifi working:
 
 To get nvidia driver installer work
  service lightdm stop
+
+# Shortcut
+
+## fzf
+
+    CTRL - R => Reverse backward
+    CTRL - T => List of files
+
+## bash
+
+    CTRL - A => Start of line
+    CTRL - E => End of line
+    META - B => Backaward word
+    META - F => Forward word
+    META - D => Supprime mot devant
+    META - T => Transpose word
+    CTRL - SHIFT - / => Undo
+    CTRL - U => Cut backward
+    CTRL - K => Cut forward

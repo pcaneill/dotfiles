@@ -114,3 +114,5 @@ setopt APPEND_HISTORY
 unsetopt BG_NICE        # do NOT nice bg commands
 setopt CORRECT          # command CORRECTION
 setopt EXTENDED_HISTORY # puts timestamps in the history
+
+source ~/CONFIG/bash/fzfconfig
