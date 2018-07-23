@@ -74,29 +74,32 @@ unset -f bind-git-helper
 # {{{ Completion
 
 mk/zsh-fzf-completion() {
-  case "${tokens[1]}" in
-      "git")
-          case "${tokens[2]}" in
-              "co"|"checkout"|"br"|"branch"|"rebase")
-                  fzf-gb-widget
-                  ;;
-              *)
-                  zle ${:-expand-or-complete}
-          esac
-          ;;
-      "tig")
-          case "${tokens[2]}" in
-              "")
-                  fzf-gb-widget
-              ;;
-              *)
-                  zle ${:-expand-or-complete}
-          esac
-          ;;
-      *)
-          zle ${:-expand-or-complete}
-          ;;
-  esac
+    str=${tokens[1]}" "${tokens[2]}" "${tokens[3]}" "${tokens[4]}" "${tokens[5]}
+    echo str: "$str" > /tmp/toto.txt
+    echo tokens: "$tokens" >> /tmp/toto.txt
+    case "${tokens[1]}" in
+        "git")
+            case "${tokens[2]}" in
+                "co"|"checkout"|"br"|"branch"|"rebase"|"reset")
+                    [ ${#tokens[@]} == 2 ] &&
+                        fzf-gb-widget && return
+                    [ "${tokens[3]}" = "--hard" ] && [ ${#tokens[@]} == 3 ] &&
+                        fzf-gb-widget && return
+                    zle ${:-expand-or-complete}
+                    ;;
+                *)
+                    zle ${:-expand-or-complete}
+            esac
+            ;;
+        "tig")
+            [ ${#tokens[@]} == 1 ] &&
+                fzf-gb-widget && return
+            zle ${:-expand-or-complete}
+            ;;
+        *)
+            zle ${:-expand-or-complete}
+            ;;
+    esac
 }
 zle -N mk/zsh-fzf-completion
 
