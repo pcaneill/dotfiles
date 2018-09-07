@@ -26,6 +26,7 @@ To get nvidia driver installer work
 
     CTRL - R => Reverse backward
     CTRL - T => List of files
+    CTRL - G B => list of branches
 
 ## bash
 
@@ -38,3 +39,11 @@ To get nvidia driver installer work
     CTRL - SHIFT - / => Undo
     CTRL - U => Cut backward
     CTRL - K => Cut forward
+
+
+# Screensetup
+
+
+    arandr
+
+    autorandr -s laptop
