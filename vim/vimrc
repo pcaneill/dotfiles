@@ -16,7 +16,7 @@ if has("nvim")
    Plug 'bruno-/vim-man'
    Plug 'equalsraf/neovim-gui-shim'
    Plug 'Shougo/deoplete.nvim'
-   Plug 'zchee/deoplete-go'
+"   Plug 'zchee/deoplete-go'
 endif
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
@@ -537,10 +537,10 @@ noremap <S-Up> <C-Y>
 noremap <S-Down> <C-E>
 
 " Resize windows
-noremap <C-Left> :exec("5winc >")<cr>
-noremap! <C-Left> <Esc>:exec("5winc >")<cr>
-noremap <C-Right> :exec("5winc <")<cr>
-noremap! <C-Right> <Esc>:exec("5winc <")<cr>
+noremap <C-A-h> :exec("5winc >")<cr>
+noremap! <C-A-h> <Esc>:exec("5winc >")<cr>
+noremap <C-A-g> :exec("5winc <")<cr>
+noremap! <C-A-g> <Esc>:exec("5winc <")<cr>
 noremap <C-Up> :exec("5winc -")<cr>
 noremap <C-Down> :exec("5winc +")<cr>
 
