@@ -6,5 +6,6 @@ set main-view   = line-number:yes,interval=1 id:yes date:relative author:full co
 # {{{ Bind
 
 bind generic Y !@sh -c "echo -n %(commit) | xclip -selection c"
+bind generic r !git rebase -i %(commit)
 
 # }}}
