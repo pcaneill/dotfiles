@@ -1,21 +1,24 @@
 apt install             \
     build-essential     \
+    python3.7           \
+    python3-ipython     \
+    python2.7           \
     git                 \
     htop                \
-    ipython             \
-    ipython3            \
-    python-dev          \
-    python-pip          \
-    python3-dev         \
-    python3-pip         \
-    qt5-default         \
     silversearcher-ag   \
     software-properties-common \
     tig                 \
     tmux                \
-    vim                 \
+    neovim              \
     vlc                 \
     xclip               \
+    xblacklight         \
+    mosh                \
+    alsa-utils          \
+    meld                \
+    arandr              \
+    autoranr            \
+    net-tools           \
     xfonts-terminus     \
     awesome             \
     neovim              \
