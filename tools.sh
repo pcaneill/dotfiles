@@ -18,6 +18,8 @@ ask "Do you want to install neovim-qt?"
 neovim_qt=$?
 ask "Do you want to install fzf?"
 fzf=$?
+ask "Do you want to install docker for ubuntu?"
+docker_ubuntu=$?
 
 if [ $neovim_qt -eq 1 ]; then
   cd ~/tools
@@ -38,4 +40,23 @@ if [ $fzf -eq 1 ]; then
   cd fzf
   ./install --all --64
   cd
+fi
+
+if [ $docker_ubuntu -eq 1 ]; then
+  sudo apt-get update
+  sudo apt-get -y install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo apt-key fingerprint 0EBFCD88
+  sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+  sudo apt-get update
+  sudo apt-get install -y docker-ce
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
 fi

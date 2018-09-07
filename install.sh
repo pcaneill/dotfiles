@@ -106,7 +106,7 @@ echo " [OK]"
 # {{{ Sakora
 
 echo -ne "Initializing sakura configuration ..."
-ln -s CONFIG/sakura/sakura.conf ~/.config/sakura/sakura.conf 2> /dev/null
+ln -s ~/CONFIG/sakura/sakura.conf ~/.config/sakura/sakura.conf 2> /dev/null
 echo " [OK]"
 
 # }}}
