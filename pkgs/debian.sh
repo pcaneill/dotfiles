@@ -1,23 +1,18 @@
 apt install             \
     build-essential     \
-    python3.7           \
     python3-ipython     \
-    python2.7           \
     git                 \
     htop                \
     silversearcher-ag   \
     software-properties-common \
     tig                 \
     tmux                \
-    neovim              \
     vlc                 \
     xclip               \
-    xblacklight         \
     mosh                \
-    alsa-utils          \
     meld                \
     arandr              \
-    autoranr            \
+    autorandr           \
     net-tools           \
     xfonts-terminus     \
     awesome             \
