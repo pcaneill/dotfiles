@@ -21,4 +21,9 @@ apt install             \
     python-neovim       \
     gnome-screensaver   \
     sakura              \
+    zstd                \
+    blueman             \
+    jq                  \
+    awscli              \
+    light               \
     zsh
