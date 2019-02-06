@@ -159,4 +159,9 @@ if [ -d "`echo ${RTAGS_DEST//>}`" ]; then
   export PATH=~/CONFIG/tools/rtags/bin:$PATH
 fi
 
+FLAMEGRAPH_TOOLS=~/CONFIG/tools/FlameGraph/
+if [ -d "`echo ${FLAMEGRAPH_TOOLS//>}`" ]; then
+  export PATH=~/CONFIG/tools/FlameGraph/:$PATH
+fi
+
 # vim: syn=sh
