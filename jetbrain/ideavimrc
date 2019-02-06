@@ -45,6 +45,8 @@ nnoremap <leader>rn :action RenameElement<cr>
 vnoremap <leader>rn :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action RenameElement<cr>
 nnoremap <leader>ri :action Inline<cr>
 vnoremap <leader>ri :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action Inline<cr>
+nnoremap <leader>rm :action Move<cr>
+vnoremap <leader>rm :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<cr>:action Move<cr>
 
 " }}}
 " {{{ GoTo <leader>g
