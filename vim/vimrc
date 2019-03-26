@@ -13,29 +13,17 @@ call plug#begin('~/.vim/bundle')
 if has("nvim")
    Plug 'benekastah/neomake'
    Plug 'kassio/neoterm'
-   Plug 'bruno-/vim-man'
    Plug 'equalsraf/neovim-gui-shim'
-   Plug 'Shougo/deoplete.nvim'
-"   Plug 'zchee/deoplete-go'
+   Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 endif
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdcommenter'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
-Plug 'junegunn/goyo.vim'
-
-" DOC
-Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/context_filetype.vim'
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -47,24 +35,12 @@ Plug 'fatih/vim-go'
 " Python
 Plug 'vim-python/python-syntax'
 
-" CPP
-" Plug 'vim-scripts/a.vim'
-" Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'cpp', 'c'] }
-" Plug 'rhysd/vim-clang-format', { 'for': [ 'cpp', 'c'] }
-" Plug 'Valloric/YouCompleteMe',  { 'do': './install.py --clang-completer' }
-
 " Utils
 Plug 'vim-scripts/genutils'
 
 " Theme
 Plug 'junegunn/seoul256.vim'
 Plug 'sjl/badwolf'
-Plug 'NLKNguyen/papercolor-theme'
-
-if has('nvim')
-    " Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
-endif
 
 call plug#end()
 
@@ -164,32 +140,6 @@ set t_Co=256
 
 " }}}
 " {{{ Plugins
-" {{{ NERDTree
-
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-
-" }}}
-" {{{ UltiSnips
-
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsListSnippets        = "<c-l>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:SuperTabDefaultCompletionType = '<C-tab>'
-
-let g:UltiSnipsEditSplit = 'vertical'
-
-" }}}
 " {{{ ctrlp
 
 "let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files && git submodule -q foreach ''for file in $(git ls-files); do echo $name/$file; done''']
@@ -220,33 +170,6 @@ if has("nvim")
   let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
   let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
 endif
-
-" }}}
-" {{{ Completion
-
-let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-
-"set completeopt+=preview
-
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_open_loclist_on_ycm_diags = 1
-let g:ycm_always_populate_location_list = 1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-
-" }}}
-" {{{ echodoc
-
-set noshowmode
-let g:echodoc_enable_at_startup = 1
-set completeopt+=menuone
-set completeopt-=preview
-set shortmess+=c
 
 " }}}
 " {{{ Terminal & Neoterm
