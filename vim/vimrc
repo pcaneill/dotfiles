@@ -719,7 +719,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 "colo seoul256
 
 set background=dark
-colorscheme PaperColor
+colorscheme badwolf
 
 " Override the search highlight color with a combination that is easier to
 " read. The default PaperColor is dark green backgroun with black foreground.
