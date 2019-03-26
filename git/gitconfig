@@ -46,3 +46,7 @@
 
 [push]
     default = current
+
+[branch]
+    autosetupmerge = always
+    autosetuprebase = always
