@@ -47,3 +47,7 @@ To get nvidia driver installer work
     arandr
 
     autorandr -s laptop
+
+# Programs
+
+* [bat](https://github.com/sharkdp/bat)
