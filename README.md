@@ -40,6 +40,13 @@ To get nvidia driver installer work
     CTRL - U => Cut backward
     CTRL - K => Cut forward
 
+## Google Chrome
+
+    CTRL - SHIFT - X  Pin all open tabs
+    CTRL - T          New Tab
+    CTRL - W          Close Tab
+    CTRL - SHIFT - T  Reopen Close Tab
+
 
 # Screensetup
 
