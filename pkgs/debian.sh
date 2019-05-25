@@ -25,5 +25,4 @@ apt install             \
     blueman             \
     jq                  \
     awscli              \
-    light               \
     zsh
