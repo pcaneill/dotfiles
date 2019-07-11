@@ -14,7 +14,6 @@ if has("nvim")
    Plug 'benekastah/neomake'
    Plug 'kassio/neoterm'
    Plug 'equalsraf/neovim-gui-shim'
-   Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 endif
 
 Plug 'kien/ctrlp.vim'
