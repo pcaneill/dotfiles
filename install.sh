@@ -80,7 +80,7 @@ echo -ne "Initializing tmux configuration ..."
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux/ 2> /dev/null
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 2> /dev/null
 ln -s ~/.tmux/.tmux.conf ~/.tmux.conf 2> /dev/null
-ln -s CONFIG/tmux/tmux.conf.local. ~/.tmux.conf.local 2> /dev/null
+ln -s CONFIG/tmux/tmux.conf.local ~/.tmux.conf.local 2> /dev/null
 echo " [OK]"
 
 # }}}
