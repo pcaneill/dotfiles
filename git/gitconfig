@@ -2,6 +2,9 @@
     excludesfile=~/.gitignore
     editor=nvim
 
+[diff]
+    renameLimit=10000
+
 [user]
     name = "Pierre-Yves Caneill"
     email = "pyc@moeryn.com"

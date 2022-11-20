@@ -55,7 +55,7 @@ nnoremap <leader>gt :action GotoTest<cr>
 nnoremap <leader>gi :action GotoImplementation<cr>
 nnoremap <leader>gd :action GotoDeclaration<cr>
 nnoremap <F2> :action GotoDeclaration<cr>
-nnoremap <C-t> :action Back<cr>
+" nnoremap <C-t> :action Back<cr>
 
 " }}}
 " {{{ Run
