@@ -1,13 +1,13 @@
 [core]
     excludesfile=~/.gitignore
-    editor=nvim
+    editor=vim
 
 [diff]
     renameLimit=10000
 
 [user]
     name = "Pierre-Yves Caneill"
-    email = "pyc@moeryn.com"
+    email = "xt3ems@gmail.com"
 
 [alias]
     co=checkout

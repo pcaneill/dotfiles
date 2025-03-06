@@ -1,24 +1,11 @@
 # Configurations
 
-* awesome
 * bash
-* gdb
 * git
 * IntelliJ
-* powershell
 * tig
 * tmux
 * top
-* valgrind
-* vim
-
-# Notes
-
-To get wifi working:
- apt-get install firmware-*
-
-To get nvidia driver installer work
- service lightdm stop
 
 # Shortcut
 
@@ -47,14 +34,3 @@ To get nvidia driver installer work
     CTRL - W          Close Tab
     CTRL - SHIFT - T  Reopen Close Tab
 
-
-# Screensetup
-
-
-    arandr
-
-    autorandr -s laptop
-
-# Programs
-
-* [bat](https://github.com/sharkdp/bat)

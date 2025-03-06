@@ -1,6 +1,7 @@
-source ~/CONFIG/bash/liquidpromptrc
-source ~/CONFIG/submodules/liquidprompt/liquidprompt
 source ~/CONFIG/bash/moerynrc
+
+export STARSHIP_CONFIG=~/CONFIG/bash/starship.toml
+eval "$(starship init zsh)"
 
 zmodload zsh/complist
 setopt menucomplete
@@ -105,9 +106,6 @@ autoload -U zutil
 autoload -U complist
 
 # next lets set some enviromental/shell pref stuff up
-# setopt NOHUP
-#setopt NOTIFY
-#setopt NO_FLOW_CONTROL
 setopt NO_EQUALS
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt APPEND_HISTORY

@@ -1,4 +1,0 @@
---memcheck:leak-check=full
---memcheck:show-reachable=yes
---child-silent-after-fork=yes
---trace-children=no

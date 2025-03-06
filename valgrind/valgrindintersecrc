@@ -1,7 +1,0 @@
---memcheck:leak-check=full
---memcheck:show-reachable=yes
---child-silent-after-fork=yes
---trace-children=no
---suppressions=/home/caneill/dev/mmsx/platform/lib-common/lib-common.supp
---suppressions=/home/caneill/dev/mmsx/platform/qkv/utils/qkv.supp
---suppressions=/home/caneill/dev/mmsx/platform/js/js.supp
